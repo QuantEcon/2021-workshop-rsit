@@ -1,1 +1,9 @@
 - file: intro
+
+- part: Week 1
+  chapters:
+    - file: week1/python-for-economics
+
+- part: Resources
+  chapters:
+    - file: resources/python-setup
