@@ -1,0 +1,6 @@
+title: "RSIT Workshop (Uni Tübingen) 2021"
+author: "Matthew McKay & Chase Coleman"
+copyright: "2021"
+exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", README.md]
+execute:
+  execute_notebooks: "off"
