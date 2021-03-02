@@ -4,3 +4,7 @@ copyright: "2021"
 exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", README.md]
 execute:
   execute_notebooks: "off"
+
+sphinx:
+  config:
+    html_theme: quantecon_book_theme
