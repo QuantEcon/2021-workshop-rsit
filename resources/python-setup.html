@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Setting up Python &#8212; RSIT Workshop (Uni Tübingen) 2021</title>
+    <title>Getting Setup for the Workshop &#8212; RSIT Workshop (Uni Tübingen) 2021</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -31,6 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -54,7 +55,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Introduction to Python for Economics" href="../week1/python-for-economics.html" />
+    <link rel="prev" title="1. Introduction to Python for Economics" href="../week1/python-for-economics.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -72,6 +73,8 @@
     
         <div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/qe-logo-large.png" class="logo" alt="logo">
   
   
   <h1 class="site-logo" id="site-title">RSIT Workshop (Uni Tübingen) 2021</h1>
@@ -97,7 +100,7 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../week1/python-for-economics.html">
-   Introduction to Python for Economics
+   1. Introduction to Python for Economics
   </a>
  </li>
 </ul>
@@ -109,7 +112,7 @@
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Setting up Python
+   Getting Setup for the Workshop
   </a>
  </li>
 </ul>
@@ -177,6 +180,66 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1-installing-python-anaconda">
+   Step 1: Installing Python (Anaconda)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-running-a-jupyter-notebook">
+   Step 2: Running a
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Jupyter
+    </span>
+   </code>
+   Notebook
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#launching-jupyter-notebooks">
+     Launching Jupyter Notebooks
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#terminal-based-workflow">
+       Terminal based Workflow
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#gui-based-workflow">
+       GUI based Workflow
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-opening-an-ipynb-file">
+     Creating / Opening an
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ipynb
+      </span>
+     </code>
+     file
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-5-exercises">
+   Step 5: Exercises
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
         </div>
     </div>
 </div>
@@ -185,8 +248,140 @@
         
               <div>
                 
-  <div class="section" id="setting-up-python">
-<h1>Setting up Python<a class="headerlink" href="#setting-up-python" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="getting-setup-for-the-workshop">
+<h1>Getting Setup for the Workshop<a class="headerlink" href="#getting-setup-for-the-workshop" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="step-1-installing-python-anaconda">
+<h2>Step 1: Installing Python (Anaconda)<a class="headerlink" href="#step-1-installing-python-anaconda" title="Permalink to this headline">¶</a></h2>
+<p>The Python ecosystem consists of a lot of software packages that
+bring extended functionality and high productivity straight away.
+To manage these packages it is <strong>strongly</strong> recommended that you
+install the <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda Python Distribution</a></p>
+<p>This enables you to get access to the majority of packages you
+will need to do your work without any configuration etc.</p>
+<p>You can <a class="reference external" href="https://www.anaconda.com/products/individual#windows">download the latest from here</a></p>
+<p>Please follow the following Installation Guides to install <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.8</span></code>
+on your platform:</p>
+<ol class="simple">
+<li><p><a class="reference external" href="https://docs.anaconda.com/anaconda/install/mac-os/">macOS</a></p></li>
+<li><p><a class="reference external" href="https://docs.anaconda.com/anaconda/install/windows/">Windows</a></p></li>
+<li><p><a class="reference external" href="https://docs.anaconda.com/anaconda/install/linux/">linux</a></p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have an <code class="docutils literal notranslate"><span class="pre">M1</span></code> based mac you will need to install using Rosetta2 emulation. A handy <a class="reference external" href="https://vineethbharadwaj.medium.com/setting-up-anaconda-navigator-spyder-jupyter-python-environments-on-macbook-with-m1-chip-for-2a4b9849c1ec">blog post</a> details some additional steps
+to sort out any possible issues using <code class="docutils literal notranslate"><span class="pre">terminal</span></code>. Please let me know if you have any issues.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are a <code class="docutils literal notranslate"><span class="pre">windows</span></code> user and would like access to the broader <code class="docutils literal notranslate"><span class="pre">linux</span></code>
+based tools we have had a lot of success using <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">windows subsystem for linux</a>
+which gives you to a <code class="docutils literal notranslate"><span class="pre">lot</span></code> of powerful tools via <code class="docutils literal notranslate"><span class="pre">terminal</span></code> based workflows.</p>
+</div>
+</div>
+<div class="section" id="step-2-running-a-jupyter-notebook">
+<h2>Step 2: Running a <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code> Notebook<a class="headerlink" href="#step-2-running-a-jupyter-notebook" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://jupyter.org">Jupyter Notebooks</a> have become a standard tool in the datascience community that marries up:</p>
+<ol class="simple">
+<li><p>writing code, and</p></li>
+<li><p>writing pros</p></li>
+</ol>
+<p>They are often described as <code class="docutils literal notranslate"><span class="pre">computational</span> <span class="pre">narratives</span></code>.</p>
+<p>We will be using <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebooks</span></code> in this workshop, and <code class="docutils literal notranslate"><span class="pre">jupyter</span></code> comes packaged with <code class="docutils literal notranslate"><span class="pre">anaconda</span></code> so if you have
+completed <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">1</span></code> you have <code class="docutils literal notranslate"><span class="pre">jupyter</span></code> on your system.</p>
+<div class="section" id="launching-jupyter-notebooks">
+<h3>Launching Jupyter Notebooks<a class="headerlink" href="#launching-jupyter-notebooks" title="Permalink to this headline">¶</a></h3>
+<p>Jupyter is a server that runs on your computer that connects the front-end <code class="docutils literal notranslate"><span class="pre">html</span></code> based interface with programming
+language kernels (such as <code class="docutils literal notranslate"><span class="pre">python</span></code>) to execute code and get results.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Lab</span></code> is also available as an option to use. It provides a more comprehensive Integrated Development
+Environment (IDE). We tend to use <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebooks</span></code> as they are a simpler interface.</p>
+</div>
+<div class="section" id="terminal-based-workflow">
+<h4>Terminal based Workflow<a class="headerlink" href="#terminal-based-workflow" title="Permalink to this headline">¶</a></h4>
+<p>Terminal based workflows can be a very convenient way to launch applications (like <code class="docutils literal notranslate"><span class="pre">jupyter</span></code>) and run programs.</p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="489a87ad-9caa-4da7-8639-03e88ae00973" name="2f102e2f-80b5-452f-a509-036aea8868af" type="radio">
+</input><label class="tabbed-label" for="489a87ad-9caa-4da7-8639-03e88ae00973">
+macOS</label><div class="tabbed-content docutils">
+<p>You can open <code class="docutils literal notranslate"><span class="pre">terminal</span></code> using:</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Finder</span></code> to open <code class="docutils literal notranslate"><span class="pre">Applications/Utilities/Terminal</span></code>, or</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Spotlight</span></code> to search for <code class="docutils literal notranslate"><span class="pre">terminal</span></code></p></li>
+</ol>
+<div class="figure align-default">
+<img alt="../_images/osx-terminal1.png" src="../_images/osx-terminal1.png" />
+</div>
+<p>then you can type <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> to launch a jupyter notebook server:</p>
+<div class="figure align-default">
+<img alt="../_images/osx-terminal2.png" src="../_images/osx-terminal2.png" />
+</div>
+<p>A browser will then open with a running <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> home page
+as shown in the <a class="reference internal" href="#getting-setup-notebooks"><span class="std std-ref">next section</span></a></p>
+</div>
+<input id="acc7ed4c-25c3-4824-8e43-98f9b6ef30fd" name="2f102e2f-80b5-452f-a509-036aea8868af" type="radio">
+</input><label class="tabbed-label" for="acc7ed4c-25c3-4824-8e43-98f9b6ef30fd">
+Windows</label><div class="tabbed-content docutils">
+<p>TBD</p>
+</div>
+<input id="23773866-53bf-4340-b94b-96f2147af1f9" name="2f102e2f-80b5-452f-a509-036aea8868af" type="radio">
+</input><label class="tabbed-label" for="23773866-53bf-4340-b94b-96f2147af1f9">
+Linux</label><div class="tabbed-content docutils">
+<p>The <code class="docutils literal notranslate"><span class="pre">linux</span></code> setup is the same as <code class="docutils literal notranslate"><span class="pre">OS</span> <span class="pre">X</span></code> once you open the default <code class="docutils literal notranslate"><span class="pre">terminal</span></code> application
+for your <code class="docutils literal notranslate"><span class="pre">linux</span></code> distribution.</p>
+</div>
+</div>
+</div>
+<div class="section" id="gui-based-workflow">
+<h4>GUI based Workflow<a class="headerlink" href="#gui-based-workflow" title="Permalink to this headline">¶</a></h4>
+<p>There is a Graphical User Interface (GUI) available for launching <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code> or <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Lab</span></code> provided by Anaconda.</p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="e6aa06ac-8180-46fc-82e7-f079348499c1" name="60d08c1b-3e5c-4556-84d8-981103669352" type="radio">
+</input><label class="tabbed-label" for="e6aa06ac-8180-46fc-82e7-f079348499c1">
+macOS</label><div class="tabbed-content docutils">
+<p>TBD</p>
+</div>
+<input id="6446924b-8bce-4637-939d-65114808f990" name="60d08c1b-3e5c-4556-84d8-981103669352" type="radio">
+</input><label class="tabbed-label" for="6446924b-8bce-4637-939d-65114808f990">
+Windows</label><div class="tabbed-content docutils">
+<p>TBD</p>
+</div>
+<input id="e037e0b2-102d-4592-a675-32a8b1d43ca7" name="60d08c1b-3e5c-4556-84d8-981103669352" type="radio">
+</input><label class="tabbed-label" for="e037e0b2-102d-4592-a675-32a8b1d43ca7">
+Linux</label><div class="tabbed-content docutils">
+<p>TBD</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="creating-opening-an-ipynb-file">
+<span id="getting-setup-notebooks"></span><h3>Creating / Opening an <code class="docutils literal notranslate"><span class="pre">ipynb</span></code> file<a class="headerlink" href="#creating-opening-an-ipynb-file" title="Permalink to this headline">¶</a></h3>
+<p>Once you have the <code class="docutils literal notranslate"><span class="pre">jupyter</span></code> server running you will see the following in your browser:</p>
+<div class="figure align-default">
+<img alt="../_images/notebook1.png" src="../_images/notebook1.png" />
+</div>
+<p>and you can click on <code class="docutils literal notranslate"><span class="pre">New</span></code> and select <code class="docutils literal notranslate"><span class="pre">Python</span></code> as your language</p>
+<div class="figure align-default">
+<img alt="../_images/notebook2.png" src="../_images/notebook2.png" />
+</div>
+</div>
+</div>
+<div class="section" id="step-5-exercises">
+<h2>Step 5: Exercises<a class="headerlink" href="#step-5-exercises" title="Permalink to this headline">¶</a></h2>
+<div class="exercise admonition" id="resources/python-setup-exercise-0">
+<p class="admonition-title"></p>
+<div class="section" id="exercise-content">
+<p>Replicate the <code class="docutils literal notranslate"><span class="pre">code</span></code> in this lecture in your own Jupyter Notebook:</p>
+<p><a class="reference external" href="https://python-programming.quantecon.org/python_by_example.html">https://python-programming.quantecon.org/python_by_example.html</a></p>
+<p>by stepping through each <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">block</span></code> and copying it into your own notebook.</p>
+<p>Alternatively, you can also download an <code class="docutils literal notranslate"><span class="pre">ipynb</span></code> version of the page:</p>
+<div class="figure align-default">
+<img alt="../_images/exercise-getting-started-nb-link.png" src="../_images/exercise-getting-started-nb-link.png" />
+</div>
+<p>and/or run this lecture in the cloud using the <code class="docutils literal notranslate"><span class="pre">play</span></code> button</p>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -214,7 +409,7 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../week1/python-for-economics.html" title="previous page">Introduction to Python for Economics</a>
+    <a class='left-prev' id="prev-link" href="../week1/python-for-economics.html" title="previous page"><span class="section-number">1. </span>Introduction to Python for Economics</a>
 
         </div>
         

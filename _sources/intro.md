@@ -3,6 +3,12 @@
 A workshop on getting starting with the [python programming language](https://www.python.org)
 with a particular focus on `applied economics` and `working with data`
 
+```{note}
+This will be a `dynamic` website used to distribute materials
+and will continuously be updated throughout the workshop. Once the workshop is completed
+it will be frozen and available for reference.
+```
+
 ## Topics and Schedule
 
 **Week 1:**
