@@ -1,9 +1,11 @@
 - file: intro
+  numbered: True
 
 - part: Week 1
   chapters:
     - file: week1/python-for-economics
 
 - part: Resources
+  numbered: false
   chapters:
     - file: resources/python-setup
