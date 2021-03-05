@@ -117,7 +117,7 @@ and you can click on `New` and select `Python` as your language
 ```
 
 
-## Step 5: Exercises
+## Step 3: Exercises
 
 ````{exercise} 
 Replicate the `code` in this lecture in your own Jupyter Notebook:
