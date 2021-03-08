@@ -1,7 +1,7 @@
 # RSIT Workshop (Uni Tübingen) 2021
 
 A workshop on getting starting with the [python programming language](https://www.python.org)
-with a particular focus on `applied economics` and `working with data`
+with a particular focus on `applied economics` and `working with data`.
 
 ```{note}
 This will be a `dynamic` website used to distribute materials
@@ -11,7 +11,16 @@ it will be frozen and available for reference.
 
 ## Topics and Schedule
 
-**Week 1:**
+The {download}`workshop program <_assets/program.pdf>` is available for an overview of the schedule
+
+```{admonition} Pre-Workshop Setup:
+Please work your way through {ref}`resources/setup`. This will help you get your computers and environment setup prior to the workshop.
+Please let us know if you have any difficulty by [raising an issue on the GitHub page](https://github.com/QuantEcon/2021-workshop-rsit/issues) or [emailing me](mailto:matthew.mckay@anu.edu.au).
+
+Please [fill in this 5 Question Survey](https://www.surveymonkey.com/r/WZZKG9Z) on software and computer equipment.
+```
+
+### Week 1:
 
 ```{list-table}
 :widths: 15 10 30
@@ -40,7 +49,7 @@ it will be frozen and available for reference.
   - Q&A / Tutorials
 ```
 
-**Week 2:**
+### Week 2:
 
 ```{list-table}
 :widths: 15 10 30
@@ -68,5 +77,3 @@ it will be frozen and available for reference.
   - 14:00 - 15:00
   - Q&A / Tutorials
 ```
-
-The {download}`program <_assets/program.pdf>` is available for an overview of the schedule

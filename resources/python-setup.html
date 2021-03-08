@@ -187,7 +187,13 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#step-1-installing-python-anaconda">
-   Step 1: Installing Python (Anaconda)
+   Step 1: Installing
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Python
+    </span>
+   </code>
+   (Anaconda)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -249,16 +255,26 @@
               <div>
                 
   <div class="section" id="getting-setup-for-the-workshop">
-<h1>Getting Setup for the Workshop<a class="headerlink" href="#getting-setup-for-the-workshop" title="Permalink to this headline">¶</a></h1>
+<span id="resources-setup"></span><h1>Getting Setup for the Workshop<a class="headerlink" href="#getting-setup-for-the-workshop" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="step-1-installing-python-anaconda">
-<h2>Step 1: Installing Python (Anaconda)<a class="headerlink" href="#step-1-installing-python-anaconda" title="Permalink to this headline">¶</a></h2>
+<h2>Step 1: Installing <code class="docutils literal notranslate"><span class="pre">Python</span></code> (Anaconda)<a class="headerlink" href="#step-1-installing-python-anaconda" title="Permalink to this headline">¶</a></h2>
 <p>The Python ecosystem consists of a lot of software packages that
 bring extended functionality and high productivity straight away.
 To manage these packages it is <strong>strongly</strong> recommended that you
 install the <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda Python Distribution</a></p>
 <p>This enables you to get access to the majority of packages you
-will need to do your work without any configuration etc.</p>
-<p>You can <a class="reference external" href="https://www.anaconda.com/products/individual#windows">download the latest from here</a></p>
+will need to do your work without any configuration and tracking of software dependencies.</p>
+<p>It is essentially a <code class="docutils literal notranslate"><span class="pre">tool</span></code> to manage your software environment.</p>
+<p>You can <a class="reference external" href="https://www.anaconda.com/products/individual#windows">download the latest from here</a> or
+search <code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">Python</span></code> and install the <code class="docutils literal notranslate"><span class="pre">Individual</span> <span class="pre">Edition</span></code>.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are familiar with <code class="docutils literal notranslate"><span class="pre">terminal</span> <span class="pre">based</span> <span class="pre">workflows</span></code> you can opt to install <code class="docutils literal notranslate"><span class="pre">anaconda</span></code> without
+any of the GUI based installers using the <code class="docutils literal notranslate"><span class="pre">Command</span> <span class="pre">Line</span> <span class="pre">Installer</span></code>.</p>
+</div>
+</div>
 <p>Please follow the following Installation Guides to install <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.8</span></code>
 on your platform:</p>
 <ol class="simple">
@@ -269,11 +285,11 @@ on your platform:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you have an <code class="docutils literal notranslate"><span class="pre">M1</span></code> based mac you will need to install using Rosetta2 emulation. A handy <a class="reference external" href="https://vineethbharadwaj.medium.com/setting-up-anaconda-navigator-spyder-jupyter-python-environments-on-macbook-with-m1-chip-for-2a4b9849c1ec">blog post</a> details some additional steps
-to sort out any possible issues using <code class="docutils literal notranslate"><span class="pre">terminal</span></code>. Please let me know if you have any issues.</p>
+to sort out any possible issues using <code class="docutils literal notranslate"><span class="pre">terminal</span></code>. Please [let me know](mailto: <a class="reference external" href="mailto:matthew&#46;mckay&#37;&#52;&#48;anu&#46;edu&#46;au">matthew<span>&#46;</span>mckay<span>&#64;</span>anu<span>&#46;</span>edu<span>&#46;</span>au</a>) if you have any issues.</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you are a <code class="docutils literal notranslate"><span class="pre">windows</span></code> user and would like access to the broader <code class="docutils literal notranslate"><span class="pre">linux</span></code>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you are a <code class="docutils literal notranslate"><span class="pre">Windows</span></code> user and would like access to the broader <code class="docutils literal notranslate"><span class="pre">linux</span></code>
 based tools we have had a lot of success using <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">windows subsystem for linux</a>
 which gives you to a <code class="docutils literal notranslate"><span class="pre">lot</span></code> of powerful tools via <code class="docutils literal notranslate"><span class="pre">terminal</span></code> based workflows.</p>
 </div>
@@ -283,11 +299,21 @@ which gives you to a <code class="docutils literal notranslate"><span class="pre
 <p><a class="reference external" href="https://jupyter.org">Jupyter Notebooks</a> have become a standard tool in the datascience community that marries up:</p>
 <ol class="simple">
 <li><p>writing code, and</p></li>
-<li><p>writing pros</p></li>
+<li><p>writing prose</p></li>
 </ol>
-<p>They are often described as <code class="docutils literal notranslate"><span class="pre">computational</span> <span class="pre">narratives</span></code>.</p>
+<p>They are often described as <code class="docutils literal notranslate"><span class="pre">computational</span> <span class="pre">narratives</span></code>. At the basic level it provides two cells that can be used
+to write <code class="docutils literal notranslate"><span class="pre">Markdown</span></code> or <code class="docutils literal notranslate"><span class="pre">Code</span></code>.</p>
+<ol class="simple">
+<li><p>A <code class="docutils literal notranslate"><span class="pre">Markdown</span> <span class="pre">Cell</span></code> allows you to write notes, comments, ideas, include figures etc.</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">Cell</span></code> is for <code class="docutils literal notranslate"><span class="pre">executable</span> <span class="pre">code</span></code> that is connected to a language kernel and fetches the output.</p></li>
+</ol>
 <p>We will be using <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebooks</span></code> in this workshop, and <code class="docutils literal notranslate"><span class="pre">jupyter</span></code> comes packaged with <code class="docutils literal notranslate"><span class="pre">anaconda</span></code> so if you have
-completed <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">1</span></code> you have <code class="docutils literal notranslate"><span class="pre">jupyter</span></code> on your system.</p>
+completed <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">1</span></code> you have <code class="docutils literal notranslate"><span class="pre">jupyter</span></code> on your system. It also provides a nice interface to start using Python. I
+do a lot of my exploratory work in Jupyter Notebooks.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you get stuck a good first place to look is the <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/notebook.html">Jupyter notebook documentation</a></p>
+</div>
 <div class="section" id="launching-jupyter-notebooks">
 <h3>Launching Jupyter Notebooks<a class="headerlink" href="#launching-jupyter-notebooks" title="Permalink to this headline">¶</a></h3>
 <p>Jupyter is a server that runs on your computer that connects the front-end <code class="docutils literal notranslate"><span class="pre">html</span></code> based interface with programming
@@ -295,14 +321,16 @@ language kernels (such as <code class="docutils literal notranslate"><span class
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p><code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Lab</span></code> is also available as an option to use. It provides a more comprehensive Integrated Development
-Environment (IDE). We tend to use <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebooks</span></code> as they are a simpler interface.</p>
+Environment (IDE). We tend to use <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebooks</span></code> as they are a simpler interface but there is a lot of
+development going into <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Lab</span></code> and you may want to explore using it.</p>
 </div>
+<p>If you haven’t been able to get setup yet you can also <a class="reference external" href="https://jupyter.org/try">try out the Jupyter Notebook in the cloud</a></p>
 <div class="section" id="terminal-based-workflow">
 <h4>Terminal based Workflow<a class="headerlink" href="#terminal-based-workflow" title="Permalink to this headline">¶</a></h4>
 <p>Terminal based workflows can be a very convenient way to launch applications (like <code class="docutils literal notranslate"><span class="pre">jupyter</span></code>) and run programs.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="8d92f8fe-f794-457c-9cce-5a864f5348fa" name="9d600f7c-8997-49c5-bec5-1ee66080ef97" type="radio">
-</input><label class="tabbed-label" for="8d92f8fe-f794-457c-9cce-5a864f5348fa">
+<input checked="checked" id="ca8bd32f-a4d2-4f57-b6b3-825088fd12c0" name="c93c2100-1c1f-4039-9218-ed36e59cb762" type="radio">
+</input><label class="tabbed-label" for="ca8bd32f-a4d2-4f57-b6b3-825088fd12c0">
 macOS</label><div class="tabbed-content docutils">
 <p>You can open <code class="docutils literal notranslate"><span class="pre">terminal</span></code> using:</p>
 <ol class="simple">
@@ -319,16 +347,24 @@ macOS</label><div class="tabbed-content docutils">
 <p>A browser will then open with a running <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> home page
 as shown in the <a class="reference internal" href="#getting-setup-notebooks"><span class="std std-ref">next section</span></a></p>
 </div>
-<input id="d26ffd1b-f9f7-49a6-9fa1-08825397ec95" name="9d600f7c-8997-49c5-bec5-1ee66080ef97" type="radio">
-</input><label class="tabbed-label" for="d26ffd1b-f9f7-49a6-9fa1-08825397ec95">
-Windows</label><div class="tabbed-content docutils">
-<p>TBD</p>
+<input id="be6cc364-0b97-4f63-9f97-49109ab415ea" name="c93c2100-1c1f-4039-9218-ed36e59cb762" type="radio">
+</input><label class="tabbed-label" for="be6cc364-0b97-4f63-9f97-49109ab415ea">
+Windows 10</label><div class="tabbed-content docutils">
+<p>You can open a <code class="docutils literal notranslate"><span class="pre">terminal</span></code> on Windows by:</p>
+<ol class="simple">
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">Menu</span></code> and then open <code class="docutils literal notranslate"><span class="pre">Command</span> <span class="pre">Prompt</span></code> under <code class="docutils literal notranslate"><span class="pre">Windows</span> <span class="pre">System</span></code></p></li>
+<li><p>Hit <code class="docutils literal notranslate"><span class="pre">Window</span></code> Key and search for <code class="docutils literal notranslate"><span class="pre">cmd</span></code> or <code class="docutils literal notranslate"><span class="pre">powershell</span></code></p></li>
+</ol>
+<p>then you can type <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> to launch a jupyter notebook server:</p>
 </div>
-<input id="c0b58cac-b2f9-4c39-b236-acb079d80d6d" name="9d600f7c-8997-49c5-bec5-1ee66080ef97" type="radio">
-</input><label class="tabbed-label" for="c0b58cac-b2f9-4c39-b236-acb079d80d6d">
+<input id="6a4db4e9-a9f6-4762-805d-a42bb4db83a0" name="c93c2100-1c1f-4039-9218-ed36e59cb762" type="radio">
+</input><label class="tabbed-label" for="6a4db4e9-a9f6-4762-805d-a42bb4db83a0">
 Linux</label><div class="tabbed-content docutils">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">linux</span></code> setup is the same as <code class="docutils literal notranslate"><span class="pre">OS</span> <span class="pre">X</span></code> once you open the default <code class="docutils literal notranslate"><span class="pre">terminal</span></code> application
 for your <code class="docutils literal notranslate"><span class="pre">linux</span></code> distribution.</p>
+</div>
 </div>
 </div>
 </div>
@@ -336,20 +372,29 @@ for your <code class="docutils literal notranslate"><span class="pre">linux</spa
 <h4>GUI based Workflow<a class="headerlink" href="#gui-based-workflow" title="Permalink to this headline">¶</a></h4>
 <p>There is a Graphical User Interface (GUI) available for launching <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code> or <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Lab</span></code> provided by Anaconda.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="be302935-ace9-4cb2-a59d-45f44d4c0e31" name="c397a53b-b59f-4a23-8ab0-75da66f08d8b" type="radio">
-</input><label class="tabbed-label" for="be302935-ace9-4cb2-a59d-45f44d4c0e31">
+<input checked="checked" id="8e8f6819-f240-43fa-8528-2cb562361d53" name="a10db687-e0ff-458f-818e-ed72ec594c25" type="radio">
+</input><label class="tabbed-label" for="8e8f6819-f240-43fa-8528-2cb562361d53">
 macOS</label><div class="tabbed-content docutils">
-<p>TBD</p>
+<p><code class="docutils literal notranslate"><span class="pre">Jupyter</span></code> can be opened using a GUI application that comes with <code class="docutils literal notranslate"><span class="pre">Anaconda</span></code> by:</p>
+<ol class="simple">
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">Finder</span></code> and select <code class="docutils literal notranslate"><span class="pre">Applications</span></code></p></li>
+<li><p>Click on <code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">Navigator</span></code></p></li>
+</ol>
+<p>The following window will open:</p>
+<p>[comment]: # Add figure here</p>
+<p>A browser will then open with a running <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> home page
+as shown in the <a class="reference internal" href="#getting-setup-notebooks"><span class="std std-ref">next section</span></a></p>
 </div>
-<input id="cd15550a-d895-4b29-b0da-6145968c685a" name="c397a53b-b59f-4a23-8ab0-75da66f08d8b" type="radio">
-</input><label class="tabbed-label" for="cd15550a-d895-4b29-b0da-6145968c685a">
+<input id="3f32d7d1-f43e-47b4-a0d7-855165bd240e" name="a10db687-e0ff-458f-818e-ed72ec594c25" type="radio">
+</input><label class="tabbed-label" for="3f32d7d1-f43e-47b4-a0d7-855165bd240e">
 Windows</label><div class="tabbed-content docutils">
 <p>TBD</p>
 </div>
-<input id="ccefca2b-9667-4c49-8517-d2ddede664af" name="c397a53b-b59f-4a23-8ab0-75da66f08d8b" type="radio">
-</input><label class="tabbed-label" for="ccefca2b-9667-4c49-8517-d2ddede664af">
+<input id="677278cd-854e-4cb2-87f3-50f5775edab0" name="a10db687-e0ff-458f-818e-ed72ec594c25" type="radio">
+</input><label class="tabbed-label" for="677278cd-854e-4cb2-87f3-50f5775edab0">
 Linux</label><div class="tabbed-content docutils">
-<p>TBD</p>
+<p>Largely depends on which distribution of Linux you are using, but <code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">Navigator</span></code>
+is available if required.</p>
 </div>
 </div>
 </div>
@@ -368,7 +413,54 @@ Linux</label><div class="tabbed-content docutils">
 </div>
 <div class="section" id="step-3-exercises">
 <h2>Step 3: Exercises<a class="headerlink" href="#step-3-exercises" title="Permalink to this headline">¶</a></h2>
+<p>Here are some exercises to help you get started with <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebooks</span></code>
+and running your own programs and linking you to further documentation
+to learn more about them.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Open a Jupyter Notebook and spend some time to have a look around at the menus and interface.</p>
+</div>
+</div>
 <div class="exercise admonition" id="resources/python-setup-exercise-0">
+<p class="admonition-title"></p>
+<div class="section" id="exercise-content">
+<p>Go through the <a class="reference external" href="https://jupyter.org/try">Classic Notebook tutorial</a> on the Jupyter website</p>
+<p>Have a read through:</p>
+<ol class="simple">
+<li><p><a class="reference external" href="https://python-programming.quantecon.org/getting_started.html#jupyter-notebooks">QuantEcon: Jupyter Notebooks</a></p></li>
+<li><p><a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/notebook.html">Jupyter notebook documentation</a></p></li>
+</ol>
+</div>
+</div>
+<div class="exercise admonition" id="resources/python-setup-exercise-1">
+<p class="admonition-title"></p>
+<div class="section" id="exercise-content">
+<p>Open a <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> document and select <code class="docutils literal notranslate"><span class="pre">New</span></code> and use <code class="docutils literal notranslate"><span class="pre">python3</span></code> (or <code class="docutils literal notranslate"><span class="pre">python</span></code>)
+as your language kernel.</p>
+<p>Let’s run your first program. Activate the first cell by <code class="docutils literal notranslate"><span class="pre">clicking</span></code> on it and type:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello RSIT Workshop&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>this should print the string in the output block below the <code class="docutils literal notranslate"><span class="pre">code-cell</span></code></p>
+<p>now try running:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>think through each line and what might be happening. <code class="docutils literal notranslate"><span class="pre">python</span></code> is fairly
+readable out of the box.</p>
+</div>
+</div>
+<div class="exercise admonition" id="resources/python-setup-exercise-2">
 <p class="admonition-title"></p>
 <div class="section" id="exercise-content">
 <p>Replicate the <code class="docutils literal notranslate"><span class="pre">code</span></code> in this lecture in your own Jupyter Notebook:</p>
