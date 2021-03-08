@@ -15,9 +15,11 @@ The {download}`workshop program <_assets/program.pdf>` is available for an overv
 
 ```{admonition} Pre-Workshop Setup:
 Please work your way through {ref}`resources/setup`. This will help you get your computers and environment setup prior to the workshop.
+
 Please let us know if you have any difficulty by [raising an issue on the GitHub page](https://github.com/QuantEcon/2021-workshop-rsit/issues) or [emailing me](mailto:matthew.mckay@anu.edu.au).
 
-Please [fill in this 5 Question Survey](https://www.surveymonkey.com/r/WZZKG9Z) on software and computer equipment.
+Also, could you please [fill in this 5 Question Survey](https://www.surveymonkey.com/r/WZZKG9Z) on software use and operating
+systems for workshop attendees.
 ```
 
 ### Week 1:
