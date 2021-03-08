@@ -214,7 +214,9 @@ Go through the [Classic Notebook tutorial](https://jupyter.org/try) on the Jupyt
 Have a read through:
 1. [QuantEcon: Jupyter Notebooks](https://python-programming.quantecon.org/getting_started.html#jupyter-notebooks)
 2. [Jupyter notebook documentation](https://jupyter-notebook.readthedocs.io/en/stable/notebook.html)
+
 ```
+
 
 ````{exercise}
 Open a `jupyter notebook` document and select `New` and use `python3` (or `python`)
@@ -224,6 +226,7 @@ Let's run your first program. Activate the first cell by `clicking` on it and ty
 
 ```python
 print("Hello RSIT Workshop")
+
 ```
 
 this should print the string in the output block below the `code-cell`
@@ -243,10 +246,12 @@ plt.show()
 ```
 
 think through each line and what might be happening. `python` is fairly
-readable out of the box. 
+readable out of the box.
+
 ````
 
-````{exercise} 
+
+````{exercise}
 Replicate the `code` in this lecture in your own Jupyter Notebook:
 
 https://python-programming.quantecon.org/python_by_example.html
