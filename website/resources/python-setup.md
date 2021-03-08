@@ -214,7 +214,6 @@ Go through the [Classic Notebook tutorial](https://jupyter.org/try) on the Jupyt
 Have a read through:
 1. [QuantEcon: Jupyter Notebooks](https://python-programming.quantecon.org/getting_started.html#jupyter-notebooks)
 2. [Jupyter notebook documentation](https://jupyter-notebook.readthedocs.io/en/stable/notebook.html)
-
 ```
 
 
@@ -247,9 +246,7 @@ plt.show()
 
 think through each line and what might be happening. `python` is fairly
 readable out of the box.
-
 ````
-
 
 ````{exercise}
 Replicate the `code` in this lecture in your own Jupyter Notebook:
@@ -264,5 +261,4 @@ Alternatively, you can also download an `ipynb` version of the page:
 ```
 
 and/or run this lecture in the cloud using the `play` button
-
 ````

@@ -3,5 +3,5 @@ matplotlib
 numpy
 ghp-import
 quantecon-book-theme
-sphinx-exercise
+git+git://github.com/executablebooks/sphinx-exercise@master
 sphinx-multitoc-numbering
