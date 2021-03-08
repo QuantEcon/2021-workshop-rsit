@@ -1,17 +1,28 @@
 (resources/setup)=
 # Getting Setup for the Workshop
 
+The following steps will help you get all the necessary software needed for the
+workshop. 
+
+Please go through this before the workshop so that you are familiar with:
+
+1. how to open `jupyter notebooks`, and
+2. are comfortable getting access to `python`. 
+
 ## Step 1: Installing `Python` (Anaconda)
 
 The Python ecosystem consists of a lot of software packages that
 bring extended functionality and high productivity straight away.
+
 To manage these packages it is **strongly** recommended that you
 install the [Anaconda Python Distribution](https://www.anaconda.com/products/individual)
 
 This enables you to get access to the majority of packages you
 will need to do your work without any configuration and tracking of software dependencies.
 
-It is essentially a `tool` to manage your software environment.
+```{tip}
+Anaconda provides `conda`, a package manager that helps manage your software environment.
+```
 
 You can [download the latest from here](https://www.anaconda.com/products/individual#windows) or
 search `Anaconda Python` and install the `Individual Edition`.
@@ -23,8 +34,8 @@ any of the GUI based installers using the `Command Line Installer`.
 ```
 ````
 
-Please follow the following Installation Guides to install `Python 3.8`
-on your platform:
+Please follow the Anaconda Installation Guides and install `Python 3.8`
+on your computer:
 
 1. [macOS](https://docs.anaconda.com/anaconda/install/mac-os/)
 2. [Windows](https://docs.anaconda.com/anaconda/install/windows/)
@@ -37,47 +48,52 @@ to sort out any possible issues using `terminal`. Please [let me know](mailto: m
 
 ```{tip}
 If you are a `Windows` user and would like access to the broader `linux`
-based tools we have had a lot of success using [windows subsystem for linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
-which gives you to a `lot` of powerful tools via `terminal` based workflows.
+based tools we have had a lot of success using [windows subsystem for linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10). This gives you to a `lot` of powerful tools via `terminal` based workflows.
 ```
 
-## Step 2: Running a `Jupyter` Notebook
+{download}`An Anaconda Starter Guide </_assets/resources/Anaconda-Starter-Guide.pdf>` is also available to download.
+
+## Step 2: Running `Jupyter`
 
 [Jupyter Notebooks](https://jupyter.org) have become a standard tool in the datascience community that marries up:
 
 1. writing code, and
 2. writing prose
 
-They are often described as `computational narratives`. At the basic level it provides two cells that can be used
-to write `Markdown` or `Code`.
+They are often described as `computational narratives`. 
+
+At the basic level it provides two cells that can be used to write `Markdown` or `Code`:
 
 1. A `Markdown Cell` allows you to write notes, comments, ideas, include figures etc.
 2. A `Code Cell` is for `executable code` that is connected to a language kernel and fetches the output.
 
-We will be using `jupyter notebooks` in this workshop, and `jupyter` comes packaged with `anaconda` so if you have
-completed `Step 1` you have `jupyter` on your system. It also provides a nice interface to start using Python. I
-do a lot of my exploratory work in Jupyter Notebooks.
+We will be using `jupyter notebooks` in this workshop, and `jupyter` comes pre-packaged with `anaconda` so if you have
+completed `Step 1` you have `jupyter` on your system. 
+
+It also provides a nice interface to start using Python. I do a lot of my exploratory work in Jupyter Notebooks.
 
 ```{tip}
 If you get stuck a good first place to look is the [Jupyter notebook documentation](https://jupyter-notebook.readthedocs.io/en/stable/notebook.html)
 ```
 
-### Launching Jupyter Notebooks
+### Launching Jupyter Notebook
 
-Jupyter is a server that runs on your computer that connects the front-end `html` based interface with programming
-language kernels (such as `python`) to execute code and get results.
+Jupyter is a server that runs on your computer that connects the front-end `html` based interface with `programming
+language kernels` (such as `python`) to execute code and get results.
 
 ```{tip}
-`Jupyter Lab` is also available as an option to use. It provides a more comprehensive Integrated Development
-Environment (IDE). We tend to use `jupyter notebooks` as they are a simpler interface but there is a lot of
+`Jupyter Lab` is also available. It provides a more comprehensive Integrated Development
+Environment (IDE). I tend to use `jupyter notebooks` as they are a simpler interface but there is a lot of
 development going into `Jupyter Lab` and you may want to explore using it.
 ```
 
 If you haven't been able to get setup yet you can also [try out the Jupyter Notebook in the cloud](https://jupyter.org/try)
 
-#### Terminal based Workflow
+#### Terminal based Workflow (Recommended)
 
 Terminal based workflows can be a very convenient way to launch applications (like `jupyter`) and run programs.
+
+A [GUI based workflow is also available](resources/gui-workflow) below.
 
 ````{tabbed} macOS
 
@@ -107,6 +123,8 @@ You can open a `terminal` on Windows by:
 
 then you can type `jupyter notebook` to launch a jupyter notebook server:
 
+[comment]: # Add figure here
+
 ````
 
 ````{tabbed} Linux
@@ -116,7 +134,7 @@ for your `linux` distribution.
 ```
 ````
 
-
+(resources/gui-workflow)=
 #### GUI based Workflow
 
 There is a Graphical User Interface (GUI) available for launching `Jupyter Notebook` or `Jupyter Lab` provided by Anaconda.
@@ -129,9 +147,10 @@ There is a Graphical User Interface (GUI) available for launching `Jupyter Noteb
 
 The following window will open:
 
-[comment]: # Add figure here
+```{figure} /_assets/resources/anaconda-navigator.png
+```
 
-A browser will then open with a running `jupyter notebook` home page
+Click on `Jupyter Notebook` and a browser will then open with a running `jupyter notebook` home page
 as shown in the [next section](getting-setup/notebooks)
 
 ````
@@ -146,20 +165,38 @@ is available if required.
 ````
 
 (getting-setup/notebooks)=
-### Creating / Opening an `ipynb` file
+## Step 3: Creating / Opening an `ipynb` file
 
 Once you have the `jupyter` server running you will see the following in your browser:
+
+```{figure} /_assets/resources/notebook-home.png
+```
+
+and you can click on `New` 
+
+```{figure} /_assets/resources/notebook-new.png
+```
+
+and select `Python` as your language. 
+
+A notebook will open in another tab:
 
 ```{figure} /_assets/resources/notebook1.png
 ```
 
-and you can click on `New` and select `Python` as your language
+you can then write some `python` code such as:
+
+```python
+print("Hello RSIT Workshop")
+```
+
+and use `Command + Enter` to execute the code and get the results
 
 ```{figure} /_assets/resources/notebook2.png
 ```
 
 
-## Step 3: Exercises
+## Step 4: Exercises
 
 Here are some exercises to help you get started with `Jupyter Notebooks`
 and running your own programs and linking you to further documentation
