@@ -2,12 +2,12 @@
 # Getting Setup for the Workshop
 
 The following steps will help you get all the necessary software needed for the
-workshop. 
+workshop.
 
 Please go through this before the workshop so that you are familiar with:
 
 1. how to open `jupyter notebooks`, and
-2. are comfortable getting access to `python`. 
+2. are comfortable getting access to `python`.
 
 ## Step 1: Installing `Python` (Anaconda)
 
@@ -20,36 +20,47 @@ install the [Anaconda Python Distribution](https://www.anaconda.com/products/ind
 This enables you to get access to the majority of packages you
 will need to do your work without any configuration and tracking of software dependencies.
 
-```{tip}
-Anaconda provides `conda`, a package manager that helps manage your software environment.
-```
-
 You can [download the latest from here](https://www.anaconda.com/products/individual#windows) or
 search `Anaconda Python` and install the `Individual Edition`.
-
-````{margin}
-```{note}
-If you are familiar with `terminal based workflows` you can opt to install `anaconda` without
-any of the GUI based installers using the `Command Line Installer`.
-```
-````
 
 Please follow the Anaconda Installation Guides and install `Python 3.8`
 on your computer:
 
-1. [macOS](https://docs.anaconda.com/anaconda/install/mac-os/)
-2. [Windows](https://docs.anaconda.com/anaconda/install/windows/)
-3. [linux](https://docs.anaconda.com/anaconda/install/linux/)
+````{tabbed} macOS
+Please use the [Anaconda installer guide for macOS](https://docs.anaconda.com/anaconda/install/mac-os/)
 
 ```{note}
 If you have an `M1` based mac you will need to install using Rosetta2 emulation. A handy [blog post](https://vineethbharadwaj.medium.com/setting-up-anaconda-navigator-spyder-jupyter-python-environments-on-macbook-with-m1-chip-for-2a4b9849c1ec) details some additional steps
-to sort out any possible issues using `terminal`. Please [let me know](mailto: matthew.mckay@anu.edu.au) if you have any issues.
+to sort out any possible issues using `terminal`. Please [let me know](mailto:matthew.mckay@anu.edu.au) if you have any issues.
 ```
+````
 
+`````{tabbed} Windows 10
+Please use the [Anaconda installer guide for Windows](https://docs.anaconda.com/anaconda/install/windows/)
+
+````{margin}
 ```{tip}
 If you are a `Windows` user and would like access to the broader `linux`
 based tools we have had a lot of success using [windows subsystem for linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10). This gives you to a `lot` of powerful tools via `terminal` based workflows.
 ```
+````
+
+````{warning}
+You can add `anaconda` to your system `PATH` but it will affect other applications that use `python` across Windows.
+Continuum **recommend** using the `Anaconda Prompt` provided by the installer. 
+
+```{figure} /_assets/resources/windows-install.png
+```
+
+Please leave this box unticked if you are not sure.
+
+````
+`````
+
+````{tabbed} Linux
+Please use the [Anaconda installer guide for Linux](https://docs.anaconda.com/anaconda/install/linux/)
+````
+
 
 {download}`An Anaconda Starter Guide </_assets/resources/Anaconda-Starter-Guide.pdf>` is also available to download.
 
@@ -116,14 +127,27 @@ as shown in the [next section](getting-setup/notebooks)
 ````
 
 ````{tabbed} Windows 10
-You can open a `terminal` on Windows by:
+The recommended way to open a `terminal` for `Anaconda` is to use the
+`Anaconda Prompt` provided by the installer. This ensures `python`
+is available on your `PATH`:
 
-1. Open `Start Menu` and then open `Command Prompt` under `Windows System`
-2. Hit `Window` Key and search for `cmd` or `powershell`
+Open `Start Menu` and then open `Anaconda3` and click on `Anaconda Prompt`
+
+```{figure} /_assets/resources/windows-startmenu.png
+```
+
+this will open
+
+```{figure} /_assets/resources/windows-terminal1.png
+```
 
 then you can type `jupyter notebook` to launch a jupyter notebook server:
 
-[comment]: # Add figure here
+```{figure} /_assets/resources/windows-terminal2.png
+```
+
+A browser will then open with a running `jupyter notebook` home page
+as shown in the [next section](getting-setup/notebooks)
 
 ````
 
@@ -147,21 +171,34 @@ There is a Graphical User Interface (GUI) available for launching `Jupyter Noteb
 
 The following window will open:
 
-```{figure} /_assets/resources/anaconda-navigator.png
+```{figure} /_assets/resources/osx-anaconda-navigator.png
 ```
 
 Click on `Jupyter Notebook` and a browser will then open with a running `jupyter notebook` home page
-as shown in the [next section](getting-setup/notebooks)
+as shown in the [next section](getting-setup/notebooks).
 
 ````
 
 ````{tabbed} Windows
-TBD
+`Jupyter` can be opened using a GUI application that comes with `Anaconda` by:
+
+1. Click on `Start Menu` and navigate to `Anaconda3`
+2. Click on `Anaconda Navigator`
+
+The following window will open:
+
+```{figure} /_assets/resources/windows-anaconda-navigator.png
+```
+
+Click on `Jupyter Notebook` and a browser will then open with a running `jupyter notebook` home page
+as shown in the [next section](getting-setup/notebooks).
 ````
 
 ````{tabbed} Linux
-Largely depends on which distribution of Linux you are using, but `Anaconda Navigator`
-is available if required.
+If you're using Linux then I presume you will use `terminal based workflows`
+
+`Anaconda Navigator` is available but it largely depends on `Linux` distribution on
+how to open the application.
 ````
 
 (getting-setup/notebooks)=
