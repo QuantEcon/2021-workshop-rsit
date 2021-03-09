@@ -106,8 +106,7 @@ Terminal based workflows can be a very convenient way to launch applications (li
 
 A [GUI based workflow is also available](resources/gui-workflow) below.
 
-````{tabbed} macOS
-
+`````{tabbed} macOS
 You can open `terminal` using:
 
 1. `Finder` to open `Applications/Utilities/Terminal`, or
@@ -115,6 +114,14 @@ You can open `terminal` using:
 
 ```{figure} /_assets/resources/osx-terminal1.png
 ```
+
+````{margin}
+```{tip}
+It can be useful to `change directory` to where the notebook
+files you are working on are located before launching the
+`jupyter` server. This makes accessing your files easier.
+```
+````
 
 then you can type `jupyter notebook` to launch a jupyter notebook server:
 
@@ -124,9 +131,9 @@ then you can type `jupyter notebook` to launch a jupyter notebook server:
 A browser will then open with a running `jupyter notebook` home page
 as shown in the [next section](getting-setup/notebooks)
 
-````
+`````
 
-````{tabbed} Windows 10
+`````{tabbed} Windows 10
 The recommended way to open a `terminal` for `Anaconda` is to use the
 `Anaconda Prompt` provided by the installer. This ensures `python`
 is available on your `PATH`:
@@ -141,6 +148,14 @@ this will open
 ```{figure} /_assets/resources/windows-terminal1.png
 ```
 
+````{margin}
+```{tip}
+It can be useful to `change directory` to where the notebook
+files you are working on are located before launching the
+`jupyter` server. This makes accessing your files easier.
+```
+````
+
 then you can type `jupyter notebook` to launch a jupyter notebook server:
 
 ```{figure} /_assets/resources/windows-terminal2.png
@@ -149,14 +164,23 @@ then you can type `jupyter notebook` to launch a jupyter notebook server:
 A browser will then open with a running `jupyter notebook` home page
 as shown in the [next section](getting-setup/notebooks)
 
+`````
+
+`````{tabbed} Linux
+
+````{margin}
+```{tip}
+It can be useful to `change directory` to where the notebook
+files you are working on are located before launching the
+`jupyter` server. This makes accessing your files easier.
+```
 ````
 
-````{tabbed} Linux
 ```{note}
 The `linux` setup is the same as `OS X` once you open the default `terminal` application
 for your `linux` distribution.
 ```
-````
+`````
 
 (resources/gui-workflow)=
 #### GUI based Workflow
@@ -209,12 +233,14 @@ Once you have the `jupyter` server running you will see the following in your br
 ```{figure} /_assets/resources/notebook-home.png
 ```
 
-and you can click on `New` 
+this is a file navigator view so that you can `change directory`  or `navigate to a file` if you didn't open the `jupyter` server in your `working directory containing notebooks`
+
+Then click on `New`:
 
 ```{figure} /_assets/resources/notebook-new.png
 ```
 
-and select `Python` as your language. 
+and select `Python` as your language.
 
 A notebook will open in another tab:
 
