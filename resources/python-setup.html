@@ -271,36 +271,48 @@ bring extended functionality and high productivity straight away.</p>
 install the <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda Python Distribution</a></p>
 <p>This enables you to get access to the majority of packages you
 will need to do your work without any configuration and tracking of software dependencies.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Anaconda provides <code class="docutils literal notranslate"><span class="pre">conda</span></code>, a package manager that helps manage your software environment.</p>
-</div>
 <p>You can <a class="reference external" href="https://www.anaconda.com/products/individual#windows">download the latest from here</a> or
 search <code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">Python</span></code> and install the <code class="docutils literal notranslate"><span class="pre">Individual</span> <span class="pre">Edition</span></code>.</p>
-<div class="margin sidebar">
-<p class="sidebar-title"></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you are familiar with <code class="docutils literal notranslate"><span class="pre">terminal</span> <span class="pre">based</span> <span class="pre">workflows</span></code> you can opt to install <code class="docutils literal notranslate"><span class="pre">anaconda</span></code> without
-any of the GUI based installers using the <code class="docutils literal notranslate"><span class="pre">Command</span> <span class="pre">Line</span> <span class="pre">Installer</span></code>.</p>
-</div>
-</div>
 <p>Please follow the Anaconda Installation Guides and install <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.8</span></code>
 on your computer:</p>
-<ol class="simple">
-<li><p><a class="reference external" href="https://docs.anaconda.com/anaconda/install/mac-os/">macOS</a></p></li>
-<li><p><a class="reference external" href="https://docs.anaconda.com/anaconda/install/windows/">Windows</a></p></li>
-<li><p><a class="reference external" href="https://docs.anaconda.com/anaconda/install/linux/">linux</a></p></li>
-</ol>
+<div class="tabbed-set docutils">
+<input checked="checked" id="565a9dad-a290-4d31-a0b3-44e9282fb909" name="da94c118-489d-42d3-ba66-daee10737df5" type="radio">
+</input><label class="tabbed-label" for="565a9dad-a290-4d31-a0b3-44e9282fb909">
+macOS</label><div class="tabbed-content docutils">
+<p>Please use the <a class="reference external" href="https://docs.anaconda.com/anaconda/install/mac-os/">Anaconda installer guide for macOS</a></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you have an <code class="docutils literal notranslate"><span class="pre">M1</span></code> based mac you will need to install using Rosetta2 emulation. A handy <a class="reference external" href="https://vineethbharadwaj.medium.com/setting-up-anaconda-navigator-spyder-jupyter-python-environments-on-macbook-with-m1-chip-for-2a4b9849c1ec">blog post</a> details some additional steps
-to sort out any possible issues using <code class="docutils literal notranslate"><span class="pre">terminal</span></code>. Please [let me know](mailto: <a class="reference external" href="mailto:matthew&#46;mckay&#37;&#52;&#48;anu&#46;edu&#46;au">matthew<span>&#46;</span>mckay<span>&#64;</span>anu<span>&#46;</span>edu<span>&#46;</span>au</a>) if you have any issues.</p>
+to sort out any possible issues using <code class="docutils literal notranslate"><span class="pre">terminal</span></code>. Please <a class="reference external" href="mailto:matthew&#46;mckay&#37;&#52;&#48;anu&#46;edu&#46;au">let me know</a> if you have any issues.</p>
 </div>
+</div>
+<input id="af84f3dc-76c4-4c35-a632-dbf32c20ec43" name="da94c118-489d-42d3-ba66-daee10737df5" type="radio">
+</input><label class="tabbed-label" for="af84f3dc-76c4-4c35-a632-dbf32c20ec43">
+Windows 10</label><div class="tabbed-content docutils">
+<p>Please use the <a class="reference external" href="https://docs.anaconda.com/anaconda/install/windows/">Anaconda installer guide for Windows</a></p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>If you are a <code class="docutils literal notranslate"><span class="pre">Windows</span></code> user and would like access to the broader <code class="docutils literal notranslate"><span class="pre">linux</span></code>
 based tools we have had a lot of success using <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">windows subsystem for linux</a>. This gives you to a <code class="docutils literal notranslate"><span class="pre">lot</span></code> of powerful tools via <code class="docutils literal notranslate"><span class="pre">terminal</span></code> based workflows.</p>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You can add <code class="docutils literal notranslate"><span class="pre">anaconda</span></code> to your system <code class="docutils literal notranslate"><span class="pre">PATH</span></code> but it will affect other applications that use <code class="docutils literal notranslate"><span class="pre">python</span></code> across Windows.
+Continuum <strong>recommend</strong> using the <code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">Prompt</span></code> provided by the installer.</p>
+<div class="figure align-default">
+<img alt="../_images/windows-install.png" src="../_images/windows-install.png" />
+</div>
+<p>Please leave this box unticked if you are not sure.</p>
+</div>
+</div>
+<input id="899d2506-af30-48dc-ae6a-ec4b1f44465c" name="da94c118-489d-42d3-ba66-daee10737df5" type="radio">
+</input><label class="tabbed-label" for="899d2506-af30-48dc-ae6a-ec4b1f44465c">
+Linux</label><div class="tabbed-content docutils">
+<p>Please use the <a class="reference external" href="https://docs.anaconda.com/anaconda/install/linux/">Anaconda installer guide for Linux</a></p>
+</div>
 </div>
 <p><a class="reference download internal" download="" href="../_downloads/6ebabd2db52baae0477ede331910a8b0/Anaconda-Starter-Guide.pdf"><code class="xref download docutils literal notranslate"><span class="pre">An</span> <span class="pre">Anaconda</span> <span class="pre">Starter</span> <span class="pre">Guide</span></code></a> is also available to download.</p>
 </div>
@@ -339,8 +351,8 @@ development going into <code class="docutils literal notranslate"><span class="p
 <p>Terminal based workflows can be a very convenient way to launch applications (like <code class="docutils literal notranslate"><span class="pre">jupyter</span></code>) and run programs.</p>
 <p>A <a class="reference internal" href="#resources-gui-workflow"><span class="std std-ref">GUI based workflow is also available</span></a> below.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="e04be47f-4d4d-43d0-9593-58db33f9a6c7" name="405ff290-8ba6-49dd-8c8a-f0fc44e3a9f3" type="radio">
-</input><label class="tabbed-label" for="e04be47f-4d4d-43d0-9593-58db33f9a6c7">
+<input checked="checked" id="ea10292e-d2ec-4efc-baeb-7da3837c5836" name="3c5494f1-fff1-4916-902c-3c103023c989" type="radio">
+</input><label class="tabbed-label" for="ea10292e-d2ec-4efc-baeb-7da3837c5836">
 macOS</label><div class="tabbed-content docutils">
 <p>You can open <code class="docutils literal notranslate"><span class="pre">terminal</span></code> using:</p>
 <ol class="simple">
@@ -357,19 +369,29 @@ macOS</label><div class="tabbed-content docutils">
 <p>A browser will then open with a running <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> home page
 as shown in the <a class="reference internal" href="#getting-setup-notebooks"><span class="std std-ref">next section</span></a></p>
 </div>
-<input id="9cbf9b8a-dc71-4b32-b60d-41bbc1ed2538" name="405ff290-8ba6-49dd-8c8a-f0fc44e3a9f3" type="radio">
-</input><label class="tabbed-label" for="9cbf9b8a-dc71-4b32-b60d-41bbc1ed2538">
+<input id="6bdb1e33-2d2d-4f1c-a0e4-00db4cd3e153" name="3c5494f1-fff1-4916-902c-3c103023c989" type="radio">
+</input><label class="tabbed-label" for="6bdb1e33-2d2d-4f1c-a0e4-00db4cd3e153">
 Windows 10</label><div class="tabbed-content docutils">
-<p>You can open a <code class="docutils literal notranslate"><span class="pre">terminal</span></code> on Windows by:</p>
-<ol class="simple">
-<li><p>Open <code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">Menu</span></code> and then open <code class="docutils literal notranslate"><span class="pre">Command</span> <span class="pre">Prompt</span></code> under <code class="docutils literal notranslate"><span class="pre">Windows</span> <span class="pre">System</span></code></p></li>
-<li><p>Hit <code class="docutils literal notranslate"><span class="pre">Window</span></code> Key and search for <code class="docutils literal notranslate"><span class="pre">cmd</span></code> or <code class="docutils literal notranslate"><span class="pre">powershell</span></code></p></li>
-</ol>
-<p>then you can type <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> to launch a jupyter notebook server:</p>
-<p>[comment]: # Add figure here</p>
+<p>The recommended way to open a <code class="docutils literal notranslate"><span class="pre">terminal</span></code> for <code class="docutils literal notranslate"><span class="pre">Anaconda</span></code> is to use the
+<code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">Prompt</span></code> provided by the installer. This ensures <code class="docutils literal notranslate"><span class="pre">python</span></code>
+is available on your <code class="docutils literal notranslate"><span class="pre">PATH</span></code>:</p>
+<p>Open <code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">Menu</span></code> and then open <code class="docutils literal notranslate"><span class="pre">Anaconda3</span></code> and click on <code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">Prompt</span></code></p>
+<div class="figure align-default">
+<img alt="../_images/windows-startmenu.png" src="../_images/windows-startmenu.png" />
 </div>
-<input id="8b343d20-5de7-4b96-94e6-23017e208674" name="405ff290-8ba6-49dd-8c8a-f0fc44e3a9f3" type="radio">
-</input><label class="tabbed-label" for="8b343d20-5de7-4b96-94e6-23017e208674">
+<p>this will open</p>
+<div class="figure align-default">
+<img alt="../_images/windows-terminal1.png" src="../_images/windows-terminal1.png" />
+</div>
+<p>then you can type <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> to launch a jupyter notebook server:</p>
+<div class="figure align-default">
+<img alt="../_images/windows-terminal2.png" src="../_images/windows-terminal2.png" />
+</div>
+<p>A browser will then open with a running <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> home page
+as shown in the <a class="reference internal" href="#getting-setup-notebooks"><span class="std std-ref">next section</span></a></p>
+</div>
+<input id="840c7f1e-d7fe-4bc5-92df-67d24454dd64" name="3c5494f1-fff1-4916-902c-3c103023c989" type="radio">
+</input><label class="tabbed-label" for="840c7f1e-d7fe-4bc5-92df-67d24454dd64">
 Linux</label><div class="tabbed-content docutils">
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -383,8 +405,8 @@ for your <code class="docutils literal notranslate"><span class="pre">linux</spa
 <span id="resources-gui-workflow"></span><h4>GUI based Workflow<a class="headerlink" href="#gui-based-workflow" title="Permalink to this headline">¶</a></h4>
 <p>There is a Graphical User Interface (GUI) available for launching <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code> or <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Lab</span></code> provided by Anaconda.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="3a605fcc-3917-49c4-9a49-95106654a9f8" name="7363a905-c8f4-4a13-bca0-71d900ae7d31" type="radio">
-</input><label class="tabbed-label" for="3a605fcc-3917-49c4-9a49-95106654a9f8">
+<input checked="checked" id="83742f16-c4cc-4be0-a062-f654da814d7c" name="627f2a18-cc44-43bb-b0ea-0752bbad4440" type="radio">
+</input><label class="tabbed-label" for="83742f16-c4cc-4be0-a062-f654da814d7c">
 macOS</label><div class="tabbed-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">Jupyter</span></code> can be opened using a GUI application that comes with <code class="docutils literal notranslate"><span class="pre">Anaconda</span></code> by:</p>
 <ol class="simple">
@@ -393,21 +415,32 @@ macOS</label><div class="tabbed-content docutils">
 </ol>
 <p>The following window will open:</p>
 <div class="figure align-default">
-<img alt="../_images/anaconda-navigator.png" src="../_images/anaconda-navigator.png" />
+<img alt="../_images/osx-anaconda-navigator.png" src="../_images/osx-anaconda-navigator.png" />
 </div>
 <p>Click on <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code> and a browser will then open with a running <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> home page
-as shown in the <a class="reference internal" href="#getting-setup-notebooks"><span class="std std-ref">next section</span></a></p>
+as shown in the <a class="reference internal" href="#getting-setup-notebooks"><span class="std std-ref">next section</span></a>.</p>
 </div>
-<input id="fe6ca74a-9a5e-47d2-bd0c-fabf18fd34cb" name="7363a905-c8f4-4a13-bca0-71d900ae7d31" type="radio">
-</input><label class="tabbed-label" for="fe6ca74a-9a5e-47d2-bd0c-fabf18fd34cb">
+<input id="c00dd1e5-5f4a-4f89-bf31-4fa7820c613e" name="627f2a18-cc44-43bb-b0ea-0752bbad4440" type="radio">
+</input><label class="tabbed-label" for="c00dd1e5-5f4a-4f89-bf31-4fa7820c613e">
 Windows</label><div class="tabbed-content docutils">
-<p>TBD</p>
+<p><code class="docutils literal notranslate"><span class="pre">Jupyter</span></code> can be opened using a GUI application that comes with <code class="docutils literal notranslate"><span class="pre">Anaconda</span></code> by:</p>
+<ol class="simple">
+<li><p>Click on <code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">Menu</span></code> and navigate to <code class="docutils literal notranslate"><span class="pre">Anaconda3</span></code></p></li>
+<li><p>Click on <code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">Navigator</span></code></p></li>
+</ol>
+<p>The following window will open:</p>
+<div class="figure align-default">
+<img alt="../_images/windows-anaconda-navigator.png" src="../_images/windows-anaconda-navigator.png" />
 </div>
-<input id="6e0871d1-051f-4a27-838a-6c423f22f86f" name="7363a905-c8f4-4a13-bca0-71d900ae7d31" type="radio">
-</input><label class="tabbed-label" for="6e0871d1-051f-4a27-838a-6c423f22f86f">
+<p>Click on <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code> and a browser will then open with a running <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> home page
+as shown in the <a class="reference internal" href="#getting-setup-notebooks"><span class="std std-ref">next section</span></a>.</p>
+</div>
+<input id="ff691cb6-c36a-43f8-9af2-a9d12f06adaf" name="627f2a18-cc44-43bb-b0ea-0752bbad4440" type="radio">
+</input><label class="tabbed-label" for="ff691cb6-c36a-43f8-9af2-a9d12f06adaf">
 Linux</label><div class="tabbed-content docutils">
-<p>Largely depends on which distribution of Linux you are using, but <code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">Navigator</span></code>
-is available if required.</p>
+<p>If you’re using Linux then I presume you will use <code class="docutils literal notranslate"><span class="pre">terminal</span> <span class="pre">based</span> <span class="pre">workflows</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">Navigator</span></code> is available but it largely depends on <code class="docutils literal notranslate"><span class="pre">Linux</span></code> distribution on
+how to open the application.</p>
 </div>
 </div>
 </div>
