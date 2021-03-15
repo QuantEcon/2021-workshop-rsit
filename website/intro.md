@@ -64,18 +64,18 @@ systems for workshop attendees.
   - 9:00am - 12:30am
   - Python & Stata16
 * - 
-  - 13:00 - 16:30pm
+  - 14:00 - 17:30pm
   - Working with Data (Pandas II) and Introduction to Web (Scrapping)
 * - Tuesday, 30th March
   - 9:00am - 12:30am
   - Python and Stata16
 * - 
-  - 13:00 - 16:30pm
+  - 14:00 - 17:30pm
   - Automate data workflows
 * - Thursday, 01st April
   - 9:00 - 10:00am
   - Q&A / Tutorials
 * - 
-  - 14:00 - 15:00
+  - 15:00 - 16:00
   - Q&A / Tutorials
 ```
