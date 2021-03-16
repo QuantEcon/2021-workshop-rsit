@@ -33,7 +33,7 @@ systems for workshop attendees.
   - Topic
 * - Monday, 22nd March
   - 8:00am - 11:30am
-  - Introduction to Python for Economics
+  - [Introduction to Python for Economics](python-for-economics)
 * - 
   - 13:00 - 16:30pm
   - Python Language Fundamentals

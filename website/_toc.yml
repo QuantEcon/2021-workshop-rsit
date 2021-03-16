@@ -4,6 +4,8 @@
 - part: Week 1
   chapters:
     - file: week1/python-for-economics
+    - file: week1/github-intro
+    - file: week1/python-ecosystem-tools
 
 - part: Resources
   numbered: false
