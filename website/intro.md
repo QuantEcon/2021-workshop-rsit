@@ -73,7 +73,7 @@ systems for workshop attendees.
   - 14:00 - 17:30pm
   - Automate data workflows
 * - Thursday, 01st April
-  - 9:00 - 10:00am
+  - 10:00 - 11:00am
   - Q&A / Tutorials
 * - 
   - 15:00 - 16:00
