@@ -18,7 +18,13 @@ These will download as `zip` files that you will need to decompress in the same 
 
 This repository is also configured to use `mybinder`
 
-You can [launch this demo notebook]() without having to setup the files on your local machine.
+You can [launch this demo notebook](https://mybinder.org/v2/gh/QuantEcon/2021-workshop-rsit/master?filepath=notebooks%2Fsession1%2Fdemo-data-analysis-python-hidalgo2007.ipynb) without having to setup the files on your local machine.
+
+:::{note}
+The `mybinder` instance only has 1 x CPU Core so the `dask` section doesn't work on the cloud as it requires a
+multi-core environment to do distributed compute tasks.
+:::
+
 
 ```{bibliography}
 :filter: docname in docnames
