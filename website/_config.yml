@@ -7,3 +7,5 @@ execute:
   execute_notebooks: "off"
 sphinx:
   extra_extensions: [sphinx_exercise, sphinx_multitoc_numbering]
+bibtex_bibfiles:
+   - _assets/references.bib

@@ -1,11 +1,16 @@
 - file: intro
-  numbered: True
 
 - part: Week 1
   chapters:
-    - file: week1/python-for-economics
-    - file: week1/github-intro
-    - file: week1/python-ecosystem-tools
+    - file: week1/session1/schedule
+      sections:
+      - file: week1/session1/python-for-economics
+      - file: week1/session1/jupyter-intro
+      - file: week1/session1/demo-science-2007
+      - file: week1/session1/github-intro
+    - file: week1/session3/schedule
+      sections:
+      - file: week1/session3/python-ecosystem-tools
 
 - part: Resources
   numbered: false
