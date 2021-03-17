@@ -7,5 +7,6 @@ dependencies:
   - dask
   - numpy
   - networkx
+  - matplotlib
   - line_profiler
 
