@@ -11,9 +11,20 @@
 
 ## Why Python?
 
+- Easy to learn, and well designed language
+- Massive scientific ecosystem
+- Open Source
+- Used extensively in datascience and machine learning
+  communities.
+
+It is a good fit for many Scientific Computing tasks as
+`python` has strong tools for vectorization, jit compilation,
+parallelization, visualization, etc.
+
+
 ### Proprietary vs Open Source
 
-**Proprietary:**
+#### Proprietary
 
 1. Excel
 2. MATLAB
@@ -34,7 +45,7 @@ also have some drawbacks.
    be difficult to achieve some task types
 3. Access to higher performance can be expensive
 
-**Open Source:**
+#### Open Source
 
 1. Python
 2. Julia
@@ -57,11 +68,13 @@ support `scientific computing`.
 
 There is a large variety of programming languages available to
 choose from and this is largely down to a trade-offs between
-`productivity for writing`, `speed`, and `design for a purpose`.
+`productivity for writing code`, `execution speed`, and/or `designed for a domain specific purpose`.
 
-**Low Level:**
+#### Low Level Languages
 
-Provide fine grained control
+Provide fine grained control at the hardware level
+
+Languages such as:
 
 1. Assembly
 2. LLVM (Assembler)
@@ -81,7 +94,12 @@ movl    -4(%rbp), %eax
 popq    %rbp
 ```
 
-**Intermediate Level:**
+#### Intermediate Level Languages
+
+`Intermediate` level languages used to be considered `high level`
+languages. Many languages in this range are often `fit for purpose` type languages.
+
+Languages such as:
 
 1. C/C++
 2. Fortran
@@ -111,13 +129,16 @@ return 0;
 }
 ```
 
-**High Level:**
+#### High Level Languages
 
 Provide a high degree of productivity through `abstraction` and
-`automation` etc.
+`automation` etc. and typically include features such as:
 
-**Features:** Automatic memory management, input and output, and
-advanced `native support` for objects that improve `productivity`
+- Automatic memory management
+- Input/Output (IO)
+- Advanced data structures
+
+Languages such as:
 
 1. Ruby
 2. Javascript
@@ -132,41 +153,108 @@ advanced `native support` for objects that improve `productivity`
 
 ## Scientific Computing
 
-**Scientific Computing** ultimately requires:
+**Scientific Computing** ultimately needs to be:
 
 1. `Productive` - easy to read, write, debug, explore
 2. `Fast` computations
 
-In `scientific computing` we also don't want to have to worry much
+In most `scientific computing` applications we also don't want to have to worry much
 about interfacing or managing the `hardware` on a day to day
-basis -- however we do want the ability to maximise usage of that
-hardware when required.
+basis -- however we would like the ability to maximise usage of that hardware when required so we don't have to change languages.
 
-## Trade-Offs (Productivity vs Execution)
+## Productivity vs. Execution Speed
 
-These two requirements typically come with a `trade-off`:
+`Productivity` and `Execution` typically come with a `trade-off`:
+
+:::{margin}
+`python` as a `core` languages is pretty slow in execution
+and high in memory use but is highly productive.
+
+```{admonition} Data for Graph:
+This graph is for illustration only and is not based on
+underlying data
+```
+:::
 
 ```{figure} img/tradeoff.pdf
 ```
 
+:::{margin}
+`MATLAB` was able to build a high productivity language that was able to overcome some of these trade-offs
+by calling out routines to lower level libraries built in `c`
+and `fortran`
+:::
+
 ```{figure} img/tradeoff2.pdf
 ```
+
+:::{margin}
+`julia` a relatively young programming language was able to
+build on top of newer modern technology using
+`just in time compilation` to deliver a gain in performance
+that often rivals C with a lot less code for programmers.
+:::
 
 ```{figure} img/tradeoff3.pdf
 ```
 
+:::{margin}
+`python` is able to use tools within the `python ecosystem`
+that enables programmers to obtain high speed when needed.
+`numba` uses `JIT` compilation to compile `python` code into
+efficient `LLVM` assembler that is highly automated.
+:::
+
 ```{figure} img/tradeoff4.pdf
 ```
 
-One of the strengths of `python` is its adaptability to various
-contexts while retaining a very high level of `productivity`.
-This is largely due to `language design` (i.e. everything
-is an object), and advances in access in `compute`. `Python`
-was first released in `1991`. It has taken 20 years to become
-as popular as it has become.
+One of the strengths of `python` is its adaptability to many
+different contexts while retaining a very high level of
+`productivity`. This is largely due to `language design`
+(i.e. everything is an object), and advances in access in
+`compute` power.
+
+:::{margin}
+`python` is often called a `glue` language as it is a
+generalised programming environment that can `glue` together
+many different systems and packages enabling a high degree of
+flexibility.
+:::
+
+### The `python` ecosystem
+
+The `python` ecosystem has strong tools in vectorization,
+JIT compilation, parallelization, visualisation, etc.
+
+The next session on the python ecosystem will introduce many
+useful packages such as:
+
+1. Scipy, NumPy, Matplotlib, Pandas (Scientific computing infrastructure)
+2. Numba (JIT compilation, multithreading)
+3. Tensorflow, PyTouch (machine learning and AI)
+4. NetworkX, etc. etc. etc.
+
+`Python` was first released in `1991`.
+
+It has taken 20 years to build the ecosystem and become as
+popular as it has become.
 
 ## Platforms: Windows, macOS, Linux
 
+Modern languages such as `python` and `julia` are interpreted languages
+so as long as your platform has an interpreter the code
+is largely cross-platform.
+
+I often work and collaborate with others across all three
+platforms and your own productivity largely comes down to preference.
+
+The user interface on `Windows` (in my view) is the least
+productive but that is largely due to inferior `terminal`
+based workflows. This is changing quickly and can now be
+largely solved using [Windows subsystem for linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) which runs
+a virtualised `linux kernel` that enables access to many
+high performance tools and productive `terminal` based
+workflows.
 
 ## Resources
 
