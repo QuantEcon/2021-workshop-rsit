@@ -2,11 +2,9 @@
 # Introduction to Python for Economics
 
 ```{admonition} Aims / Outcomes / Expectations:
-1. Provide an overview of `python`
-2. Reduce the `fixed costs` of using `python`
-3. Get setup and comfortable using `python`
-4. Show Examples
-5. Provide resources for further study
+1. Try and answer the question: Why Python?
+2. Provide an overview of Programming vs. Scripting
+3. Discuss Scientific Computing
 ```
 
 ## Why Python?

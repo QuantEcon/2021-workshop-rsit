@@ -4,7 +4,7 @@ The Workshop is to be delivered online through Zoom alongside this companion web
 
 Registered participants will receive a Zoom link via Email.
 
-## Instructors Bio
+## Instructors
 
 ### Matthew McKay
 
@@ -14,6 +14,12 @@ Matthew will deliver the morning sessions from `Australia`
 
 ### Chase Coleman
 
-{{ BIO }}
+```{todo}
+@ChaseColeman BIO
+```
 
 Chase will deliver the afternoon sessions from the `United States`
+
+## QuantEcon
+
+[QuantEcon](https://quantecon.org) is a NumFOCUS fiscally sponsored project dedicated to development and documentation of modern open source computational tools for economics, econometrics, and decision making. We welcome contributions and collaboration from the economics community and other partner organizations.

@@ -1,6 +1,14 @@
 (session1/schedule)=
 # Session 1 (Intro Python)
 
+```{admonition} Aims / Outcomes / Expectations of Workshop:
+1. Provide an overview of `python`
+2. Reduce the `fixed costs` of using `python`
+3. Get setup and comfortable using `python`
+4. Show Examples
+5. Provide resources for further study
+```
+
 **Week 1, Session 1 (Monday 22nd March)**
 
 ```{list-table}

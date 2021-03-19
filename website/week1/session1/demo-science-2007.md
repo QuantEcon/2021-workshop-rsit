@@ -1,5 +1,5 @@
 (session1/demo)=
-# Demo: Data Analysis
+# (Demo) Replicating the ProductSpace
 
 ## Running Locally
 
