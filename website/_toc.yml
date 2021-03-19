@@ -16,3 +16,4 @@
   numbered: false
   chapters:
     - file: resources/python-setup
+    - file: workshop

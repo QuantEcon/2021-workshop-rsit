@@ -22,7 +22,7 @@ Also, could you please [fill in this 5 Question Survey](https://www.surveymonkey
 systems for workshop attendees.
 ```
 
-### Week 1:
+### Week 1
 
 ```{list-table}
 :widths: 15 10 30
@@ -51,7 +51,7 @@ systems for workshop attendees.
   - Q&A / Tutorials
 ```
 
-### Week 2:
+### Week 2
 
 ```{list-table}
 :widths: 15 10 30
