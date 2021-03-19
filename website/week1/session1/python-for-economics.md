@@ -1,7 +1,7 @@
 (session1/python-for-economics)=
 # Introduction to Python for Economics
 
-```{admonition} Aims / Outcomes / Expectations:
+```{admonition} Aims & Outcomes:
 1. Try and answer the question: Why Python?
 2. Provide an overview of Programming vs. Scripting
 3. Discuss Scientific Computing
