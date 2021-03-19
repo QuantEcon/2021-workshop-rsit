@@ -1,6 +1,10 @@
 (session1/demo)=
 # (Demo) Replicating the ProductSpace
 
+```{admonition} Aims & Outcomes:
+1. Demonstrate `python` using a real world example
+```
+
 ## Running Locally
 
 You can {download}`download the demo notebook here <../../../notebooks/session1/demo-data-analysis-python-hidalgo2007.ipynb>`
