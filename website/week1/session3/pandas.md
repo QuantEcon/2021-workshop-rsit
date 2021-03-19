@@ -1,17 +1,22 @@
 (session3/pandas)=
 # Pandas
 
+```{admonition} Aims & Outcomes:
+1. Use `DataFrames`
+2. Use `introspection` to look at the `methods` that can be applied
+3. Learn how to look up the documentation / manuals
+```
+
 [Pandas](https://pandas.pydata.org) is the foundational package for data analysis in `python`.
 
-A useful [set of tutorials](https://pandas.pydata.org/docs/getting_started/index.html) developed
-by the `pandas` project.
+The official [pandas manual](https://pandas.pydata.org/docs/) is an excellent resource
 
 Here is [the QuantEcon lecture on Pandas](https://python-programming.quantecon.org/pandas.html)
 
 We will work through the following `pandas` demo notebook.
 
 ```{note}
-You will be spending a lot more time with `pandas` in addition sessions. 
+You will be spending a lot more time with `pandas` in addition sessions.
 
 It is the workhorse package for any work with `data` in `python`.
 ```

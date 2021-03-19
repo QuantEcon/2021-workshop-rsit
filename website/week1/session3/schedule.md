@@ -2,7 +2,9 @@
 # Session 3 (Python Ecosystem)
 
 ```{admonition} Aims & Outcomes:
-1. Introduce some of the most common `python` packages
+1. Reduce search cost for important `python` packages
+2. Learn to import them into `python`
+3. Learn how to look up the documentation / manuals
 ```
 
 **Week 1, Session 2 (Tuesday, March 23rd)**
