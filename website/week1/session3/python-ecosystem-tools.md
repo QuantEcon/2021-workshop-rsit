@@ -1,2 +1,0 @@
-# Python Ecosystem and Tools
-

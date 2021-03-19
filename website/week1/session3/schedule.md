@@ -1,6 +1,10 @@
 (session3/schedule)=
 # Session 3 (Python Ecosystem)
 
+```{admonition} Aims & Outcomes:
+1. Introduce some of the most common `python` packages
+```
+
 **Week 1, Session 2 (Tuesday, March 23rd)**
 
 ```{list-table}
@@ -10,15 +14,15 @@
 * - Time
   - Topic
 * - 8:00am - 8:30am
-  - NumPy
+  - [NumPy](session3/numpy)
 * - 9:00am - 9:30am
-  - matplotlib
+  - [matplotlib](session3/matplotlib)
 * - 9:30am to 10:00am
-  - pandas
+  - [pandas](session3/pandas)
 * - 10:00 - 10:30am
-  - SciPy
+  - [SciPy](session3/scipy)
 * - 10:30am to 11:00am
-  - numba
+  - [numba](session3/numba)
 * - 11:00am to 11:30am
-  - networkx
+  - [networkx](session3/networkx)
 ```
