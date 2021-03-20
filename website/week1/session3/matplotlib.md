@@ -6,7 +6,9 @@
 A [useful gallery of examples](https://matplotlib.org/stable/gallery/index.html) can be a good place
 to see what is possible when building plots and visualisations with `matplotlib`
 
+:::{admonition} Lecture Resource
 Here is [the QuantEcon lecture on matplotlib](https://python-programming.quantecon.org/matplotlib.html)
+:::
 
 We will work through the following `matplotlib` demo notebook.
 
