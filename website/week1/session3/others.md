@@ -30,6 +30,18 @@ repository Issues list and let me know as a comment
   - a `python` interface to [Plotly](https://plotly.com/python/) for interactive plots
 ```
 
+## Scientific Computing
+
+```{list-table}
+:widths: 5 25
+:header-rows: 1
+
+* - Package
+  - Description
+* - [scipy](https://www.scipy.org)
+  - The core library for `scientific computing`
+```
+
 ## Networks
 
 ```{list-table}

@@ -13,10 +13,10 @@
 Here is [the QuantEcon lecture on Pandas](https://python-programming.quantecon.org/pandas.html)
 :::
 
-We will work through the following `pandas` demo notebook.
-
 ```{note}
-You will be spending a lot more time with `pandas` in addition sessions.
+You will be spending a lot more time with `pandas` in additional sessions so don't worry if
+this preview feels too quick. We will go through each `object` much more slowly in this
+afternoon's `Session 4` with Chase.
 
 It is the workhorse package for any work with `data` in `python`.
 ```
@@ -25,6 +25,8 @@ It is the workhorse package for any work with `data` in `python`.
 The official [pandas manual](https://pandas.pydata.org/docs/) is an excellent and well maintained
 reference manual
 ```
+
+We will work through the following `pandas` demo notebook.
 
 ## Local Option
 
