@@ -9,9 +9,9 @@
 
 [Pandas](https://pandas.pydata.org) is the foundational package for data analysis in `python`.
 
-The official [pandas manual](https://pandas.pydata.org/docs/) is an excellent resource
-
+:::{admonition} Lecture Resource
 Here is [the QuantEcon lecture on Pandas](https://python-programming.quantecon.org/pandas.html)
+:::
 
 We will work through the following `pandas` demo notebook.
 
@@ -19,6 +19,11 @@ We will work through the following `pandas` demo notebook.
 You will be spending a lot more time with `pandas` in addition sessions.
 
 It is the workhorse package for any work with `data` in `python`.
+```
+
+```{tip}
+The official [pandas manual](https://pandas.pydata.org/docs/) is an excellent and well maintained
+reference manual
 ```
 
 ## Local Option

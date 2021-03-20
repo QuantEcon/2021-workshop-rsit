@@ -8,7 +8,7 @@ makes them accessible in a high productivity setting.
 
 [NumPy](https://numpy.org) also defines the standard interfaces for `array` based programming across the ecosystem.
 
-```{admonition} Lecture Resource
+```{admonition} Resource
 Here is [the QuantEcon lecture on NumPy](https://python-programming.quantecon.org/numpy.html)
 ```
 
@@ -30,7 +30,7 @@ jupyter notebook intro-to-numpy.ipynb
 You can [launch the notebook](https://mybinder.org/v2/gh/QuantEcon/2021-workshop-rsit/main?filepath=notebooks%2Fsession1%2Fintro-to-numpy.ipynb)
 
 ```{tip}
-The [NumPy](https://numpy.org) is used extensively across the `quantecon` lecture
+The [NumPy](https://numpy.org) library is used extensively across the `quantecon` lecture
 series and is used to cover topics such as:
 
 1. [Linear Algebra](https://python.quantecon.org/linear_algebra.html)
