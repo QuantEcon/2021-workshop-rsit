@@ -219,12 +219,12 @@ many different systems and packages enabling a high degree of
 flexibility.
 :::
 
-### The `python` ecosystem
+## The `python` ecosystem
 
 The `python` ecosystem has strong tools in vectorization,
 JIT compilation, parallelization, visualisation, etc.
 
-The next session on the python ecosystem will introduce many
+The [next session](session3/schedule) on the python ecosystem will introduce many
 useful packages such as:
 
 1. Scipy, NumPy, Matplotlib, Pandas (Scientific computing infrastructure)
@@ -232,12 +232,30 @@ useful packages such as:
 3. Tensorflow, PyTouch (machine learning and AI)
 4. NetworkX, etc. etc. etc.
 
+This will hopefully help to:
+
+1. reduce search cost
+2. demonstrate the versatility of the `ecosystem`
+
+## History
+
 `Python` was first released in `1991`.
 
-It has taken 20 years to build the ecosystem and become as
+It has taken 30 years to build the ecosystem and become as
 popular as it has become.
 
-## Platforms: Windows, macOS, Linux
+## Popularity
+
+There is a nice [wired article](https://www.wired.com/story/python-language-more-popular-than-ever/) that talks about
+the continued popularity of `python`.
+
+The [redmonk](https://redmonk.com/sogrady/2020/02/28/language-rankings-1-20/) rankings put `python` in the #2 spot!
+
+The key takeaway from the article:
+
+> O'Grady cites Python's versatility as one reason for its ongoing popularity. Companies like Google, Dropbox, and Instagram all rely heavily on Python, as do countless smaller ventures. It also has a home in academia as the preferred data-crunching language of many scientists and mathematicians.
+
+## Platform Independence: Windows, macOS, Linux
 
 Modern languages such as `python` and `julia` are interpreted languages
 so as long as your platform has an interpreter the code
@@ -260,5 +278,3 @@ Some additional resources for those interested:
 
 1. [QuantEcon Python Programming](https://python-programming.quantecon.org)
 2. [QuantEcon Python Intermediate Economics](https://python.quantecon.org)
-
-
