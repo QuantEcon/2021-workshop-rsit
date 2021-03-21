@@ -14,7 +14,6 @@
       - file: week1/session3/numpy
       - file: week1/session3/pandas
       - file: week1/session3/matplotlib
-      - file: week1/session3/scipy
       - file: week1/session3/statsmodels
       - file: week1/session3/numba
       - file: week1/session3/networkx
