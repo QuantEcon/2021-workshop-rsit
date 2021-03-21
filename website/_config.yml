@@ -2,7 +2,7 @@ title: "RSIT Workshop (Uni Tübingen) 2021"
 author: "Matthew McKay & Chase Coleman"
 copyright: "2021"
 logo: _assets/qe-logo-large.png
-exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", README.md]
+exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", README.md, week1/session3/scipy.md]
 execute:
   execute_notebooks: "off"
 sphinx:
