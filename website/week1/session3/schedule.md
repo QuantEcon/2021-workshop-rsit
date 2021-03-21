@@ -25,7 +25,7 @@ package ecoystem.
 * - 9:00am - 9:30am
   - [matplotlib](session3/matplotlib)
 * - 9:30am - 10:00am
-  - Q&A / Exercises / Break
+  - Q&A / [Exercises](session3/exercises) / Break
 * - 10:00am to 10:30am
   - [statsmodels](session3/statsmodels)
 * - 10:30am to 11:00am
