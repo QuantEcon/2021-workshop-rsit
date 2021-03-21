@@ -14,9 +14,7 @@ Matthew will deliver the morning sessions from `Australia`
 
 ### Chase Coleman
 
-```{todo}
-@ChaseColeman BIO
-```
+TBD
 
 Chase will deliver the afternoon sessions from the `United States`
 
