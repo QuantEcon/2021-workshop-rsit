@@ -19,11 +19,11 @@
 * - 8:00am - 9:00am
   - [Introduction to Python for Economics](session1/python-for-economics)
 * - 9:00am to 9:30am
-  - [Introduction to Jupyter](session1/jupyter)
+  - [Tool #1: Introduction to Jupyter](session1/jupyter)
 * - 9:30am - 10:00am
   - Q&A / [Exercises](setup/exercises) / Break
 * - 10:00am to 11:00am
   - Demo: [International Trade [Science, 2007]](session1/demo)
 * - 10:30am - 11:30am
-  - [Tool #1: GitHub](session1/github)
+  - [Tool #2: GitHub](session1/github)
 ```
