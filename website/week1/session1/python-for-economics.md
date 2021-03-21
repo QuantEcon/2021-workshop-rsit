@@ -228,7 +228,7 @@ The next session on the python ecosystem will introduce many
 useful packages such as:
 
 1. Scipy, NumPy, Matplotlib, Pandas (Scientific computing infrastructure)
-2. Numba (JIT compilation, multithreading)
+2. Numba (JIT compilation, multi-threading)
 3. Tensorflow, PyTouch (machine learning and AI)
 4. NetworkX, etc. etc. etc.
 
