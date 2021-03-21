@@ -21,7 +21,7 @@
 * - 9:00am to 9:30am
   - [Introduction to Jupyter](session1/jupyter)
 * - 9:30am - 10:00am
-  - Q&A / Exercises
+  - Q&A / [Exercises](setup/exercises) / Break
 * - 10:00am to 11:00am
   - Demo: [International Trade [Science, 2007]](session1/demo)
 * - 10:30am - 11:30am
