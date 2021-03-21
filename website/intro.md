@@ -24,6 +24,10 @@ systems for workshop attendees.
 
 ### Week 1
 
+```{warning}
+The workshop resources are currently being edited at the moment so the website is likely to change.
+```
+
 ```{list-table}
 :widths: 15 10 30
 :header-rows: 1
