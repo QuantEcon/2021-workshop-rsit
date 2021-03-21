@@ -146,7 +146,7 @@ to check on `git` state
 ```{figure} img/terminal-git-status.png
 ```
 
-### Commiting a Change (Local) - Part 1
+### Commiting a Change (Local)
 
 We will want to move the file `first.txt` into the staging area
 in preparation for committing.
