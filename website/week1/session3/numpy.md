@@ -27,7 +27,7 @@ jupyter notebook intro-to-numpy.ipynb
 
 ## Cloud Based Option
 
-You can [launch the notebook](https://mybinder.org/v2/gh/QuantEcon/2021-workshop-rsit/main?filepath=notebooks%2Fsession1%2Fintro-to-numpy.ipynb)
+You can [launch the notebook](https://mybinder.org/v2/gh/QuantEcon/2021-workshop-rsit/main?filepath=notebooks%2Fsession3%2Fintro-to-numpy.ipynb)
 
 ```{tip}
 The [NumPy](https://numpy.org) library is used extensively across the `quantecon` lecture
