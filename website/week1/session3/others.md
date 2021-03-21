@@ -30,7 +30,46 @@ repository Issues list and let me know as a comment
   - a `python` interface to [Plotly](https://plotly.com/python/) for interactive plots
 ```
 
-## Scientific Computing
+## Statistical Modelling & Machine Learning
+
+```{list-table}
+:widths: 5 25
+:header-rows: 1
+
+* - Package
+  - Description
+* - [statsmodels](http://statsmodels.sourceforge.net)
+  - Statistical modelling (Econometrics focus)
+* - [scikit-learn](http://http://scikit-learn.org)
+  - The standard machine learning library
+* - [Stan](http://mc-stan.org)
+  - Bayesian Statistical modeling, data analysis, and prediction
+* - [PyMC3](https://pymc-devs.github.io/pymc3/)
+  - Alternative package for Bayesian statistical modeling
+* - [scikit-survival](https://github.com/sebp/scikit-survival/)
+  - Survival analysis based on top of scikit-learn
+* - [lifelines](https://lifelines.readthedocs.io)
+  - Survival analysis in Python
+```
+
+## Performance & Scale
+
+```{list-table}
+:widths: 5 25
+:header-rows: 1
+
+* - Package
+  - Description
+* - [Numba](http://numba.pydata.org)
+  - Generates optimised code using a `just-in-time` compiler
+* - [Dask](https://dask.org)
+  - Infrastructure for building parallel workloads across `cpu cores` or `machines`
+* - [Cython](http://cython.org)
+  - Translates Python-style code to C
+
+```
+
+## Scientific Computing & Mathematics
 
 ```{list-table}
 :widths: 5 25
@@ -40,6 +79,12 @@ repository Issues list and let me know as a comment
   - Description
 * - [scipy](https://www.scipy.org)
   - The core library for `scientific computing`
+* - [scipy](https://scipy.org/scipylib/index.html)
+  - statistics, linear algebra, numerical integration and optimisation
+* - [cvxpy](http://www.cvxpy.org)
+  - Convex optimisation
+* - [FEniCS](https://fenicsproject.org)
+  - Platform for partial differential equations (PDE
 ```
 
 ## Networks
@@ -70,34 +115,6 @@ The article `Python Packages for Networks` is a good reference {cite}`Batagelj20
 - [tulip](https://tulip.labri.fr/Documentation/current/tulip-python/html/index.html)
 
 
-```{bibliography}
-:filter: docname in docnames
-:style: plain
-```
-
----
-
-| Course | Description |
-| ------ | ----------- |
-| [Software Carpentry](https://software-carpentry.org/lessons/) | Introduction to various programming topics |
-| [Data carpentry](http://www.datacarpentry.org/lessons/) | Hands-on, interactive lessons on various data analysis topics |
-
-## Machine Learning
-
-| Package | Description |
-| ------- | ----------- |
-| [scikit-learn](http://http://scikit-learn.org) | The standard machine learning library |
-
-## Statistical Modelling
-
-| Package | Description |
-| ------- | ----------- |
-| [Stan](http://mc-stan.org) | Statistical modeling, data analysis, and prediction in the Bayesian world |
-| [PyMC3](https://pymc-devs.github.io/pymc3/) | Alternative package for Bayesian statistical modeling |
-| [statsmodels](http://statsmodels.sourceforge.net) | Statistical models and tests |
-| [lifelines](https://lifelines.readthedocs.io) | Survival analysis in Python |
-| [scikit-survival](https://github.com/sebp/scikit-survival/) | Survival analysis based on top of scikit-learn |
-
 ## Natural Language Processing (NLP)
 
 | Package | Description |
@@ -106,20 +123,26 @@ The article `Python Packages for Networks` is a good reference {cite}`Batagelj20
 | [gensim](https://radimrehurek.com/gensim/index.html) | Topic modelling |
 
 
-## Mathematics
+## Online Courses
 
-| Package | Description |
-| ------- | ----------- |
-| [scipy](https://scipy.org/scipylib/index.html) | statistics, linear algebra, numerical integration and optimisation |
-| [sympy](http://sympy.org) | Library for symbolic mathematics |
-| [cvxpy](http://www.cvxpy.org), [cvxopt](http://cvxopt.org) | Convex optimisation |
-| [FEniCS](https://fenicsproject.org) | Platform for partial differential equations (PDE) |
+```{list-table}
+:widths: 5 25
+:header-rows: 1
 
+* - Course
+  - Description
+* - [Python Programming for Economics and Finance](https://python-programming.quantecon.org/intro.html)
+  - Introduction to the `python` language
+* - [Quantitative Economics with Python](https://python.quantecon.org)
+  - A series of lectures on quantitative economic modelling
+* - [Software Carpentry](https://software-carpentry.org/lessons/)
+  - Introduction to various programming topics
+* - [Data carpentry](http://www.datacarpentry.org/lessons/)
+  - Hands-on, interactive lessons on various data analysis topics
 
-## Performance & Scale
+```
 
-| Package | Description |
-| ------- | ----------- |
-| [Cython](http://cython.org) | Translates Python-style code to C |
-| [Numba](http://numba.pydata.org) | Generates optimised code using a just-in-time compiler |
-| [Dask](https://dask.org)
+```{bibliography}
+:filter: docname in docnames
+:style: plain
+```
