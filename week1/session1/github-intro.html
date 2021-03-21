@@ -1,0 +1,776 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub &#8212; RSIT Workshop (Uni Tübingen) 2021</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Session 3 (Python Ecosystem)" href="../session3/schedule.html" />
+    <link rel="prev" title="(Demo) Replicating the ProductSpace" href="demo-science-2007.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/qe-logo-large.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">RSIT Workshop (Uni Tübingen) 2021</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   RSIT Workshop (Uni Tübingen) 2021
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="schedule.html">
+   Session 1 (Intro Python)
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-for-economics.html">
+     Introduction to Python for Economics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jupyter-intro.html">
+     Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="demo-science-2007.html">
+     (Demo) Replicating the ProductSpace
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     GitHub
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../session3/schedule.html">
+   Session 3 (Python Ecosystem)
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session3/overview.html">
+     Overview of Python Ecoysystem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session3/numpy.html">
+     NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session3/pandas.html">
+     Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session3/matplotlib.html">
+     Matplotlib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session3/statsmodels.html">
+     statsmodels
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session3/numba.html">
+     Numba
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session3/networkx.html">
+     NetworkX
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session3/others.html">
+     Other Packages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session3/exercises.html">
+     Exercises
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../resources/python-setup.html">
+   Getting Setup for the Workshop
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../workshop.html">
+   How will the Workshop work?
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/week1/session1/github-intro.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-github">
+   What is GitHub?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-git">
+   What is Git?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#key-concepts-of-git">
+     Key Concepts of Git
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#git-workflow">
+     Git Workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#setting-up-git">
+     Setting up Git
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-up-a-repository-github">
+   Setting up a Repository (GitHub)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#new-repository">
+     New Repository
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cloning-your-repository">
+     Cloning your Repository
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fetching-the-latest-from-github">
+     Fetching the latest from GitHub
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-a-change">
+     Adding a Change
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#commiting-a-change-local-part-1">
+     Commiting a Change (Local) - Part 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pushing-a-change-github">
+     Pushing a Change (GitHub)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#viewing-results-on-github">
+     Viewing results on GitHub
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optional-git-advanced">
+   (Optional) Git - Advanced
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#branching">
+     Branching
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#suggested-workflows">
+   Suggested Workflows
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#key-git-commands">
+     Key GIT Commands
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-common-terminal-workflow">
+     A Common Terminal Workflow
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#further-reading-resources">
+   Further Reading / Resources
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#git-resources">
+   Git Resources
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gui-options-os-x-and-windows">
+   GUI Options (OS X and Windows):
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="github">
+<span id="session1-github"></span><h1>GitHub<a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-aims-outcomes-expectations admonition">
+<p class="admonition-title">Aims / Outcomes / Expectations:</p>
+<ol class="simple">
+<li><p>Provide an overview of <code class="docutils literal notranslate"><span class="pre">GitHub</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span></code></p></li>
+<li><p>Demo: <code class="docutils literal notranslate"><span class="pre">GitHub</span></code> and features needed for the workshop</p></li>
+<li><p>Provide resources for interested participants</p></li>
+</ol>
+</div>
+<div class="section" id="what-is-github">
+<h2>What is GitHub?<a class="headerlink" href="#what-is-github" title="Permalink to this headline">¶</a></h2>
+<p>It is a website that hosts Git projects and adds an interface for:</p>
+<ol class="simple">
+<li><p>tracking issues,</p></li>
+<li><p>reduce complexity of code reviews, and</p></li>
+<li><p>simplifies collaboration on projects</p></li>
+<li><p>enables web integrations (i.e. automated workflows)</p></li>
+</ol>
+<p>GitHub consists of <code class="docutils literal notranslate"><span class="pre">users</span></code> (individuals) and <code class="docutils literal notranslate"><span class="pre">organisations</span></code> for
+grouping projects in an organisation setting such as <a class="reference external" href="https://github.com/QuantEcon">QuantEcon</a></p>
+</div>
+<div class="section" id="what-is-git">
+<h2>What is Git?<a class="headerlink" href="#what-is-git" title="Permalink to this headline">¶</a></h2>
+<p><strong>Git</strong> is a <code class="docutils literal notranslate"><span class="pre">distributed</span> <span class="pre">version</span> <span class="pre">control</span></code> system that sits on top of
+your file system that tracks the state of a collection of files.</p>
+<p>Its major strength is text type data (manuscripts, code etc.) but can keep track
+of other file types also.</p>
+<p>It can help you determine exactly what has changed, why it has changed, and
+who has changed it.</p>
+<div class="section" id="key-concepts-of-git">
+<h3>Key Concepts of Git<a class="headerlink" href="#key-concepts-of-git" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Working Directory</p></li>
+<li><p>Staging Area</p></li>
+<li><p>Local Repository (Repo)</p></li>
+<li><p>Remote Repository (Repo)</p></li>
+</ol>
+<p>as <code class="docutils literal notranslate"><span class="pre">git</span></code> is <code class="docutils literal notranslate"><span class="pre">distributed</span></code> the local and remote
+repositories have access to the same history information.</p>
+</div>
+<div class="section" id="git-workflow">
+<h3>Git Workflow<a class="headerlink" href="#git-workflow" title="Permalink to this headline">¶</a></h3>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>image courtesy of this <a class="reference external" href="https://www.freecodecamp.org/news/learn-the-basics-of-git-in-under-10-minutes-da548267cc91/">tutorial</a></p>
+</div>
+<div class="figure align-default">
+<img alt="../../_images/git-basic-2.png" src="../../_images/git-basic-2.png" />
+</div>
+<p>A <strong>file</strong> in a Working Directory can have one of the following three states</p>
+<ol class="simple">
+<li><p><strong>Modified</strong> changes detected</p></li>
+<li><p><strong>Staged</strong> changes are marked to be committed</p></li>
+<li><p><strong>Commited</strong> changes stored in local repository</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can find the status of files using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git status
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="setting-up-git">
+<h3>Setting up Git<a class="headerlink" href="#setting-up-git" title="Permalink to this headline">¶</a></h3>
+<p>When using Git for the first time it can be a good idea to setup
+Git with the correct user information.</p>
+<p>Open a terminal (or Git Bash (Windows)):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git config --global user.name <span class="s2">&quot;Your name here&quot;</span>
+$ git config --global user.email <span class="s2">&quot;your_email@example.com&quot;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can check the configuration using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git config --list
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="setting-up-a-repository-github">
+<h2>Setting up a Repository (GitHub)<a class="headerlink" href="#setting-up-a-repository-github" title="Permalink to this headline">¶</a></h2>
+<p>Go to GitHub (in browser) and click on <strong>New</strong></p>
+<div class="figure align-default">
+<img alt="../../_images/github-new-repo.png" src="../../_images/github-new-repo.png" />
+</div>
+<div class="section" id="new-repository">
+<h3>New Repository<a class="headerlink" href="#new-repository" title="Permalink to this headline">¶</a></h3>
+<p>To setup a new repository</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Click on <code class="docutils literal notranslate"><span class="pre">Clone</span></code> and copy the url such as: <code class="docutils literal notranslate"><span class="pre">https://github.com/&lt;username&gt;/test.git</span></code>
+to your clipboard to use when cloning.</p>
+</div>
+</div>
+<div class="figure align-default">
+<img alt="../../_images/github-repo.png" src="../../_images/github-repo.png" />
+</div>
+</div>
+<div class="section" id="cloning-your-repository">
+<h3>Cloning your Repository<a class="headerlink" href="#cloning-your-repository" title="Permalink to this headline">¶</a></h3>
+<p>To get a copy of the repository on your local machine</p>
+<p>Open a <code class="docutils literal notranslate"><span class="pre">terminal</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> &lt;working-directory&gt;
+git clone https://github.com/&lt;username&gt;/&lt;repo-name&gt;.git
+</pre></div>
+</div>
+<div class="figure align-default">
+<img alt="../../_images/terminal-git-clone.png" src="../../_images/terminal-git-clone.png" />
+</div>
+</div>
+<div class="section" id="fetching-the-latest-from-github">
+<h3>Fetching the latest from GitHub<a class="headerlink" href="#fetching-the-latest-from-github" title="Permalink to this headline">¶</a></h3>
+<p>If you <strong>already</strong> have a local copy of the repository on your local computer
+then you should always fetch the latest changes before starting your work.</p>
+<p>Open a <strong>terminal</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git pull
+</pre></div>
+</div>
+<p>this is particularly the case in collaborative environments.</p>
+</div>
+<div class="section" id="adding-a-change">
+<h3>Adding a Change<a class="headerlink" href="#adding-a-change" title="Permalink to this headline">¶</a></h3>
+<p>Navigate to the repository via <code class="docutils literal notranslate"><span class="pre">terminal</span></code></p>
+<p>Create a file such as <code class="docutils literal notranslate"><span class="pre">first.txt</span></code> and use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git status
+</pre></div>
+</div>
+<p>to check on <code class="docutils literal notranslate"><span class="pre">git</span></code> state</p>
+<div class="figure align-default">
+<img alt="../../_images/terminal-git-status.png" src="../../_images/terminal-git-status.png" />
+</div>
+</div>
+<div class="section" id="commiting-a-change-local-part-1">
+<h3>Commiting a Change (Local) - Part 1<a class="headerlink" href="#commiting-a-change-local-part-1" title="Permalink to this headline">¶</a></h3>
+<p>We will want to move the file <code class="docutils literal notranslate"><span class="pre">first.txt</span></code> into the staging area
+in preparation for committing.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">Terminal</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add first.txt
+</pre></div>
+</div>
+<div class="figure align-default">
+<img alt="../../_images/terminal-git-add.png" src="../../_images/terminal-git-add.png" />
+</div>
+<p>Once we have added the files we want to commit them to history</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">Terminal</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git commit -m <span class="s2">&quot;initial commit&quot;</span>
+</pre></div>
+</div>
+<div class="figure align-default">
+<img alt="../../_images/terminal-git-commit.png" src="../../_images/terminal-git-commit.png" />
+</div>
+</div>
+<div class="section" id="pushing-a-change-github">
+<h3>Pushing a Change (GitHub)<a class="headerlink" href="#pushing-a-change-github" title="Permalink to this headline">¶</a></h3>
+<p>To get those changes on your remote GitHub copy of the repository
+we need to push them to GitHub:</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">Terminal</span></code>:</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On collaborative projects you rarely push to <strong>master</strong></p>
+</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git push origin master
+</pre></div>
+</div>
+<div class="figure align-default">
+<img alt="../../_images/terminal-git-push.png" src="../../_images/terminal-git-push.png" />
+</div>
+</div>
+<div class="section" id="viewing-results-on-github">
+<h3>Viewing results on GitHub<a class="headerlink" href="#viewing-results-on-github" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-default">
+<img alt="../../_images/github-updated-repo.png" src="../../_images/github-updated-repo.png" />
+</div>
+</div>
+</div>
+<div class="section" id="optional-git-advanced">
+<h2>(Optional) Git - Advanced<a class="headerlink" href="#optional-git-advanced" title="Permalink to this headline">¶</a></h2>
+<p>Git has a <strong>lot</strong> of features:</p>
+<ol class="simple">
+<li><p><a class="reference external" href="https://help.github.com/en/github/getting-started-with-github/fork-a-repo">Forking</a></p></li>
+<li><p><a class="reference external" href="https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell">Branching</a></p></li>
+<li><p><a class="reference external" href="https://git-scm.com/book/en/v2/Git-Branching-Rebasing">Rebasing</a></p></li>
+<li><p><a class="reference external" href="https://git-scm.com/book/en/v2/Git-Basics-Tagging">Tagging</a></p></li>
+<li><p><a class="reference external" href="https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning">Stashing</a></p></li>
+<li><p>…</p></li>
+</ol>
+<p>we will run through <strong>branching</strong></p>
+<div class="section" id="branching">
+<h3>Branching<a class="headerlink" href="#branching" title="Permalink to this headline">¶</a></h3>
+<p>A <strong>branch</strong> is like a parallel copy of the <strong>master</strong>/<strong>main</strong> branch.</p>
+<div class="figure align-default">
+<img alt="../../_images/git-branch.png" src="../../_images/git-branch.png" />
+</div>
+<p>It allows changes to occur in parallel.</p>
+<p>The <strong>master</strong>/<strong>main</strong> branch does not get modified until the branch is merged
+into the main** branch.</p>
+<p>Using GitHub this is called a <code class="docutils literal notranslate"><span class="pre">pull</span> <span class="pre">request</span></code>.</p>
+<p><strong>Setting up a Branch:</strong></p>
+<p>Let’s setup a branch</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout -b first-branch
+</pre></div>
+</div>
+<div class="figure align-default">
+<img alt="../../_images/terminal-git-checkout.png" src="../../_images/terminal-git-checkout.png" />
+</div>
+<p>and then add a file <code class="docutils literal notranslate"><span class="pre">second.txt</span></code> and/or modify <code class="docutils literal notranslate"><span class="pre">first.txt</span></code></p>
+<p><strong>Adding a Change:</strong></p>
+<p>We now want to follow the same <strong>commit</strong> workflow as before</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add second.txt
+git commit -m <span class="s2">&quot;adding a second file&quot;</span>
+</pre></div>
+</div>
+<div class="figure align-default">
+<img alt="../../_images/terminal-git-add-commit-branch.png" src="../../_images/terminal-git-add-commit-branch.png" />
+</div>
+<p><strong>Pushing the Change:</strong></p>
+<p>Pushing this branch to GitHub’s copy of the <strong>test</strong> repo</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">origin</span></code> is automatically configured to GitHub when you cloned the repository from GitHub</p>
+</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git push origin first-branch
+</pre></div>
+</div>
+<div class="figure align-default">
+<img alt="../../_images/terminal-git-push-branch-github.png" src="../../_images/terminal-git-push-branch-github.png" />
+</div>
+<p><strong>Setup a PR on GitHub:</strong></p>
+<p>Look for:</p>
+<div class="figure align-default">
+<img alt="../../_images/github-recent-push-notification.png" src="../../_images/github-recent-push-notification.png" />
+</div>
+<p>then setup a <code class="docutils literal notranslate"><span class="pre">PR</span></code> by clicking on <code class="docutils literal notranslate"><span class="pre">Compare</span> <span class="pre">and</span> <span class="pre">pull</span> <span class="pre">request</span></code></p>
+<div class="figure align-default">
+<img alt="../../_images/github-pull-request.png" src="../../_images/github-pull-request.png" />
+</div>
+</div>
+</div>
+<div class="section" id="suggested-workflows">
+<h2>Suggested Workflows<a class="headerlink" href="#suggested-workflows" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="key-git-commands">
+<h3>Key GIT Commands<a class="headerlink" href="#key-git-commands" title="Permalink to this headline">¶</a></h3>
+<p>The vast majority of interactions with <strong>git</strong> is focused on these commands</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">&lt;branch-name&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;message&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code></p></li>
+</ol>
+</div>
+<div class="section" id="a-common-terminal-workflow">
+<h3>A Common Terminal Workflow<a class="headerlink" href="#a-common-terminal-workflow" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> : retrieve new updates</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> : show status of commit</p></li>
+<li><p>General work and edits</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> : show status of commit</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code> : puts <strong>all</strong> changed files into <strong>staging area</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;some</span> <span class="pre">message&quot;</span></code> : commit changes to local git repository with a description</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> : pushes the new version to Github</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="further-reading-resources">
+<h2>Further Reading / Resources<a class="headerlink" href="#further-reading-resources" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="git-resources">
+<h2>Git Resources<a class="headerlink" href="#git-resources" title="Permalink to this headline">¶</a></h2>
+<p>Understanding <strong>Git</strong>:</p>
+<ol class="simple">
+<li><p><a class="reference external" href="https://try.github.io/">Github Tutorials</a></p></li>
+<li><p><a class="reference external" href="https://git-scm.com/book/en/v2">Git Book</a></p></li>
+<li><p><a class="reference external" href="https://juristr.com/blog/2013/04/git-explained">Blog: Beginners</a></p></li>
+<li><p><a class="reference external" href="https://itnext.io/become-a-git-pro-in-just-one-blog-a-thorough-guide-to-git-architecture-and-command-line-interface-93fbe9bdb395">Blog: Git Guide</a></p></li>
+<li><p><a class="reference external" href="https://www.freecodecamp.org/news/learn-the-basics-of-git-in-under-10-minutes-da548267cc91/">Blog: Git Quickstart</a></p></li>
+<li><p><a class="reference external" href="https://towardsdatascience.com/10-git-commands-you-should-know-df54bea1595c">Blog: Useful Git Commands</a></p></li>
+</ol>
+</div>
+<div class="section" id="gui-options-os-x-and-windows">
+<h2>GUI Options (OS X and Windows):<a class="headerlink" href="#gui-options-os-x-and-windows" title="Permalink to this headline">¶</a></h2>
+<p>Some like to start by using a GUI</p>
+<ol class="simple">
+<li><p><a class="reference external" href="https://desktop.github.com/">Github Desktop</a></p></li>
+<li><p><a class="reference external" href="https://git-fork.com/">Git Fork</a></p></li>
+<li><p><a class="reference external" href="https://www.gitkraken.com/">Git Kraken</a></p></li>
+</ol>
+<p>I typically recommend <code class="docutils literal notranslate"><span class="pre">terminal</span> <span class="pre">based</span> <span class="pre">workflows</span></code></p>
+</div>
+<div class="section" id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
+<div class="exercise admonition" id="week1/session1/github-intro-exercise-0">
+<p class="admonition-title"><span class="caption-number">Exercise 1 </span>(Exercise 1: Clone Workshop Repository)</p>
+<div class="section" id="exercise-content">
+<p>Clone the workshop repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/QuantEcon/2021-workshop-rsit.git
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./week1/session1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="demo-science-2007.html" title="previous page">(Demo) Replicating the ProductSpace</a>
+    <a class='right-next' id="next-link" href="../session3/schedule.html" title="next page">Session 3 (Python Ecosystem)</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Matthew McKay & Chase Coleman<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

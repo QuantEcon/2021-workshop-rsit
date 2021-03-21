@@ -22,7 +22,11 @@ Also, could you please [fill in this 5 Question Survey](https://www.surveymonkey
 systems for workshop attendees.
 ```
 
-### Week 1:
+### Week 1
+
+```{warning}
+The workshop resources are currently being edited at the moment so the website is likely to change.
+```
 
 ```{list-table}
 :widths: 15 10 30
@@ -33,13 +37,13 @@ systems for workshop attendees.
   - Topic
 * - Monday, 22nd March
   - 8:00am - 11:30am
-  - Introduction to Python for Economics
+  - [Introduction to Python for Economics](session1/schedule)
 * - 
   - 13:00 - 16:30pm
   - Python Language Fundamentals
 * - Tuesday, 23rd March
   - 8:00am - 11:30am
-  - Python Ecosystem and Tools
+  - [Python Ecosystem and Tools](session3/schedule)
 * - 
   - 13:00 - 16:30pm
   - Working with Data (Pandas)
@@ -51,7 +55,7 @@ systems for workshop attendees.
   - Q&A / Tutorials
 ```
 
-### Week 2:
+### Week 2
 
 ```{list-table}
 :widths: 15 10 30

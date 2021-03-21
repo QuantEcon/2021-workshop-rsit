@@ -56,7 +56,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="1. Introduction to Python for Economics" href="../week1/python-for-economics.html" />
+    <link rel="next" title="How will the Workshop work?" href="../workshop.html" />
+    <link rel="prev" title="Exercises" href="../week1/session3/exercises.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -99,10 +100,88 @@
  </span>
 </p>
 <ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week1/python-for-economics.html">
-   1. Introduction to Python for Economics
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../week1/session1/schedule.html">
+   Session 1 (Intro Python)
   </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week1/session1/python-for-economics.html">
+     Introduction to Python for Economics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week1/session1/jupyter-intro.html">
+     Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week1/session1/demo-science-2007.html">
+     (Demo) Replicating the ProductSpace
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week1/session1/github-intro.html">
+     GitHub
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../week1/session3/schedule.html">
+   Session 3 (Python Ecosystem)
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week1/session3/overview.html">
+     Overview of Python Ecoysystem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week1/session3/numpy.html">
+     NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week1/session3/pandas.html">
+     Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week1/session3/matplotlib.html">
+     Matplotlib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week1/session3/statsmodels.html">
+     statsmodels
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week1/session3/numba.html">
+     Numba
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week1/session3/networkx.html">
+     NetworkX
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week1/session3/others.html">
+     Other Packages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week1/session3/exercises.html">
+     Exercises
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
 </ul>
 <p class="caption collapsible-parent">
@@ -114,6 +193,11 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Getting Setup for the Workshop
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop.html">
+   How will the Workshop work?
   </a>
  </li>
 </ul>
@@ -277,8 +361,8 @@ search <code class="docutils literal notranslate"><span class="pre">Anaconda</sp
 <p>Please follow the Anaconda Installation Guides and install <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.8</span></code>
 on your computer:</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="682533a5-a607-4c16-9bf0-ddca93c75985" name="d397af8a-dfe4-4734-91f2-7457aa4a1829" type="radio">
-</input><label class="tabbed-label" for="682533a5-a607-4c16-9bf0-ddca93c75985">
+<input checked="checked" id="715ca58d-592f-4c42-9938-83d6bcfedb5c" name="47eee685-34be-44e4-ad6d-a62a059d2266" type="radio">
+</input><label class="tabbed-label" for="715ca58d-592f-4c42-9938-83d6bcfedb5c">
 macOS</label><div class="tabbed-content docutils">
 <p>Please use the <a class="reference external" href="https://docs.anaconda.com/anaconda/install/mac-os/">Anaconda installer guide for macOS</a></p>
 <div class="admonition note">
@@ -287,8 +371,8 @@ macOS</label><div class="tabbed-content docutils">
 to sort out any possible issues using <code class="docutils literal notranslate"><span class="pre">terminal</span></code>. Please <a class="reference external" href="mailto:matthew&#46;mckay&#37;&#52;&#48;anu&#46;edu&#46;au">let me know</a> if you have any issues.</p>
 </div>
 </div>
-<input id="6c88c7e7-9be5-4dc9-8c5e-c96dc434f0a2" name="d397af8a-dfe4-4734-91f2-7457aa4a1829" type="radio">
-</input><label class="tabbed-label" for="6c88c7e7-9be5-4dc9-8c5e-c96dc434f0a2">
+<input id="93381869-dfbb-455f-9b30-00619354d9b7" name="47eee685-34be-44e4-ad6d-a62a059d2266" type="radio">
+</input><label class="tabbed-label" for="93381869-dfbb-455f-9b30-00619354d9b7">
 Windows 10</label><div class="tabbed-content docutils">
 <p>Please use the <a class="reference external" href="https://docs.anaconda.com/anaconda/install/windows/">Anaconda installer guide for Windows</a></p>
 <div class="margin sidebar">
@@ -309,8 +393,8 @@ Continuum <strong>recommend</strong> using the <code class="docutils literal not
 <p>Please leave this box unticked if you are not sure.</p>
 </div>
 </div>
-<input id="20a8d470-c32b-4e21-aad6-02ebcbb8daa4" name="d397af8a-dfe4-4734-91f2-7457aa4a1829" type="radio">
-</input><label class="tabbed-label" for="20a8d470-c32b-4e21-aad6-02ebcbb8daa4">
+<input id="dd3cfb44-d935-42dc-8b3d-1ad84396fc3f" name="47eee685-34be-44e4-ad6d-a62a059d2266" type="radio">
+</input><label class="tabbed-label" for="dd3cfb44-d935-42dc-8b3d-1ad84396fc3f">
 Linux</label><div class="tabbed-content docutils">
 <p>Please use the <a class="reference external" href="https://docs.anaconda.com/anaconda/install/linux/">Anaconda installer guide for Linux</a></p>
 </div>
@@ -352,8 +436,8 @@ development going into <code class="docutils literal notranslate"><span class="p
 <p>Terminal based workflows can be a very convenient way to launch applications (like <code class="docutils literal notranslate"><span class="pre">jupyter</span></code>) and run programs.</p>
 <p>A <a class="reference internal" href="#resources-gui-workflow"><span class="std std-ref">GUI based workflow is also available</span></a> below.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="e96d0b6b-3d3f-4482-9328-6bd2a1b403f9" name="7ccc693a-2dc3-4c7b-bd83-347b31dd33c2" type="radio">
-</input><label class="tabbed-label" for="e96d0b6b-3d3f-4482-9328-6bd2a1b403f9">
+<input checked="checked" id="6e4f96f1-2ccb-4593-84e4-4b2155e4bb48" name="9c38183d-e244-4821-adc4-aa7f2d984229" type="radio">
+</input><label class="tabbed-label" for="6e4f96f1-2ccb-4593-84e4-4b2155e4bb48">
 macOS</label><div class="tabbed-content docutils">
 <p>You can open <code class="docutils literal notranslate"><span class="pre">terminal</span></code> using:</p>
 <ol class="simple">
@@ -379,8 +463,8 @@ files you are working on are located before launching the
 <p>A browser will then open with a running <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> home page
 as shown in the <a class="reference internal" href="#getting-setup-notebooks"><span class="std std-ref">next section</span></a></p>
 </div>
-<input id="a64671bc-5387-4c31-8632-782a351eb297" name="7ccc693a-2dc3-4c7b-bd83-347b31dd33c2" type="radio">
-</input><label class="tabbed-label" for="a64671bc-5387-4c31-8632-782a351eb297">
+<input id="ef13abf5-8f5c-4aaa-bda2-51f8903cf50f" name="9c38183d-e244-4821-adc4-aa7f2d984229" type="radio">
+</input><label class="tabbed-label" for="ef13abf5-8f5c-4aaa-bda2-51f8903cf50f">
 Windows 10</label><div class="tabbed-content docutils">
 <p>The recommended way to open a <code class="docutils literal notranslate"><span class="pre">terminal</span></code> for <code class="docutils literal notranslate"><span class="pre">Anaconda</span></code> is to use the
 <code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">Prompt</span></code> provided by the installer. This ensures <code class="docutils literal notranslate"><span class="pre">python</span></code>
@@ -409,8 +493,8 @@ files you are working on are located before launching the
 <p>A browser will then open with a running <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> home page
 as shown in the <a class="reference internal" href="#getting-setup-notebooks"><span class="std std-ref">next section</span></a></p>
 </div>
-<input id="5482df51-2bb0-4cc4-a1d6-93dd2d84c954" name="7ccc693a-2dc3-4c7b-bd83-347b31dd33c2" type="radio">
-</input><label class="tabbed-label" for="5482df51-2bb0-4cc4-a1d6-93dd2d84c954">
+<input id="190baa19-93d8-416d-806a-9ccd0e8e759e" name="9c38183d-e244-4821-adc4-aa7f2d984229" type="radio">
+</input><label class="tabbed-label" for="190baa19-93d8-416d-806a-9ccd0e8e759e">
 Linux</label><div class="tabbed-content docutils">
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
@@ -433,8 +517,8 @@ for your <code class="docutils literal notranslate"><span class="pre">linux</spa
 <span id="resources-gui-workflow"></span><h4>GUI based Workflow<a class="headerlink" href="#gui-based-workflow" title="Permalink to this headline">¶</a></h4>
 <p>There is a Graphical User Interface (GUI) available for launching <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code> or <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Lab</span></code> provided by Anaconda.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="bfd53710-aba4-4376-89fa-528d06538f82" name="f67c9401-1c14-4ffb-b3d5-5d39aa175df9" type="radio">
-</input><label class="tabbed-label" for="bfd53710-aba4-4376-89fa-528d06538f82">
+<input checked="checked" id="d7a0f9e8-5411-48d4-95c9-ed2b15dc2f8b" name="b6fe7072-b9b4-4918-8df9-cee88107c4ef" type="radio">
+</input><label class="tabbed-label" for="d7a0f9e8-5411-48d4-95c9-ed2b15dc2f8b">
 macOS</label><div class="tabbed-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">Jupyter</span></code> can be opened using a GUI application that comes with <code class="docutils literal notranslate"><span class="pre">Anaconda</span></code> by:</p>
 <ol class="simple">
@@ -448,8 +532,8 @@ macOS</label><div class="tabbed-content docutils">
 <p>Click on <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code> and a browser will then open with a running <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> home page
 as shown in the <a class="reference internal" href="#getting-setup-notebooks"><span class="std std-ref">next section</span></a>.</p>
 </div>
-<input id="f8d96a3e-a1b9-4ccd-ad99-ba584375c265" name="f67c9401-1c14-4ffb-b3d5-5d39aa175df9" type="radio">
-</input><label class="tabbed-label" for="f8d96a3e-a1b9-4ccd-ad99-ba584375c265">
+<input id="7b735b6e-fc4a-446a-bade-6b3dd4d78b19" name="b6fe7072-b9b4-4918-8df9-cee88107c4ef" type="radio">
+</input><label class="tabbed-label" for="7b735b6e-fc4a-446a-bade-6b3dd4d78b19">
 Windows</label><div class="tabbed-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">Jupyter</span></code> can be opened using a GUI application that comes with <code class="docutils literal notranslate"><span class="pre">Anaconda</span></code> by:</p>
 <ol class="simple">
@@ -463,8 +547,8 @@ Windows</label><div class="tabbed-content docutils">
 <p>Click on <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code> and a browser will then open with a running <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> home page
 as shown in the <a class="reference internal" href="#getting-setup-notebooks"><span class="std std-ref">next section</span></a>.</p>
 </div>
-<input id="de150350-c463-4358-ad78-4c6b623df788" name="f67c9401-1c14-4ffb-b3d5-5d39aa175df9" type="radio">
-</input><label class="tabbed-label" for="de150350-c463-4358-ad78-4c6b623df788">
+<input id="393f7f74-11e5-4fd2-afcf-6b342b34ec50" name="b6fe7072-b9b4-4918-8df9-cee88107c4ef" type="radio">
+</input><label class="tabbed-label" for="393f7f74-11e5-4fd2-afcf-6b342b34ec50">
 Linux</label><div class="tabbed-content docutils">
 <p>If you’re using Linux then I presume you will use <code class="docutils literal notranslate"><span class="pre">terminal</span> <span class="pre">based</span> <span class="pre">workflows</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">Navigator</span></code> is available but it largely depends on <code class="docutils literal notranslate"><span class="pre">Linux</span></code> distribution on
@@ -512,7 +596,7 @@ to learn more about them.</p>
 </div>
 </div>
 <div class="exercise admonition" id="resources/python-setup-exercise-0">
-<p class="admonition-title"><span class="caption-number">Exercise 1 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 2 </span></p>
 <div class="section" id="exercise-content">
 <p>Go through the <a class="reference external" href="https://jupyter.org/try">Classic Notebook tutorial</a> on the Jupyter website</p>
 <p>Have a read through:</p>
@@ -523,7 +607,7 @@ to learn more about them.</p>
 </div>
 </div>
 <div class="exercise admonition" id="resources/python-setup-exercise-1">
-<p class="admonition-title"><span class="caption-number">Exercise 2 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 3 </span></p>
 <div class="section" id="exercise-content">
 <p>Open a <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> document and select <code class="docutils literal notranslate"><span class="pre">New</span></code> and use <code class="docutils literal notranslate"><span class="pre">python3</span></code> (or <code class="docutils literal notranslate"><span class="pre">python</span></code>)
 as your language kernel.</p>
@@ -550,7 +634,7 @@ readable out of the box.</p>
 </div>
 </div>
 <div class="exercise admonition" id="resources/python-setup-exercise-2">
-<p class="admonition-title"><span class="caption-number">Exercise 3 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 4 </span></p>
 <div class="section" id="exercise-content">
 <p>Replicate the <code class="docutils literal notranslate"><span class="pre">code</span></code> in this lecture in your own Jupyter Notebook:</p>
 <p><a class="reference external" href="https://python-programming.quantecon.org/python_by_example.html">https://python-programming.quantecon.org/python_by_example.html</a></p>
@@ -590,7 +674,8 @@ readable out of the box.</p>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../week1/python-for-economics.html" title="previous page"><span class="section-number">1. </span>Introduction to Python for Economics</a>
+    <a class='left-prev' id="prev-link" href="../week1/session3/exercises.html" title="previous page">Exercises</a>
+    <a class='right-next' id="next-link" href="../workshop.html" title="next page">How will the Workshop work?</a>
 
         </div>
         

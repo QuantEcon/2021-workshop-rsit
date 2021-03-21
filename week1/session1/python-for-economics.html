@@ -1,0 +1,682 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Python for Economics &#8212; RSIT Workshop (Uni Tübingen) 2021</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Jupyter Notebooks" href="jupyter-intro.html" />
+    <link rel="prev" title="Session 1 (Intro Python)" href="schedule.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/qe-logo-large.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">RSIT Workshop (Uni Tübingen) 2021</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   RSIT Workshop (Uni Tübingen) 2021
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="schedule.html">
+   Session 1 (Intro Python)
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Introduction to Python for Economics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jupyter-intro.html">
+     Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="demo-science-2007.html">
+     (Demo) Replicating the ProductSpace
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="github-intro.html">
+     GitHub
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../session3/schedule.html">
+   Session 3 (Python Ecosystem)
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session3/overview.html">
+     Overview of Python Ecoysystem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session3/numpy.html">
+     NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session3/pandas.html">
+     Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session3/matplotlib.html">
+     Matplotlib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session3/statsmodels.html">
+     statsmodels
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session3/numba.html">
+     Numba
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session3/networkx.html">
+     NetworkX
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session3/others.html">
+     Other Packages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session3/exercises.html">
+     Exercises
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../resources/python-setup.html">
+   Getting Setup for the Workshop
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../workshop.html">
+   How will the Workshop work?
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/week1/session1/python-for-economics.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-python">
+   Why Python?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#proprietary-vs-open-source">
+     Proprietary vs Open Source
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#proprietary">
+       Proprietary
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#open-source">
+       Open Source
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#choice-of-programming-languages">
+     Choice of Programming Languages
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#low-level-languages">
+       Low Level Languages
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#intermediate-level-languages">
+       Intermediate Level Languages
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#high-level-languages">
+       High Level Languages
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scientific-computing">
+   Scientific Computing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#productivity-vs-execution-speed">
+   Productivity vs. Execution Speed
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-python-ecosystem">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       python
+      </span>
+     </code>
+     ecosystem
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#platforms-windows-macos-linux">
+   Platforms: Windows, macOS, Linux
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resources">
+   Resources
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="introduction-to-python-for-economics">
+<span id="session1-python-for-economics"></span><h1>Introduction to Python for Economics<a class="headerlink" href="#introduction-to-python-for-economics" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-aims-outcomes admonition">
+<p class="admonition-title">Aims &amp; Outcomes:</p>
+<ol class="simple">
+<li><p>Try and answer the question: Why Python?</p></li>
+<li><p>Provide an overview of Programming vs. Scripting</p></li>
+<li><p>Discuss Scientific Computing</p></li>
+</ol>
+</div>
+<div class="section" id="why-python">
+<h2>Why Python?<a class="headerlink" href="#why-python" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Easy to learn, and well designed language</p></li>
+<li><p>Massive scientific ecosystem</p></li>
+<li><p>Open Source</p></li>
+<li><p>Used extensively in datascience and machine learning
+communities.</p></li>
+</ul>
+<p>It is a good fit for many Scientific Computing tasks as
+<code class="docutils literal notranslate"><span class="pre">python</span></code> has strong tools for vectorization, jit compilation,
+parallelization, visualization, etc.</p>
+<div class="section" id="proprietary-vs-open-source">
+<h3>Proprietary vs Open Source<a class="headerlink" href="#proprietary-vs-open-source" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="proprietary">
+<h4>Proprietary<a class="headerlink" href="#proprietary" title="Permalink to this headline">¶</a></h4>
+<ol class="simple">
+<li><p>Excel</p></li>
+<li><p>MATLAB</p></li>
+<li><p>STATA</p></li>
+</ol>
+<p>These can be <code class="docutils literal notranslate"><span class="pre">good</span></code> tools for <code class="docutils literal notranslate"><span class="pre">specific</span> <span class="pre">tasks</span></code> but
+also have some drawbacks.</p>
+<p><strong>Pro:</strong></p>
+<ol class="simple">
+<li><p>Simpler to use with Integrated graphical interfaces</p></li>
+<li><p>Company that provides support</p></li>
+<li><p>Stable</p></li>
+</ol>
+<p><strong>Con:</strong></p>
+<ol class="simple">
+<li><p>Cost Money</p></li>
+<li><p>More constrained to a <code class="docutils literal notranslate"><span class="pre">narrow</span></code> domain than
+more general high-level programming languages so can
+be difficult to achieve some task types</p></li>
+<li><p>Access to higher performance can be expensive</p></li>
+</ol>
+</div>
+<div class="section" id="open-source">
+<h4>Open Source<a class="headerlink" href="#open-source" title="Permalink to this headline">¶</a></h4>
+<ol class="simple">
+<li><p>Python</p></li>
+<li><p>Julia</p></li>
+<li><p>R</p></li>
+</ol>
+<p>Are typically considered the leading <code class="docutils literal notranslate"><span class="pre">programming</span> <span class="pre">languages</span></code> to
+support <code class="docutils literal notranslate"><span class="pre">scientific</span> <span class="pre">computing</span></code>.</p>
+<p><strong>Pro:</strong></p>
+<ol class="simple">
+<li><p>Free</p></li>
+<li><p>Ultimately customisable and auditable being <code class="docutils literal notranslate"><span class="pre">open</span> <span class="pre">source</span></code></p></li>
+<li><p>Quick moving communities writing packages and extensions</p></li>
+</ol>
+<p><strong>Con:</strong></p>
+<ol class="simple">
+<li><p>Initially less <code class="docutils literal notranslate"><span class="pre">user</span> <span class="pre">friendly</span></code> with limited <code class="docutils literal notranslate"><span class="pre">point</span> <span class="pre">and</span> <span class="pre">click</span></code>
+style of interaction</p></li>
+<li><p>Quick moving communities writing packages and extensions :-).</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="choice-of-programming-languages">
+<h3>Choice of Programming Languages<a class="headerlink" href="#choice-of-programming-languages" title="Permalink to this headline">¶</a></h3>
+<p>There is a large variety of programming languages available to
+choose from and this is largely down to a trade-offs between
+<code class="docutils literal notranslate"><span class="pre">productivity</span> <span class="pre">for</span> <span class="pre">writing</span> <span class="pre">code</span></code>, <code class="docutils literal notranslate"><span class="pre">execution</span> <span class="pre">speed</span></code>, and/or <code class="docutils literal notranslate"><span class="pre">designed</span> <span class="pre">for</span> <span class="pre">a</span> <span class="pre">domain</span> <span class="pre">specific</span> <span class="pre">purpose</span></code>.</p>
+<div class="section" id="low-level-languages">
+<h4>Low Level Languages<a class="headerlink" href="#low-level-languages" title="Permalink to this headline">¶</a></h4>
+<p>Provide fine grained control at the hardware level</p>
+<p>Languages such as:</p>
+<ol class="simple">
+<li><p>Assembly</p></li>
+<li><p>LLVM (Assembler)</p></li>
+</ol>
+<p><strong>Example:</strong> <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">1</span></code> in assembly</p>
+<div class="highlight-nasm notranslate"><div class="highlight"><pre><span></span><span class="nf">pushq</span>   <span class="o">%</span><span class="nb">rbp</span>
+<span class="nf">movq</span>    <span class="o">%</span><span class="nb">rsp</span><span class="p">,</span> <span class="o">%</span><span class="nb">rbp</span>
+<span class="nf">movl</span>    <span class="kc">$</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="p">(</span><span class="o">%</span><span class="nb">rbp</span><span class="p">)</span>
+<span class="nf">movl</span>    <span class="kc">$</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">(</span><span class="o">%</span><span class="nb">rbp</span><span class="p">)</span>
+<span class="nf">movl</span>    <span class="o">-</span><span class="mi">12</span><span class="p">(</span><span class="o">%</span><span class="nb">rbp</span><span class="p">),</span> <span class="o">%</span><span class="nb">edx</span>
+<span class="nf">movl</span>    <span class="o">-</span><span class="mi">8</span><span class="p">(</span><span class="o">%</span><span class="nb">rbp</span><span class="p">),</span> <span class="o">%</span><span class="nb">eax</span>
+<span class="nf">addl</span>    <span class="o">%</span><span class="nb">edx</span><span class="p">,</span> <span class="o">%</span><span class="nb">eax</span>
+<span class="nf">movl</span>    <span class="o">%</span><span class="nb">eax</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">(</span><span class="o">%</span><span class="nb">rbp</span><span class="p">)</span>
+<span class="nf">movl</span>    <span class="o">-</span><span class="mi">4</span><span class="p">(</span><span class="o">%</span><span class="nb">rbp</span><span class="p">),</span> <span class="o">%</span><span class="nb">eax</span>
+<span class="nf">popq</span>    <span class="o">%</span><span class="nb">rbp</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="intermediate-level-languages">
+<h4>Intermediate Level Languages<a class="headerlink" href="#intermediate-level-languages" title="Permalink to this headline">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Intermediate</span></code> level languages used to be considered <code class="docutils literal notranslate"><span class="pre">high</span> <span class="pre">level</span></code>
+languages. Many languages in this range are often <code class="docutils literal notranslate"><span class="pre">fit</span> <span class="pre">for</span> <span class="pre">purpose</span></code> type languages.</p>
+<p>Languages such as:</p>
+<ol class="simple">
+<li><p>C/C++</p></li>
+<li><p>Fortran</p></li>
+<li><p>Java</p></li>
+</ol>
+<div class="admonition-design-for-purpose admonition">
+<p class="admonition-title">Design for Purpose:</p>
+<p>Linus Torvalds thinks <code class="docutils literal notranslate"><span class="pre">C</span></code> is the <a class="reference external" href="https://www.reddit.com/r/programming/comments/1t0gfy/linus_torvalds_on_the_question_if_there_is_a/">best language choice</a> for writing
+the <code class="docutils literal notranslate"><span class="pre">linux</span></code> kernel. This is because the <code class="docutils literal notranslate"><span class="pre">C</span></code> programming language
+is a nice balance between <code class="docutils literal notranslate"><span class="pre">low-level</span></code> and <code class="docutils literal notranslate"><span class="pre">productivity</span></code>. It is
+<code class="docutils literal notranslate"><span class="pre">productive</span></code> enough to write large and complex systems reasonably
+quickly but has enough access to <code class="docutils literal notranslate"><span class="pre">low-level</span></code> features to build
+interfaces for <code class="docutils literal notranslate"><span class="pre">hardware</span></code> and <code class="docutils literal notranslate"><span class="pre">systems</span></code>.</p>
+<p>It is a good fit for writing <code class="docutils literal notranslate"><span class="pre">operating</span> <span class="pre">system</span> <span class="pre">kernels</span></code>.</p>
+</div>
+<p><strong>Example:</strong> <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">1</span></code> in C</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">sum</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;Sum = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">sum</span><span class="p">);</span>
+<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="high-level-languages">
+<h4>High Level Languages<a class="headerlink" href="#high-level-languages" title="Permalink to this headline">¶</a></h4>
+<p>Provide a high degree of productivity through <code class="docutils literal notranslate"><span class="pre">abstraction</span></code> and
+<code class="docutils literal notranslate"><span class="pre">automation</span></code> etc. and typically include features such as:</p>
+<ul class="simple">
+<li><p>Automatic memory management</p></li>
+<li><p>Input/Output (IO)</p></li>
+<li><p>Advanced data structures</p></li>
+</ul>
+<p>Languages such as:</p>
+<ol class="simple">
+<li><p>Ruby</p></li>
+<li><p>Javascript</p></li>
+<li><p>Python</p></li>
+<li><p>Julia</p></li>
+</ol>
+<p><strong>Example:</strong> <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">1</span></code> in python</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="scientific-computing">
+<h2>Scientific Computing<a class="headerlink" href="#scientific-computing" title="Permalink to this headline">¶</a></h2>
+<p><strong>Scientific Computing</strong> ultimately needs to be:</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Productive</span></code> - easy to read, write, debug, explore</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Fast</span></code> computations</p></li>
+</ol>
+<p>In most <code class="docutils literal notranslate"><span class="pre">scientific</span> <span class="pre">computing</span></code> applications we also don’t want to have to worry much
+about interfacing or managing the <code class="docutils literal notranslate"><span class="pre">hardware</span></code> on a day to day
+basis – however we would like the ability to maximise usage of that hardware when required so we don’t have to change languages.</p>
+</div>
+<div class="section" id="productivity-vs-execution-speed">
+<h2>Productivity vs. Execution Speed<a class="headerlink" href="#productivity-vs-execution-speed" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Productivity</span></code> and <code class="docutils literal notranslate"><span class="pre">Execution</span></code> typically come with a <code class="docutils literal notranslate"><span class="pre">trade-off</span></code>:</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span></code> as a <code class="docutils literal notranslate"><span class="pre">core</span></code> languages is pretty slow in execution
+and high in memory use but is highly productive.</p>
+<div class="admonition-data-for-graph admonition">
+<p class="admonition-title">Data for Graph:</p>
+<p>This graph is for illustration only and is not based on
+underlying data</p>
+</div>
+</div>
+<div class="figure align-default">
+<img alt="../../_images/tradeoff.pdf" src="../../_images/tradeoff.pdf" />
+</div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p><code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> was able to build a high productivity language that was able to overcome some of these trade-offs
+by calling out routines to lower level libraries built in <code class="docutils literal notranslate"><span class="pre">c</span></code>
+and <code class="docutils literal notranslate"><span class="pre">fortran</span></code></p>
+</div>
+<div class="figure align-default">
+<img alt="../../_images/tradeoff2.pdf" src="../../_images/tradeoff2.pdf" />
+</div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p><code class="docutils literal notranslate"><span class="pre">julia</span></code> a relatively young programming language was able to
+build on top of newer modern technology using
+<code class="docutils literal notranslate"><span class="pre">just</span> <span class="pre">in</span> <span class="pre">time</span> <span class="pre">compilation</span></code> to deliver a gain in performance
+that often rivals C with a lot less code for programmers.</p>
+</div>
+<div class="figure align-default">
+<img alt="../../_images/tradeoff3.pdf" src="../../_images/tradeoff3.pdf" />
+</div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span></code> is able to use tools within the <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">ecosystem</span></code>
+that enables programmers to obtain high speed when needed.
+<code class="docutils literal notranslate"><span class="pre">numba</span></code> uses <code class="docutils literal notranslate"><span class="pre">JIT</span></code> compilation to compile <code class="docutils literal notranslate"><span class="pre">python</span></code> code into
+efficient <code class="docutils literal notranslate"><span class="pre">LLVM</span></code> assembler that is highly automated.</p>
+</div>
+<div class="figure align-default">
+<img alt="../../_images/tradeoff4.pdf" src="../../_images/tradeoff4.pdf" />
+</div>
+<p>One of the strengths of <code class="docutils literal notranslate"><span class="pre">python</span></code> is its adaptability to many
+different contexts while retaining a very high level of
+<code class="docutils literal notranslate"><span class="pre">productivity</span></code>. This is largely due to <code class="docutils literal notranslate"><span class="pre">language</span> <span class="pre">design</span></code>
+(i.e. everything is an object), and advances in access in
+<code class="docutils literal notranslate"><span class="pre">compute</span></code> power.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span></code> is often called a <code class="docutils literal notranslate"><span class="pre">glue</span></code> language as it is a
+generalised programming environment that can <code class="docutils literal notranslate"><span class="pre">glue</span></code> together
+many different systems and packages enabling a high degree of
+flexibility.</p>
+</div>
+<div class="section" id="the-python-ecosystem">
+<h3>The <code class="docutils literal notranslate"><span class="pre">python</span></code> ecosystem<a class="headerlink" href="#the-python-ecosystem" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">python</span></code> ecosystem has strong tools in vectorization,
+JIT compilation, parallelization, visualisation, etc.</p>
+<p>The next session on the python ecosystem will introduce many
+useful packages such as:</p>
+<ol class="simple">
+<li><p>Scipy, NumPy, Matplotlib, Pandas (Scientific computing infrastructure)</p></li>
+<li><p>Numba (JIT compilation, multi-threading)</p></li>
+<li><p>Tensorflow, PyTouch (machine learning and AI)</p></li>
+<li><p>NetworkX, etc. etc. etc.</p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">Python</span></code> was first released in <code class="docutils literal notranslate"><span class="pre">1991</span></code>.</p>
+<p>It has taken 20 years to build the ecosystem and become as
+popular as it has become.</p>
+</div>
+</div>
+<div class="section" id="platforms-windows-macos-linux">
+<h2>Platforms: Windows, macOS, Linux<a class="headerlink" href="#platforms-windows-macos-linux" title="Permalink to this headline">¶</a></h2>
+<p>Modern languages such as <code class="docutils literal notranslate"><span class="pre">python</span></code> and <code class="docutils literal notranslate"><span class="pre">julia</span></code> are interpreted languages
+so as long as your platform has an interpreter the code
+is largely cross-platform.</p>
+<p>I often work and collaborate with others across all three
+platforms and your own productivity largely comes down to preference.</p>
+<p>The user interface on <code class="docutils literal notranslate"><span class="pre">Windows</span></code> (in my view) is the least
+productive but that is largely due to inferior <code class="docutils literal notranslate"><span class="pre">terminal</span></code>
+based workflows. This is changing quickly and can now be
+largely solved using <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows subsystem for linux</a> which runs
+a virtualised <code class="docutils literal notranslate"><span class="pre">linux</span> <span class="pre">kernel</span></code> that enables access to many
+high performance tools and productive <code class="docutils literal notranslate"><span class="pre">terminal</span></code> based
+workflows.</p>
+</div>
+<div class="section" id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<p>Some additional resources for those interested:</p>
+<ol class="simple">
+<li><p><a class="reference external" href="https://python-programming.quantecon.org">QuantEcon Python Programming</a></p></li>
+<li><p><a class="reference external" href="https://python.quantecon.org">QuantEcon Python Intermediate Economics</a></p></li>
+</ol>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./week1/session1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="schedule.html" title="previous page">Session 1 (Intro Python)</a>
+    <a class='right-next' id="next-link" href="jupyter-intro.html" title="next page">Jupyter Notebooks</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Matthew McKay & Chase Coleman<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
