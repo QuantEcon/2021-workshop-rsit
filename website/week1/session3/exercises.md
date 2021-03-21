@@ -1,6 +1,8 @@
 (session3/exercises)=
 
-# Python Plotting Exercises
+# Exercises
+
+Here are some `python plotting` exercises to work through in your own time.
 
 ## Local Option
 
