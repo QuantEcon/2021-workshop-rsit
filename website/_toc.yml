@@ -1,11 +1,27 @@
 - file: intro
-  numbered: True
 
 - part: Week 1
   chapters:
-    - file: week1/python-for-economics
+    - file: week1/session1/schedule
+      sections:
+      - file: week1/session1/python-for-economics
+      - file: week1/session1/jupyter-intro
+      - file: week1/session1/demo-science-2007
+      - file: week1/session1/github-intro
+    - file: week1/session3/schedule
+      sections:
+      - file: week1/session3/overview
+      - file: week1/session3/numpy
+      - file: week1/session3/pandas
+      - file: week1/session3/matplotlib
+      - file: week1/session3/statsmodels
+      - file: week1/session3/numba
+      - file: week1/session3/networkx
+      - file: week1/session3/others
+      - file: week1/session3/exercises
 
 - part: Resources
   numbered: false
   chapters:
     - file: resources/python-setup
+    - file: workshop

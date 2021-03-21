@@ -1,0 +1,14 @@
+name: mybinder
+channels:
+  - default
+dependencies:
+  - python=3.8
+  - pandas
+  - dask
+  - numpy
+  - networkx
+  - matplotlib
+  - line_profiler
+  - numba
+  - bokeh
+

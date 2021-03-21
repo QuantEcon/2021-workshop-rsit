@@ -1,2 +1,9 @@
+.ipynb_checkpoints
 .DS_Store
 _build
+
+notebooks/session1/data/*.h5
+notebooks/session1/*.png
+notebooks/session1/*.gml
+notebooks/session1/dask*
+notebooks/session1/.ipynb_checkpoints
