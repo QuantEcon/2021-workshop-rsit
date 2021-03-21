@@ -34,4 +34,3 @@ You can [launch the notebook](https://mybinder.org/v2/gh/QuantEcon/2021-workshop
 
 1. [Jupyter Documentation](http://jupyter.readthedocs.org/en/latest/index.html)
 1. [Try Jupyter Tutorials](https://try.jupyter.org/)
-

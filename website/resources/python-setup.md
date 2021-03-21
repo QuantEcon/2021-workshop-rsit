@@ -71,7 +71,7 @@ Please use the [Anaconda installer guide for Linux](https://docs.anaconda.com/an
 1. writing code, and
 2. writing prose
 
-They are often described as `computational narratives`. 
+They are often described as `computational narratives`.
 
 At the basic level it provides two cells that can be used to write `Markdown` or `Code`:
 
@@ -258,7 +258,7 @@ and use `Command + Enter` to execute the code and get the results
 ```{figure} /_assets/resources/notebook2.png
 ```
 
-
+(setup/exercises)=
 ## Step 4: Exercises
 
 Here are some exercises to help you get started with `Jupyter Notebooks`
