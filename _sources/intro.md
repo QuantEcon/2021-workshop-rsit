@@ -36,7 +36,7 @@ systems for workshop attendees.
   - [Introduction to Python for Economics](session1/schedule)
 * - 
   - 13:00 - 16:30pm
-  - Python Language Fundamentals
+  - [Python Language Fundamentals](session2/schedule)
 * - Tuesday, 23rd March
   - 8:00am - 11:30am
   - [Python Ecosystem and Tools](session3/schedule)
