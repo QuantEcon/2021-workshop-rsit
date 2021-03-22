@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>statsmodels &#8212; RSIT Workshop (Uni Tübingen) 2021</title>
+    <title>Exercises &#8212; RSIT Workshop (Uni Tübingen) 2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -56,8 +56,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Numba" href="numba.html" />
-    <link rel="prev" title="Matplotlib" href="matplotlib.html" />
+    <link rel="next" title="Python Functions" href="python-functions.html" />
+    <link rel="prev" title="Python Control Flow" href="python-control-flow.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -129,33 +129,33 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../session2/schedule.html">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="schedule.html">
    Session 2 (Python Fundamentals)
   </a>
-  <ul class="collapse-ul">
+  <ul class="current collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../session2/python-basics.html">
+    <a class="reference internal" href="python-basics.html">
      Python Basics
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../session2/python-collections.html">
+    <a class="reference internal" href="python-collections.html">
      Python Collections
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../session2/python-control-flow.html">
+    <a class="reference internal" href="python-control-flow.html">
      Python Control Flow
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../session2/exercises.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Exercises
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../session2/python-functions.html">
+    <a class="reference internal" href="python-functions.html">
      Python Functions
     </a>
    </li>
@@ -163,53 +163,53 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 current active collapsible-parent">
-  <a class="reference internal" href="schedule.html">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../session3/schedule.html">
    Session 3 (Python Ecosystem)
   </a>
-  <ul class="current collapse-ul">
+  <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="overview.html">
+    <a class="reference internal" href="../session3/overview.html">
      Overview of Python Ecoysystem
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="numpy.html">
+    <a class="reference internal" href="../session3/numpy.html">
      NumPy
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="pandas.html">
+    <a class="reference internal" href="../session3/pandas.html">
      Pandas
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="matplotlib.html">
+    <a class="reference internal" href="../session3/matplotlib.html">
      Matplotlib
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session3/statsmodels.html">
      statsmodels
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="numba.html">
+    <a class="reference internal" href="../session3/numba.html">
      Numba
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="networkx.html">
+    <a class="reference internal" href="../session3/networkx.html">
      NetworkX
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="others.html">
+    <a class="reference internal" href="../session3/others.html">
      Other Packages
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="exercises.html">
+    <a class="reference internal" href="../session3/exercises.html">
      Exercises
     </a>
    </li>
@@ -274,7 +274,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/week1/session3/statsmodels.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/week1/session2/exercises.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -327,35 +327,21 @@
         
               <div>
                 
-  <div class="section" id="statsmodels">
-<span id="session3-statsmodels"></span><h1>statsmodels<a class="headerlink" href="#statsmodels" title="Permalink to this headline">¶</a></h1>
-<div class="admonition-aims-outcomes admonition">
-<p class="admonition-title">Aims &amp; Outcomes:</p>
-<ol class="simple">
-<li><p>Run a Gravity Model</p></li>
-<li><p>Use NumPy to verify statsmodels</p></li>
-</ol>
-</div>
-<p><a class="reference external" href="https://www.statsmodels.org/stable/index.html">statsmodels</a> is the package for <code class="docutils literal notranslate"><span class="pre">econometric</span></code> type statistics in <code class="docutils literal notranslate"><span class="pre">python</span></code>.</p>
-<div class="admonition-resources admonition">
-<p class="admonition-title">Resources</p>
-<p>The <a class="reference external" href="https://www.statsmodels.org/stable/gettingstarted.html">statsmodels getting started guide</a> and the
-<a class="reference external" href="https://www.statsmodels.org/stable/user-guide.html">user guide</a> are good places to learn more about
-what <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> can do.</p>
-</div>
-<p>We will work through the following <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> demo notebook.</p>
+  <div class="section" id="exercises">
+<span id="session2-exercises"></span><h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<p>Here are some exercises to practice writing Python code</p>
 <div class="section" id="local-option">
 <h2>Local Option<a class="headerlink" href="#local-option" title="Permalink to this headline">¶</a></h2>
-<p>You can download the <a class="reference download internal" download="" href="../../_downloads/c79b406fe80c1563bd9044eef5f38a0c/intro-to-statsmodels.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">notebook</span> <span class="pre">from</span> <span class="pre">here</span></code></a></p>
-<p>Then browse to your download location and load <strong>jupyter</strong>:</p>
+<p>You can download the <a class="reference download internal" download="" href="../../_downloads/c78dbad05a3117cd79c60b03519922ab/python-exercises.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">notebook</span> <span class="pre">from</span> <span class="pre">here</span></code></a></p>
+<p>Then browse to your download location and load the notebook with <strong>jupyter</strong>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/Downloads
-jupyter notebook intro-to-statsmodels.ipynb
+jupyter notebook python-exercises.ipynb
 </pre></div>
 </div>
 </div>
 <div class="section" id="cloud-based-option">
 <h2>Cloud Based Option<a class="headerlink" href="#cloud-based-option" title="Permalink to this headline">¶</a></h2>
-<p>You can <a class="reference external" href="https://mybinder.org/v2/gh/QuantEcon/2021-workshop-rsit/main?filepath=notebooks%2Fsession3%2Fintro-to-statsmodels.ipynb">launch the notebook</a></p>
+<p>You can <a class="reference external" href="https://mybinder.org/v2/gh/QuantEcon/2021-workshop-rsit/main?filepath=notebooks%2Fsession2%2Fpython-exercises.ipynb">launch the notebook</a></p>
 </div>
 </div>
 
@@ -372,7 +358,7 @@ jupyter notebook intro-to-statsmodels.ipynb
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./week1/session3"
+            path: "./week1/session2"
         },
         predefinedOutput: true
     }
@@ -384,8 +370,8 @@ jupyter notebook intro-to-statsmodels.ipynb
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="matplotlib.html" title="previous page">Matplotlib</a>
-    <a class='right-next' id="next-link" href="numba.html" title="next page">Numba</a>
+    <a class='left-prev' id="prev-link" href="python-control-flow.html" title="previous page">Python Control Flow</a>
+    <a class='right-next' id="next-link" href="python-functions.html" title="next page">Python Functions</a>
 
         </div>
         
