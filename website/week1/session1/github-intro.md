@@ -3,7 +3,7 @@
 
 ```{admonition} Aims / Outcomes / Expectations:
 1. Provide an overview of `GitHub` and `git`
-2. Demo: `GitHub` and features needed for the workshop
+2. Demo: `GitHub` and features recommended for this workshop
 3. Provide resources for interested participants
 ```
 
@@ -44,7 +44,7 @@ repositories have access to the same history information.
 ### Git Workflow
 
 ```{margin}
-image courtesy of this [tutorial](https://www.freecodecamp.org/news/learn-the-basics-of-git-in-under-10-minutes-da548267cc91/)
+Image courtesy of this [tutorial](https://www.freecodecamp.org/news/learn-the-basics-of-git-in-under-10-minutes-da548267cc91/)
 ```
 
 ```{figure} img/git-basic-2.png
@@ -146,7 +146,7 @@ to check on `git` state
 ```{figure} img/terminal-git-status.png
 ```
 
-### Commiting a Change (Local)
+### Committing a Change (Local)
 
 We will want to move the file `first.txt` into the staging area
 in preparation for committing.
