@@ -156,19 +156,19 @@ Languages such as:
 1 + 1
 ```
 
-```{admonition} Scripting vs. Programming Languages
-I think of `Stata` as a `scripting` language. The `do` file is a convenient way to
-write scripts that replicate some workflow. But they lack features of more general
-programming structures such as the use of `objects` to store `data` and `methods`.
+:::{admonition} Scripting vs. Programming Languages
+Most interaction with `Stata` is in a `scripting` context. The `do` file is a convenient way to
+write a set of instructions that can be repeated for a given workflow. But it lacks features
+of more general programming languages such as the use of `objects` to store `data` and `methods`.
 
 This is often a design choice!
 
 `Stata` would like a high productivity environment to run complex statistical models and
 the syntax is less general then `python`. For example, many `stata` commands work over
 `rows` of data because of the domain.
-```
+:::
 
-```{admonition} Mata (Stata Programming Language)
+```{admonition} Mata (Stata's Programming Language)
 There is [mata](https://www.stata.com/features/overview/introduction-to-mata/) which can be
 used to write `stata` programs and is very similar to `C` with a focus on matrix operations.
 
