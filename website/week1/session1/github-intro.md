@@ -9,6 +9,12 @@
 
 ## What is GitHub?
 
+:::{margin}
+The competitors are mainly:
+1. [Gitlab](https://about.gitlab.com)
+1. [Atlassian BitBucket](https://bitbucket.org)
+:::
+
 It is a website that hosts Git projects and adds an interface for:
 
 1. tracking issues,
@@ -16,8 +22,27 @@ It is a website that hosts Git projects and adds an interface for:
 3. simplifies collaboration on projects
 4. enables web integrations (i.e. automated workflows)
 
+:::{margin}
+`GitHub` is ideally suited to software projects, but it is general enough to be used for any
+projects (with a particular emphasis on text based files).
+:::
+
 GitHub consists of `users` (individuals) and `organisations` for
 grouping projects in an organisation setting such as [QuantEcon](https://github.com/QuantEcon)
+
+Here are the [2020 year in review statistics](https://octoverse.github.com)
+
+There is a useful [training guide](https://lab.github.com/githubtraining/introduction-to-github) that is
+put together by the `GitHub` team. 
+
+Another access option is to use [Github Desktop](https://desktop.github.com/) but I find the website to be
+my preferred access option coupled with `terminal based workflows with git`.
+
+```{tip}
+If you are solely interested in LaTeX projects there are other services available that offer 
+collaboration features such as [overleaf](https://www.overleaf.com) but requires a paid account.
+```
+
 
 ## What is Git?
 
@@ -322,7 +347,6 @@ Understanding **Git**:
 
 Some like to start by using a GUI
 
-1. [Github Desktop](https://desktop.github.com/)
 1. [Git Fork](https://git-fork.com/)
 1. [Git Kraken](https://www.gitkraken.com/)
 

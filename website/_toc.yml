@@ -23,7 +23,6 @@
       - file: week1/session3/matplotlib
       - file: week1/session3/statsmodels
       - file: week1/session3/numba
-      - file: week1/session3/networkx
       - file: week1/session3/others
       - file: week1/session3/exercises
 

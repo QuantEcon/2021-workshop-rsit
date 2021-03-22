@@ -19,17 +19,17 @@ package ecoystem.
 * - Time
   - Topic
 * - 8:00am - 8:30am
-  - [NumPy](session3/numpy)
+  - [GitHub](session1/github)  
 * - 8:30am - 9:00am
-  - [pandas](session3/pandas)
+  - [NumPy](session3/numpy)
 * - 9:00am - 9:30am
-  - [matplotlib](session3/matplotlib)
+  - [pandas](session3/pandas)
 * - 9:30am - 10:00am
+  - [matplotlib](session3/matplotlib)
+* - 10:00am - 10:30am
   - Q&A / [Exercises](session3/exercises) / Break
-* - 10:00am to 10:30am
-  - [statsmodels](session3/statsmodels)
 * - 10:30am to 11:00am
-  - [numba](session3/numba)
+  - [statsmodels](session3/statsmodels)
 * - 11:00am to 11:30am
-  - [networkx](session3/networkx)
+  - [numba](session3/numba)
 ```
