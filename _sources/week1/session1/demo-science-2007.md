@@ -13,8 +13,8 @@ This notebook uses `The Product Space Conditions the Development of Nations` {ci
 
 To run this notebook there are some `supplementary data` files that you need to download as well:
 
-1. The {download}`data directory <../../../notebooks/session1/data.zip>` containing the needed data files
-2. The {download}`img directory <../../../notebooks/session1/img.zip>` containing the supporting image files
+1. The {download}`data directory <../../../notebooks/session1/data.zip>` containing the needed `data` files
+2. The {download}`img directory <../../../notebooks/session1/img.zip>` containing the supporting `image` files
 
 These will download as `zip` files that you will need to decompress in the same directory as where you have saved the notebook.
 
