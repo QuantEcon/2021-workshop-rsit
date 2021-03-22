@@ -26,6 +26,25 @@ cd ~/Downloads
 jupyter notebook intro-to-jupyter-notebooks.ipynb
 ```
 
+:::{tip}
+If you want to grab all the notebooks for the workshop you can clone the workshop repository `using git`
+or you can download a `zip` of the repository which contains the `notebooks` folder.
+
+The Repository:
+
+https://github.com/QuantEcon/2021-workshop-rsit
+
+and select the `zip` folder
+
+```{figure} img/github-download-zip.png
+```
+
+```{warning}
+The `zip` file will need to be downloaded again if there are updates
+```
+
+:::
+
 ## Cloud Based Option
 
 You can [launch the notebook](https://mybinder.org/v2/gh/QuantEcon/2021-workshop-rsit/main?filepath=notebooks%2Fsession1%2Fintro-to-jupyter-notebooks.ipynb)

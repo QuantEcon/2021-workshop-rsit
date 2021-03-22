@@ -4,7 +4,7 @@
 ```{admonition} Aims / Outcomes / Expectations of Workshop:
 1. Provide an overview of `python`
 2. Reduce the `fixed costs` of using `python`
-3. Get setup locally to use `python`
+3. Get setup locally to use `python` and `jupyter`
 4. Provide resources for further study
 ```
 
@@ -26,4 +26,8 @@
   - Demo: [International Trade [Science, 2007]](session1/demo)
 * - 10:30am - 11:30am
   - [Tool #2: GitHub](session1/github)
+```
+
+```{admonition} Survey Results
+The [results of the survey](https://www.surveymonkey.com/results/SM-RMQ29GJ89/)
 ```
