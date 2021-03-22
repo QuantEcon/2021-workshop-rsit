@@ -11,4 +11,5 @@ dependencies:
   - line_profiler
   - numba
   - bokeh
+  - statsmodels
 
