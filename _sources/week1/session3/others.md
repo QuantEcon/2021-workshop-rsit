@@ -78,13 +78,11 @@ repository Issues list and let me know as a comment
 * - Package
   - Description
 * - [scipy](https://www.scipy.org)
-  - The core library for `scientific computing`
-* - [scipy](https://scipy.org/scipylib/index.html)
-  - statistics, linear algebra, numerical integration and optimisation
+  - The core library for `scientific computing` including statistics, linear algebra, numerical integration and optimisation
 * - [cvxpy](http://www.cvxpy.org)
   - Convex optimisation
 * - [FEniCS](https://fenicsproject.org)
-  - Platform for partial differential equations (PDE
+  - Platform for partial differential equations (PDE)
 ```
 
 ## Networks
@@ -117,11 +115,19 @@ The article `Python Packages for Networks` is a good reference {cite}`Batagelj20
 
 ## Natural Language Processing (NLP)
 
-| Package | Description |
-| ------- | ----------- |
-| [SpaCy](https://spacy.io) | Library with lots of NLP algorithms | 
-| [gensim](https://radimrehurek.com/gensim/index.html) | Topic modelling |
+```{list-table}
+:widths: 5 25
+:header-rows: 1
 
+* - Course
+  - Description
+* - [NLTK](https://www.nltk.org)
+  - Natural Language Toolkit
+* - [SpaCy](https://spacy.io)
+  - Library with lots of NLP algorithms
+* - [gensim](https://radimrehurek.com/gensim/index.html)
+  - Topic modelling
+```
 
 ## Online Courses
 
