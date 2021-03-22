@@ -8,6 +8,13 @@
       - file: week1/session1/jupyter-intro
       - file: week1/session1/demo-science-2007
       - file: week1/session1/github-intro
+    - file: week1/session2/schedule
+      sections:
+      - file: week1/session2/python-basics
+      - file: week1/session2/python-collections
+      - file: week1/session2/python-control-flow
+      - file: week1/session2/exercises
+      - file: week1/session2/python-functions
     - file: week1/session3/schedule
       sections:
       - file: week1/session3/overview
