@@ -16,7 +16,9 @@
 
 * - Time
   - Topic
-* - 8:00am - 9:00am
+* - 8:00am - 8:15am
+  - Introductions
+* - 8:15am - 9:00am
   - [Introduction to Python for Economics](session1/python-for-economics)
 * - 9:00am to 9:30am
   - [Tool #1: Introduction to Jupyter](session1/jupyter)
