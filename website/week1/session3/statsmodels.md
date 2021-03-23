@@ -20,10 +20,19 @@ We will work through the following `statsmodels` demo notebook.
 
 You can download the {download}`notebook from here <../../../notebooks/session3/intro-to-statsmodels.ipynb>`
 
-Then browse to your download location and load **jupyter**:
+You will also need to download the 
+{download}`supplementary data file <../../../notebooks/session3/data/gravity_dataset_2013.csv>`
+
+and save this file in a folder called `data` where you have saved the notebook such as:
 
 ```bash
-cd ~/Downloads
+intro-to-statsmodels.ipynb
+data/gravity_dataset_2013.csv
+```
+
+then browse to this `folder` and load **jupyter**:
+
+```bash
 jupyter notebook intro-to-statsmodels.ipynb
 ```
 
