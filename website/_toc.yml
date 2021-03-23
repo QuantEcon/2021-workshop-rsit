@@ -25,6 +25,14 @@
       - file: week1/session3/numba
       - file: week1/session3/others
       - file: week1/session3/exercises
+    - file: week1/session4/schedule
+      sections:
+      - file: week1/session4/pandas-introduction
+      - file: week1/session4/pandas-basics
+      - file: week1/session4/pandas-index
+      - file: week1/session4/pandas-cleaning
+      - file: week1/session4/pandas-reshape
+      - file: week1/session4/exercises
 
 - part: Resources
   numbered: false
