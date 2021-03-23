@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Basics &#8212; RSIT Workshop (Uni Tübingen) 2021</title>
+    <title>Pandas Introduction &#8212; RSIT Workshop (Uni Tübingen) 2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -56,8 +56,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Python Collections" href="python-collections.html" />
-    <link rel="prev" title="Session 2 (Python Fundamentals)" href="schedule.html" />
+    <link rel="next" title="Pandas Basics" href="pandas-basics.html" />
+    <link rel="prev" title="Session 4 (Pandas)" href="schedule.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -129,33 +129,33 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 current active collapsible-parent">
-  <a class="reference internal" href="schedule.html">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../session2/schedule.html">
    Session 2 (Python Fundamentals)
   </a>
-  <ul class="current collapse-ul">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session2/python-basics.html">
      Python Basics
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="python-collections.html">
+    <a class="reference internal" href="../session2/python-collections.html">
      Python Collections
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="python-control-flow.html">
+    <a class="reference internal" href="../session2/python-control-flow.html">
      Python Control Flow
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="exercises.html">
+    <a class="reference internal" href="../session2/exercises.html">
      Exercises
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="python-functions.html">
+    <a class="reference internal" href="../session2/python-functions.html">
      Python Functions
     </a>
    </li>
@@ -212,38 +212,38 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../session4/schedule.html">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="schedule.html">
    Session 4 (Pandas)
   </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../session4/pandas-introduction.html">
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Pandas Introduction
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../session4/pandas-basics.html">
+    <a class="reference internal" href="pandas-basics.html">
      Pandas Basics
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../session4/pandas-index.html">
+    <a class="reference internal" href="pandas-index.html">
      Pandas Index
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../session4/pandas-cleaning.html">
+    <a class="reference internal" href="pandas-cleaning.html">
      Pandas Cleaning
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../session4/pandas-reshape.html">
+    <a class="reference internal" href="pandas-reshape.html">
      Pandas Reshaping
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../session4/exercises.html">
+    <a class="reference internal" href="exercises.html">
      Exercises
     </a>
    </li>
@@ -308,7 +308,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/week1/session2/python-basics.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/week1/session4/pandas-introduction.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -361,31 +361,31 @@
         
               <div>
                 
-  <div class="section" id="python-basics">
-<span id="session2-python-basics"></span><h1>Python Basics<a class="headerlink" href="#python-basics" title="Permalink to this headline">¶</a></h1>
-<p>This notebook introduces the most basic components of the Python programming language:</p>
+  <div class="section" id="pandas-introduction">
+<span id="session4-pandas-introduction"></span><h1>Pandas Introduction<a class="headerlink" href="#pandas-introduction" title="Permalink to this headline">¶</a></h1>
+<p>This notebook introduces the basic components of the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> package</p>
 <ul class="simple">
-<li><p>Variable assignment</p></li>
-<li><p>Object types</p></li>
-<li><p>Using functions and modules</p></li>
+<li><p>Series</p></li>
+<li><p>DataFrames</p></li>
+<li><p>Series and DataFrame methods</p></li>
 </ul>
 <div class="admonition-lecture-resource admonition">
 <p class="admonition-title">Lecture Resource</p>
-<p>Here is <a class="reference external" href="https://datascience.quantecon.org/python_fundamentals/basics.html">the QuantEcon DataScience lecture on Python Basics</a></p>
+<p>Here is <a class="reference external" href="https://datascience.quantecon.org/pandas/intro.html">the QuantEcon DataScience introduction to pandas</a></p>
 </div>
 <p>We will work through the following notebook.</p>
 <div class="section" id="local-option">
 <h2>Local Option<a class="headerlink" href="#local-option" title="Permalink to this headline">¶</a></h2>
-<p>You can download the <a class="reference download internal" download="" href="../../_downloads/0136068d61059702fe47259bac20284b/python-basics.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">notebook</span> <span class="pre">from</span> <span class="pre">here</span></code></a></p>
+<p>You can download the <a class="reference download internal" download="" href="../../_downloads/904198169359a0b7a2ab66d55992cfe5/pandas-introduction.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">notebook</span> <span class="pre">from</span> <span class="pre">here</span></code></a></p>
 <p>Then browse to your download location and load <strong>jupyter</strong>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/Downloads
-jupyter notebook python-basics.ipynb
+jupyter notebook pandas-introduction.ipynb
 </pre></div>
 </div>
 </div>
 <div class="section" id="cloud-based-option">
 <h2>Cloud Based Option<a class="headerlink" href="#cloud-based-option" title="Permalink to this headline">¶</a></h2>
-<p>You can <a class="reference external" href="https://mybinder.org/v2/gh/QuantEcon/2021-workshop-rsit/main?filepath=notebooks%2Fsession2%2Fpython-basics.ipynb">launch the notebook</a></p>
+<p>You can <a class="reference external" href="https://mybinder.org/v2/gh/QuantEcon/2021-workshop-rsit/main?filepath=notebooks%2Fsession4%2Fpandas-introduction.ipynb">launch the notebook</a></p>
 </div>
 </div>
 
@@ -402,7 +402,7 @@ jupyter notebook python-basics.ipynb
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./week1/session2"
+            path: "./week1/session4"
         },
         predefinedOutput: true
     }
@@ -414,8 +414,8 @@ jupyter notebook python-basics.ipynb
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="schedule.html" title="previous page">Session 2 (Python Fundamentals)</a>
-    <a class='right-next' id="next-link" href="python-collections.html" title="next page">Python Collections</a>
+    <a class='left-prev' id="prev-link" href="schedule.html" title="previous page">Session 4 (Pandas)</a>
+    <a class='right-next' id="next-link" href="pandas-basics.html" title="next page">Pandas Basics</a>
 
         </div>
         
