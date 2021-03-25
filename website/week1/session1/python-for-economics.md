@@ -202,7 +202,7 @@ underlying data
 ```
 :::
 
-```{figure} img/tradeoff.pdf
+```{figure} img/tradeoff.png
 ```
 
 :::{margin}
@@ -211,7 +211,7 @@ overcome some of these trade-offs by calling out routines to lower level
 libraries built in `c` and `fortran`
 :::
 
-```{figure} img/tradeoff2.pdf
+```{figure} img/tradeoff2.png
 ```
 
 :::{margin}
@@ -221,7 +221,7 @@ build on top of newer modern technology using
 that often rivals C with a lot less code for programmers.
 :::
 
-```{figure} img/tradeoff3.pdf
+```{figure} img/tradeoff3.png
 ```
 
 :::{margin}
@@ -231,7 +231,7 @@ that enables programmers to obtain high speed **when needed**.
 efficient `LLVM` assembler that is highly automated.
 :::
 
-```{figure} img/tradeoff4.pdf
+```{figure} img/tradeoff4.png
 ```
 
 One of the strengths of `python` is its adaptability to many
