@@ -42,10 +42,10 @@ systems for workshop attendees.
   - [Python Ecosystem and Tools](session3/schedule)
 * - 
   - 13:00 - 16:30pm
-  - Working with Data (Pandas)
+  - [Working with Data (Pandas)](session4/schedule)
 * - Thursday, 25th March
   - 9:00 - 10:00am
-  - Q&A / Tutorials
+  - Q&A / [Tutorials](session3/exercises)
 * - 
   - 14:00 - 15:00
   - Q&A / Tutorials
