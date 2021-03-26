@@ -6,6 +6,11 @@
 2. Use NumPy to verify statsmodels
 ```
 
+:::{margin}
+There is another package [linearmodels](https://github.com/bashtage/linearmodels/) that extends `statsmodels` with
+Panel regressions, instrumental variable estimators, system estimators, etc. and is actively maintained
+:::
+
 [statsmodels](https://www.statsmodels.org/stable/index.html) is the package for `econometric` type statistics in `python`.
 
 ```{admonition} Resources
@@ -20,7 +25,7 @@ We will work through the following `statsmodels` demo notebook.
 
 You can download the {download}`notebook from here <../../../notebooks/session3/intro-to-statsmodels.ipynb>`
 
-You will also need to download the 
+You will also need to download the
 {download}`supplementary data file <../../../notebooks/session3/data/gravity_dataset_2013.csv>`
 
 and save this file in a folder called `data` where you have saved the notebook such as:
