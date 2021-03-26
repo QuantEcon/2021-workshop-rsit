@@ -32,6 +32,8 @@ We will work through the following `pandas` demo notebook.
 
 You can download the {download}`notebook from here <../../../notebooks/session3/intro-to-pandas.ipynb>`
 
+You can get the {download}`supplementary images files here <../../../notebooks/session3/img.zip>`
+
 Then browse to your download location and load **jupyter**:
 
 ```bash
