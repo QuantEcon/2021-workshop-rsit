@@ -40,6 +40,8 @@ repository Issues list and let me know as a comment
   - Description
 * - [statsmodels](http://statsmodels.sourceforge.net)
   - Statistical modelling (Econometrics focus)
+* - [linearmodels](https://github.com/bashtage/linearmodels/)
+  - Extends `statsmodels` to include Panel Models, High Dimensional Fixed Effects, System Regressions etc.
 * - [scikit-learn](http://http://scikit-learn.org)
   - The standard machine learning library
 * - [Stan](http://mc-stan.org)
