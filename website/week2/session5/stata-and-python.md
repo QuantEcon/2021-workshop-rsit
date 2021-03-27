@@ -459,26 +459,74 @@ environments.
 
 `Stata` makes various components of `stata` available to `python` via
 the [stata function interface (sfi)](stata-and-python-sfi)
-to enable this interaction such as:
+to enable such interaction, such as:
 
 1. [Current Stata Dataset](https://www.stata.com/python/api16/Data.html)
 2. [Stata Frames](https://www.stata.com/python/api16/Frame.html)
    ```{note}
-   [frames](https://www.stata.com/new-in-stata/multiple-datasets-in-memory/) have been introduced to load more than one dataset
+   [frames](https://www.stata.com/new-in-stata/multiple-datasets-in-memory/) have been introduced 
+   to load more than one dataset
    ```
 3. [Stata Macros](https://www.stata.com/python/api16/Macro.html)
 
-In addition to access to many other components.
+In addition to access to [many other components](stata-and-python-sfi).
 
 #### Copying Data from Stata to Python
 
-#### Copying Data from Python to Stata
-
-```{note}
-This example is largely derived from [this excellent stata blog post](https://blog.stata.com/2020/11/19/stata-python-integration-part-9-using-the-stata-function-interface-to-copy-data-from-python-to-stata/)
+```{admonition} Stata Blog Post
+This section is heavily inspired by [this excellent stata blog post](https://blog.stata.com/2020/11/05/stata-python-integration-part-8-using-the-stata-function-interface-to-copy-data-from-stata-to-python/)
+that runs through another example.
 ```
 
-### Example: Running a Gravity Model Regression
+```stata
+sysuse auto
+list foreign
+```
+
+listing the `foreign` data in `stata` shows:
+
+```{figure} img/stata-sysuse-auto-list-foreign.png
+```
+
+then use `python` to look at the `raw` data
+
+```stata
+python
+from sfi import Data
+dataraw = Data.get('foreign')
+dataraw
+end
+```
+
+and it looks like
+
+```{figure} img/stata-sysuse-auto-python-raw.png
+```
+
+The `data` looks different.
+
+```{note}
+`stata` has a concept of `labels`
+```
+
+
+
+#### Copying Data from Python to Stata
+
+```{admonition} Stata Blog Post
+There is [this excellent stata blog post](https://blog.stata.com/2020/11/19/stata-python-integration-part-9-using-the-stata-function-interface-to-copy-data-from-python-to-stata/)
+that runs through another example.
+```
+
+### Real World Example (Gravity Model)
+
+In this example we will:
+
+1. build a dataset in `python` from multiple sources
+2. provide the data to `stata` to run a `fixed effects` regression
+3. compare the results using `linearmodels` in `python`
+4. compare some plots
+
 
 (sesssion5/stata-and-python-sfi)=
 ### The stata function interface `sfi`
