@@ -34,6 +34,18 @@
       - file: week1/session4/pandas-reshape
       - file: week1/session4/exercises
 
+- part: Week 2
+  chapters:
+    - file: week2/session5/schedule
+      sections:
+      - file: week2/session5/review-session3
+      - file: week2/session5/stata-and-python
+      - file: week2/session5/stata-and-python-file-interface
+    - file: week2/session7/schedule
+      sections:
+      - file: week2/session7/stata-and-jupyter
+      - file: week2/session7/python-and-julia
+
 - part: Resources
   numbered: false
   chapters:

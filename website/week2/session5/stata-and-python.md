@@ -1,0 +1,529 @@
+(session5/stata-and-python)=
+# Stata and Python
+
+:::{margin}
+I am interested in turning these workshop materials into a resource on using
+`stata` and `python` together for the broader community.
+
+Any feedback, ideas or suggested improvements are most welcome!
+:::
+
+One of the major new features of [Stata16](https://www.stata.com/new-in-stata/)
+is [python integration](https://www.stata.com/new-in-stata/python-integration/).
+
+There are various ways to use `python` effectively with `stata` and this session
+will look at:
+
+1. [Setting up **python** in **stata**](session5/stata-python-setup)
+2. [Using **python** in **stata**](session5/stata-python-using)
+3. [Using **stata** with **python** (via files)](session5/stata-python-file-interface)]
+
+```{seealso}
+We will also look at alternative ways to use `stata` and `python` in the
+[next session](session7/stata-and-jupyter) through `jupyter` using `stata`
+kernels.
+```
+
+```{tip}
+There is a nice sequence of [blog posts](https://blog.stata.com/category/programming/)
+in the `programming` channel of the stata blog discussing python.
+```
+
+(session5/stata-python-setup)=
+## Setup Python in Stata
+
+:::{margin}
+Stata16 [has been updated for use on Apple Silicon based Macs](https://blog.stata.com/2020/11/10/stata-for-mac-with-apple-silicon/) but older versions will run through translation instead of
+native support.
+:::
+
+```{note}
+This session presumes you have already installed `Stata16+` on your computer and you are already
+familiar with using `stata`
+```
+
+```{tip}
+Some Universities install `stata` over the network as university provided software.
+This can cause issues relating to permissions so please speak up if you run into
+these problems and we can look at trying to find a solution.
+```
+
+```{admonition} macOS + Anaconda Issue
+I ran into [this issue](https://www.statalist.org/forums/forum/general-stata-discussion/general/1578573-python-integration-pandas-package-causing-stata-to-close) on my `macOS` installation
+of Stata and found the suggestion solution was required to prevent this behavior
+```
+
+Integration between computer software is always a tricky problem to solve and typically requires
+some investment in setting up the integrations properly.
+
+We will focus on setting up `python` in `stata` and getting access to your configuration.
+
+Having good knowledge of how your system is configured helps greatly in reducing bugs and issues related
+to software problems.
+
+:::{margin}
+This workflow has been put together on `macOS`. The `stata` application is pretty consistent
+across platforms such as `Windows` but please let me know if we need `windows` tabs for clarity
+:::
+
+Open up the `Stata` application on your computer
+
+```{figure} img/stata-open.png
+```
+
+### Checking your Configuration
+
+To check your configuration you can type:
+
+```stata
+python query
+```
+
+in the command window which will provide the following details:
+
+```{figure} img/stata-python-query.png
+```
+
+the `output` provides useful information about how `stata` and `python`
+are linked together.
+
+```{list-table}
+:widths: 15 25
+:header-rows: 1
+
+* - Field
+  - Description
+* - `python_exec`
+  - the location on your computer for the `python` interpreter you are using in `stata`
+* - `python_userpath`
+  - the location for any custom `python` code that you would like added to the python `sys.path`
+* - `python system information`
+  - this provides additional information about the `python` version and software used.
+```
+
+### Searching for Python on your System
+
+Stata can search your system for any `python` installations and list them by typing:
+
+```stata
+python search
+```
+
+in the command window.
+
+```{figure} img/stata-python-search.png
+```
+
+:::{note}
+If `python` is not yet configured you will see:
+
+```stata
+. python search
+
+no Python installation found; minimum version required is 2.7.
+r(111)
+```
+
+this will require you to install a python environment such as [anaconda](resources/setup)
+:::
+
+### Setting the python distribution
+
+Linking `stata` to a specific `python` installation (such as `anaconda`) can be done
+using the `set python_exec` command such as:
+
+:::{tabbed} macOS
+```stata
+set python_exec /Users/<user>/anaconda3/bin/python
+```
+:::
+
+:::{tabbed} Windows
+```stata
+set python_exec C:\Users\<users>\anaconda3\python.exe
+```
+:::
+
+This can be used together with `python search` to know which path to provide and then
+the setting can be checked using `python query`.
+
+### Updating your `sys.path` in `python`
+
+`python` uses `sys.path` to specify the search path for looking up
+`python packages` and other utilities and programs.
+
+You can add a custom path for the python `stata` environment using `set python_userpath`
+
+:::{tabbed} macOS
+```stata
+set python_userpath /Users/<user>/mypythoncode
+```
+:::
+
+:::{tabbed} Windows
+```stata
+set python_userpath C:\Users\<users>\mypythoncode
+```
+:::
+
+Then check the setting using `python query`.
+
+### Testing Python
+
+To check that everything is setup and ready to go you can run the
+[first python example](session5/stata-and-python-firstexample) and verify
+everything is working.
+
+(session5/stata-python-using)=
+## Using Python in Stata
+
+:::{margin}
+The [stata manual](https://www.stata.com/manuals/ppython.pdf) has a section
+on the `python` command.
+
+This [blog post](https://blog.stata.com/2020/08/25/stata-python-integration-part-2-three-ways-to-use-python-in-stata/)
+does a really good job of explaining the different methods for using `python` in `stata`.
+:::
+
+(session5/stata-and-python-interactive)=
+### Running `python` Interactively with a First Example
+
+(session5/stata-and-python-firstexample)=
+
+You can run `python` interactively within `stata` in a manner that is the
+equivalent of running the `python` REPL program through a terminal.
+
+This is activated by typing `python` in the command window.
+
+```{figure} img/stata-python.png
+```
+
+You are now interfacing directly with the `python` interpreter as indicated in
+the `Result` window.
+
+You can now write `python code` such as:
+
+```python
+print("Hello World!")
+```
+
+```{figure} img/stata-python-hello-world.png
+```
+
+once you hit enter `stata` sends the code snippet to the python interpreter
+for processing
+
+```{figure} img/stata-python-hello-world-result.png
+```
+
+:::{margin}
+```{note}
+For `python` users the use of `end` takes some getting used to as the usual
+way to exit the `python` REPL is using the `exit()` function. Stata uses `end`
+across its ecosystem and is consistent with `stata`.
+```
+:::
+
+To stop interfacing with the `python` interpreter you need to type `end` in
+the command window
+
+```{figure} img/stata-python-hello-world-end.png
+```
+
+this will return you to the standard `stata` interface.
+
+:::{tip}
+If you have a one line `python` command you can use
+```stata
+python: print("Hello World!")
+```
+which will pass the code to `python` and display the results
+directly below in the `Results` window
+```{figure} img/stata-python-hello-world-oneline.png
+```
+:::
+
+(session5/stata-and-python-do)=
+### Running `python` in a `do` file
+
+Another option for running `python` code is through the `do` file.
+
+Let's open the `do` file editor and add:
+
+:::{margin}
+This can be {download}`downloaded from here as a do file <do/example1.do>`
+:::
+
+```stata
+di "Stata Here"
+python: print("Python Here")
+```
+
+```{figure} img/stata-example1-do.png
+```
+
+and when you click on `Do` button you get the result:
+
+```{figure} img/stata-example1-do-run.png
+```
+
+where the results from `python` are displayed similarly to `stata` output.
+
+However, you often want to add in a **block of code** such as:
+
+```python
+for i in range(0,2):
+    print("Python Here")
+```
+
+This can be done by delimiting the `python code` within the `do` file using:
+
+1. `python` and `end`, or
+2. `python:` and `end`
+
+The difference between these two `delimiters` is in how `stata` handles any
+errors in `python`. The `python` environment will continue to execute the rest
+of the `python` code if an error is encountered, while `python:` will **immediately**
+return control to `stata` once the error is encountered.
+
+:::{margin}
+This can be {download}`downloaded from here as a do file <do/example2a.do>`
+:::
+
+```stata
+di "Stata Here"
+python
+for i in rang(2):
+   print("Python Here")
+print("Python Done")
+end
+di "Back in Stata Land!"
+```
+
+```{figure} img/stata-example2a-do-error.png
+```
+
+As you can see `stata` has continued to execute code past the point at which there is
+an error. 
+
+However if you use `python:` the execution will halt at the point of the `error`.
+
+:::{margin}
+This can be {download}`downloaded from here as a do file <do/example2b.do>`
+:::
+
+```stata
+di "Stata Here"
+python:
+for i in rang(2):
+   print("Python Here")
+print("Python Done")
+end
+di "Back in Stata Land!"
+```
+
+```{figure} img/stata-example2b-do-error.png
+```
+
+```{tip}
+I tend to use `python:` as I prefer to get to the error quickly to fix the problem
+without any distracting output below it. Also in a long running program you will want
+to fix the issue prior to the rest of the program executing.
+```
+
+We can use the error message to fix the issue now and run the fixed `do` file
+
+:::{margin}
+This can be {download}`downloaded from here as a do file <do/example2c.do>`
+:::
+
+```stata
+di "Stata Here"
+python:
+for i in range(2):
+   print("Python Here")
+print("Python Done")
+end
+di "Back in Stata Land!"
+```
+
+```{figure} img/stata-example2c-do-run.png
+```
+
+#### The Do File Editor and White Space
+
+```{admonition} Reminder
+Whitespace is used by `python` to declare `scopes` and is an integral part
+of the language definition
+```
+
+The `do` file editor doesn't provide you with full `text editor` support when writing
+`python` code in the `do` file editor.
+
+For example if you type:
+
+```stata
+python:
+for i in range(10):
+|<curser placed here>
+```
+
+the `editor` will **not** automatically indent your code.
+
+However once you have set the
+curser to the correct indentation level it will retain that indentation level for
+subsequent lines.
+
+```stata
+python:
+for i in range(10):
+    |
+    |<curser placed here>
+```
+
+So you need to be careful with `whitespace`
+
+Also what you type in the `delimiters` is directly passed to `python`
+so you can't indent these `code-blocks` such as:
+
+```stata
+di "Stata Here"
+python:
+    print("Python Here")
+```
+
+`python` will return the following error:
+
+```{figure} img/stata-do-whitespace-error.png
+```
+
+(session5/stata-and-python-scripts)=
+### Running `python` scripts in `stata`
+
+A third option is to run a `python script` that contains some `python code`
+
+If you save the following code in a file `example3.py`:
+
+:::{margin}
+This can be {download}`downloaded from here as a py file <do/example3.py>`
+:::
+
+```python
+print("Python Here")
+for i in range(2):
+    print(f"{i} times hello")
+print("I'm outta here")
+```
+
+you can then run this script in `stata` using:
+
+:::{margin}
+```{tip}
+You will need to update you `working directory` before running the
+python script
+```
+:::
+
+```stata
+python script example.py
+```
+
+with the output:
+
+```{figure} img/stata-python-script-example.png
+```
+
+```{tip}
+This is a very useful way to run `python` code as it leaves you
+to write `python` code in any text editor you like such as
+[vscode](https://code.visualstudio.com).
+```
+
+### Interacting between `Stata` and `Python`
+
+```{note}
+In many cases it can be simpler to keep `python` and `stata`
+workflows independent of each other and use `files` to transfer
+data between them.
+
+This is covered in [](session5/stata-python-file-interface)
+```
+
+So far the `python` and `stata` runtime environments have been
+independent of each other to learn about how to run `python` code
+within `stata`.
+
+However for most applications we want some level of `interaction` between `stata`
+and `python` by copying back and forth objects between the different runtime
+environments.
+
+`Stata` makes various components of `stata` available to `python` via
+the [stata function interface (sfi)](stata-and-python-sfi)
+to enable this interaction such as:
+
+1. [Current Stata Dataset](https://www.stata.com/python/api16/Data.html)
+2. [Stata Frames](https://www.stata.com/python/api16/Frame.html)
+   ```{note}
+   [frames](https://www.stata.com/new-in-stata/multiple-datasets-in-memory/) have been introduced to load more than one dataset
+   ```
+3. [Stata Macros](https://www.stata.com/python/api16/Macro.html)
+
+In addition to access to many other components.
+
+#### Copying Data from Stata to Python
+
+#### Copying Data from Python to Stata
+
+```{note}
+This example is largely derived from [this excellent stata blog post](https://blog.stata.com/2020/11/19/stata-python-integration-part-9-using-the-stata-function-interface-to-copy-data-from-python-to-stata/)
+```
+
+### Example: Running a Gravity Model Regression
+
+(sesssion5/stata-and-python-sfi)=
+### The stata function interface `sfi`
+
+The [python api documentation](https://www.stata.com/python/api16/) contains
+the details about the `sfi` package from `stata`.
+
+```{list-table}
+:widths: 15 25
+:header-rows: 1
+
+* - Class
+  - Description
+* - [Characteristics](https://www.stata.com/python/api16/Characteristic.html) 
+  - Access `stata` characteristics
+* - [Data](https://www.stata.com/python/api16/Data.html)
+  - Access to the current `stata` dataset
+* - [Datetimes](https://www.stata.com/python/api16/Datetime.html)
+  - Access to `stata` datetimes
+* - [Frames](https://www.stata.com/python/api16/Frame.html)
+  - Access to `stata` Frames
+* - [Macros](https://www.stata.com/python/api16/Macro.html)
+  - Access to `stata` macros
+* - [Mata](https://www.stata.com/python/api16/Mata.html)
+  - An interface with global `mata` matrices
+* - [Matrix](https://www.stata.com/python/api16/Matrix.html)
+  - Access to `stata` matrices
+* - [Missing](https://www.stata.com/python/api16/Missing.html)
+  - Access to `stata` missing values
+* - [Platform](https://www.stata.com/python/api16/Platform.html)
+  - Access to `platform` information
+* - [Scalars](https://www.stata.com/python/api16/Scalar.html)
+  - Access to `stata` scalars
+* - [SFIToolkit](https://www.stata.com/python/api16/SFIToolkit.html)
+  - a set of `core` tools for interacting with `stata`
+* - [StrLConnector](https://www.stata.com/python/api16/StrLConnector.html)
+  - Provide access to `stata strL` datatype in `Data` and/or `Frame`
+* - [ValueLabel](https://www.stata.com/python/api16/ValueLabel.html)
+  - Access to `stata` value labels
+```
+
+
+## Resources
+
+1. [Stata Manual](https://www.stata.com/manuals/ppython.pdf)
+2. [Stata Blog Posts](https://blog.stata.com/category/programming/)
+
+
