@@ -54,6 +54,49 @@ repository Issues list and let me know as a comment
   - Survival analysis in Python
 ```
 
+## Data Versioning
+
+
+
+
+## Data Workflows & Management
+
+```{note}
+In general `data versioning` is a hard problem to solve (in general) due to the many
+different formats that `data` comes in. You will often find tools fit for purpose
+such as `tabular` data versioning.
+
+It is often the case that the `workflow` that translates sources to final datasets
+is tracked for reproducibility.
+```
+
+```{list-table}
+:widths: 5 25
+:header-rows: 1
+
+* - Package
+  - Description
+* - [dvc](https://dvc.org)
+  - Version Control System for Machine Learning Projects
+* - [git-lfs](https://git-lfs.github.com)
+  - Large file support for saving data files in git projects (built by github)
+* - [airflow](https://airflow.apache.org)
+  - A platform to programmatically author, schedule, and monitor workflows
+* - [prefect](https://www.prefect.io/core)
+  - Open Source Data Workflow Manager (with Paid Options)
+* - [dolt](https://github.com/dolthub/dolt) and [dolthub](https://www.dolthub.com)
+  - Git style SQL database manager for tracking changes in datasets
+* - [kedro](https://kedro.readthedocs.io/en/stable/01_introduction/01_introduction.html)
+  - Python framework for creating reproducible, maintainable and modular data science code
+```
+
+There are a **lot** of workflow managers as [shown by this list](https://github.com/pditommaso/awesome-pipeline)
+
+```{tip}
+This space is constantly evolving so it is always worth doing a bit of research to see if something
+better or more task specific is available.
+```
+
 ## Performance & Scale
 
 ```{list-table}
