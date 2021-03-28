@@ -1,7 +1,7 @@
 (session5/stata-and-python)=
 # Stata and Python
 
-:::{margin}
+:::{note}
 I am interested in turning these workshop materials into a resource on using
 `stata` and `python` together for the broader community.
 
@@ -458,7 +458,7 @@ and `python` by copying back and forth objects between the different runtime
 environments.
 
 `Stata` makes various components of `stata` available to `python` via
-the [stata function interface (sfi)](stata-and-python-sfi)
+the [stata function interface (sfi)](session5/stata-and-python-sfi)
 to enable such interaction, such as:
 
 1. [Current Stata Dataset](https://www.stata.com/python/api16/Data.html)
@@ -469,7 +469,7 @@ to enable such interaction, such as:
    ```
 3. [Stata Macros](https://www.stata.com/python/api16/Macro.html)
 
-In addition to access to [many other components](stata-and-python-sfi).
+In addition to access to [many other components](session5/stata-and-python-sfi).
 
 #### Copying Data from Stata to Python
 
@@ -488,7 +488,8 @@ listing the `foreign` data in `stata` shows:
 ```{figure} img/stata-sysuse-auto-list-foreign.png
 ```
 
-then use `python` to look at the `raw` data
+then use `python` to look at the `raw` data using the `.get` method
+of the `Data` object from the `stata function interface` package.
 
 ```stata
 python
@@ -503,13 +504,234 @@ and it looks like
 ```{figure} img/stata-sysuse-auto-python-raw.png
 ```
 
-The `data` looks different.
+Notice that the `data` looks different.
 
 ```{note}
 `stata` has a concept of `labels`
 ```
 
+If you use the `data explorer` you will see that the `foreign` variable consists of
+`0,1` that are associated with labels `domestic` and `foreign` (respectively).
 
+```{figure} img/stata-sysuse-auto-dataviewier-foreign.png
+```
+
+You may want to get more information about the `get` method so the best place
+to look is the [documentation on sfi.Data](https://www.stata.com/python/api16/Data.html).
+Then you can click on the [get method](https://www.stata.com/python/api16/Data.html#sfi.Data.get)
+
+```{tip}
+You **can't** use the `ipython` features such as `Data.get?` in this context because
+`python` is interfacing directly with the `python` interpreter and not the
+`ipython` interpreter (such as when you're using `jupyter`)
+```
+
+That page looks like:
+
+```{figure} img/stata-docs-sfi-data-get.png
+```
+
+You can see that an option is to fetch the `value label` using `valuelabel=True`
+
+```stata
+python
+from sfi import Data
+dataraw = Data.get('foreign', valuelabel=True)
+dataraw
+end
+```
+
+and the `rawdata` is now returned as strings taking the value of the `labels` that
+have been applied to the data
+
+```{figure} img/stata-sysuse-auto-foreign-valuelabels.png
+```
+
+**Obtaining more variables at once:**
+
+You can obtain more variables using the `get` method. Based on the documentation you can use
+the following methods to specify what variables to fetch `var (int, str, or list-like, optional)`.
+
+In addition you can also specify which `obs` you would like `obs (int or list-like, optional)`.
+
+```stata
+python
+from sfi import Data
+dataraw = Data.get('foreign mpg rep78', range(45,56))
+dataraw
+end
+```
+
+this code saves a `list of list` type object into the `python` object `dataraw`
+
+```{figure} img/stata-sysuse-auto-3vars-range.png
+```
+
+The data is written as a list of `rows` in the order of the variables requested, which
+in this case is: `foreign mpg rep78` such as the first element:
+
+```python
+[[0, 18, 2], ...
+```
+
+:::{margin}
+```{note}
+`range` is a `python` object that behaves like a list when constructing `ranges`
+```
+:::
+
+The `range(45,56)` request will fetch observations `46` to `56` as shown in the `data` browser
+
+:::{margin}
+```{note}
+The stata `data viewer` is indexed by `1` while `python` is indexed by `0`
+```
+:::
+
+```{figure} img/stata-sysuse-auto-dataviewer-range.png
+```
+
+As per the `documentation` you can also specify a `list-like` object instead of a string separated
+by a space such as `['foreign', 'mpg', 'rep78']`:
+
+```stata
+python
+from sfi import Data
+dataraw = Data.get(['foreign', 'mpg', 'rep78'], range(45,56))
+dataraw
+end
+```
+
+will return the same data
+
+```{figure} img/stata-sysuse-auto-3vars-range-list.png
+```
+
+```{exercise}
+What happens now if you specify `valuelabel=True` for the above `python`
+code?
+```
+
+:::{margin}
+Current `Stata` support is for moving `raw data` to the python context. It is left
+to the user to push that raw data into some other object such as `pd.DataFrame`
+or `pd.Series`. I hope support for `pd.DataFrame` will be coming in a future release.
+:::
+
+**pd.DataFrame and pd.Series:**
+
+The discussion so far has focused on fetching `raw data` out of `stata` and copying
+it to the `python` environment. But in many applications we are unlikely to want to
+use the raw data directly and you will want to be comfortable with setting up
+pandas `DataFrame` and `Series` objects such as:
+
+```stata
+python
+from sfi import Data
+import pandas as pd
+dataraw = Data.get('foreign mpg rep78', range(45,56))
+df = pd.DataFrame(dataraw)
+df
+end
+```
+
+You will notice that the `raw data` has now been placed in a `pd.DataFrame`
+but `columns` and `index` variables haven't come across:
+
+```{figure} img/stata-sysuse-auto-3vars-range-dataframe.png
+```
+
+You may want to parameterize your requests so you can use them in both
+the `sfi.Data.get` method in addition to a `pd.DataFrame` method when converting
+the `raw data` into a `pd.DataFrame`
+
+You can save the variable selection as a python variable:
+
+```python
+vars = ['foreign', 'mpg', 'rep78']
+```
+
+then you can use these variables for both `stata` and `python`
+
+:::{margin}
+I have used:
+1. `range(45,56)` for `stata`, and
+2. `range(46,57)` for `pandas`
+to harmonise given data ind `stata data viewer` is indexed by `1`.
+
+I hope `stata` provide `sfi.Data.dataframe` that can help manage these
+indexing issues.
+
+```{note}
+Most of the time you will not need to harmonise like this as you will
+just use the data that has been selected.
+```
+:::
+
+```stata
+python
+from sfi import Data
+import pandas as pd
+vars = ['foreign', 'mpg', 'rep78']
+dataraw = Data.get(vars, range(45,56), valuelabel=True)
+df = pd.DataFrame(dataraw, index=range(46,57), columns=vars)
+df
+end
+```
+
+which provides a much more consistent `pd.DataFrame` and lines up closely with
+the stata context.
+
+```{figure} img/stata-sysuse-auto-3vars-range-dataframe2.png
+```
+
+```{exercise}
+How can you explain the value for the variable `rep78` for observation `51`?
+```
+
+**Missing Values:**
+
+Missing values in `stata` are internally represented by the `largest` value for
+each type. Within `stata` you typically work with missing values using `.`  such as:
+
+```stata
+list rep78 if rep78 != .
+```
+
+and much of this detail is taken care of for you.
+
+So missing values are represented by the `maximum value`:
+
+:::{margin}
+This table is from the [stata manual](https://www.stata.com/manuals/u12.pdf#u12.2.2Numericstoragetypes)
+:::
+
+```{figure} img/stata-numeric-types-table.png
+```
+
+:::{margin}
+I am **not** sure why `python` receives the missing value for a `double` numeric type when
+`rep78` is coded as an `int` in `stata`. I will need to ask `statacorp`.
+:::
+
+However if using the raw data in `python` you will want to specify `missingval=np.nan`
+
+```stata
+python
+from sfi import Data
+import numpy as np
+import pandas as pd
+vars = ['foreign', 'mpg', 'rep78']
+dataraw = Data.get(vars, range(45,56), valuelabel=True, missingval=np.nan)
+df = pd.DataFrame(dataraw, index=range(46,57), columns=vars)
+df
+end
+```
+
+which returns the following:
+
+```{figure} img/stata-sysuse-auto-3vars-range-dataframe3.png
+```
 
 #### Copying Data from Python to Stata
 
@@ -527,8 +749,7 @@ In this example we will:
 3. compare the results using `linearmodels` in `python`
 4. compare some plots
 
-
-(sesssion5/stata-and-python-sfi)=
+(session5/stata-and-python-sfi)=
 ### The stata function interface `sfi`
 
 The [python api documentation](https://www.stata.com/python/api16/) contains
