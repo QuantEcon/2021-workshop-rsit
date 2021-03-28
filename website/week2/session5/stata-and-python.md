@@ -655,8 +655,10 @@ then you can use these variables for both `stata` and `python`
 
 :::{margin}
 I have used:
+
 1. `range(45,56)` for `stata`, and
 2. `range(46,57)` for `pandas`
+
 to harmonise given data ind `stata data viewer` is indexed by `1`.
 
 I hope `stata` provide `sfi.Data.dataframe` that can help manage these
@@ -688,6 +690,22 @@ the stata context.
 ```{exercise}
 How can you explain the value for the variable `rep78` for observation `51`?
 ```
+
+:::{note}
+There is also a method available `sfi.Data.getAsDict()` that includes the
+variable names in a returned dictionary so you can use:
+
+```stata
+python
+from sfi import Data
+import pandas as pd
+vars = ['foreign', 'mpg', 'rep78']
+dataraw = Data.getAsDict(vars, range(45,56), valuelabel=True)
+df = pd.DataFrame(dataraw)
+df
+end
+```
+:::
 
 **Missing Values:**
 
@@ -740,7 +758,7 @@ There is [this excellent stata blog post](https://blog.stata.com/2020/11/19/stat
 that runs through another example.
 ```
 
-### Real World Example (Gravity Model)
+### Example: International Trade (Gravity Model)
 
 In this example we will:
 
@@ -761,7 +779,7 @@ the details about the `sfi` package from `stata`.
 
 * - Class
   - Description
-* - [Characteristics](https://www.stata.com/python/api16/Characteristic.html) 
+* - [Characteristics](https://www.stata.com/python/api16/Characteristic.html)
   - Access `stata` characteristics
 * - [Data](https://www.stata.com/python/api16/Data.html)
   - Access to the current `stata` dataset
