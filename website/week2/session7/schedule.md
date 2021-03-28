@@ -13,6 +13,8 @@
 
 * - Time
   - Topic
+* - 9:00pm - 10:00am
+  - [Using Python with Stata (via Files)](session5/stata-and-python-files)
 * - 9:00am - 10:00am
   - [Stata and Jupyter](session7/stata-and-jupyter)
 * - 10:00 - 11:00am

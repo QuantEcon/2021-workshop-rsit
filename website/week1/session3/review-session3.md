@@ -1,6 +1,5 @@
-(session5/review-session3)=
-
-# Questions & Answers (Session 3)
+(session3/review-session3)=
+# Questions & Answers
 
 ## Q: How to create a numpy array with np.nan
 

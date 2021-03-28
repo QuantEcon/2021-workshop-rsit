@@ -1,5 +1,5 @@
-(session5/stata-python-file-interface)=
-# Stata and Python (via Files)
+(session5/stata-and-python-files)=
+# File based Workflows
 
 In many cases it can be convenient to keep `stata` and `python`
 workflows largely independent of each other such as:

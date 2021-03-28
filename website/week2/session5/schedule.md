@@ -15,15 +15,13 @@
 * - Time
   - Topic
 * - 9:00am - 9:15am
-  - [Review of Session 3](session5/review-session3)
-* - 9:00am - 10:00am
+  - [Review of Session 3](session3/review-session3)
+* - 9:15am - 10:00am
   - [Numba](session3/numba)
 * - 10:00am - 10:30am
-  - [Python and Stata](session5/stata-and-python), [Setup Python in Stata](session5/stata-python-setup)
+  - [Python and Stata](session5/stata-and-python), [Setup Python in Stata](session5/stata-and-python-setup)
 * - 10:30am - 11:00am
   - Q&A / Break
-* - 11:00am - 12:00pm
-  - [Using Python in Stata](session5/stata-python-using)
-* - 12:00pm - 12:30pm
-  - [Using Python with Stata (via Files)](session5/stata-python-file-interface)
+* - 11:00am - 12:30pm
+  - [Using Python in Stata](session5/stata-and-python-integrated)
 ```
