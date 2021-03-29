@@ -110,6 +110,11 @@ set python_exec C:\Users\<users>\anaconda3\python.exe
 ```
 :::
 
+:::{warning}
+If you have already started a python session in `stata` you will need to quit stata
+and reopen it before using `set python_exec`
+:::
+
 This can be used together with `python search` to know which path to provide.
 
 You can then check the setting has taken effect using `python query`.
