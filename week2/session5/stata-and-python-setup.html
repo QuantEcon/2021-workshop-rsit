@@ -525,15 +525,15 @@ are linked together.</p>
 <p>Linking <code class="docutils literal notranslate"><span class="pre">stata</span></code> to a specific <code class="docutils literal notranslate"><span class="pre">python</span></code> installation (such as <code class="docutils literal notranslate"><span class="pre">anaconda</span></code>) can be done
 using the <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">python_exec</span></code> command such as:</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="2e955937-48b4-475f-a0f1-cf0b67b83acc" name="c8ff2cba-c781-4d0c-9472-6e14475730d7" type="radio">
-</input><label class="tabbed-label" for="2e955937-48b4-475f-a0f1-cf0b67b83acc">
+<input checked="checked" id="f4700a41-4063-4f22-beab-9bded3351283" name="e1f62dfa-08e5-4831-b514-2c525326e7ba" type="radio">
+</input><label class="tabbed-label" for="f4700a41-4063-4f22-beab-9bded3351283">
 macOS</label><div class="tabbed-content docutils">
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> python_exec <span class="o">/</span>Users<span class="o">/&lt;</span>user<span class="o">&gt;/</span>anaconda3<span class="o">/</span>bin<span class="o">/</span>python
 </pre></div>
 </div>
 </div>
-<input id="a1e7b246-5470-419d-a6f4-fa8fe0de7a76" name="c8ff2cba-c781-4d0c-9472-6e14475730d7" type="radio">
-</input><label class="tabbed-label" for="a1e7b246-5470-419d-a6f4-fa8fe0de7a76">
+<input id="d8c2d3eb-32f7-48c3-b7c1-af28947e0286" name="e1f62dfa-08e5-4831-b514-2c525326e7ba" type="radio">
+</input><label class="tabbed-label" for="d8c2d3eb-32f7-48c3-b7c1-af28947e0286">
 Windows</label><div class="tabbed-content docutils">
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> python_exec C:\Users\<span class="o">&lt;</span>users<span class="o">&gt;</span>\anaconda3\python<span class="m">.</span>exe
 </pre></div>
@@ -549,15 +549,15 @@ Windows</label><div class="tabbed-content docutils">
 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">packages</span></code> and other utilities and programs.</p>
 <p>You can add a custom path for the python <code class="docutils literal notranslate"><span class="pre">stata</span></code> environment using <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">python_userpath</span></code></p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="899ee467-3a9a-4a69-add1-66a2e0d30ae2" name="d333d0b2-9bf5-41e9-b858-2cf2edaf4dcc" type="radio">
-</input><label class="tabbed-label" for="899ee467-3a9a-4a69-add1-66a2e0d30ae2">
+<input checked="checked" id="ed37908b-0159-407e-a348-2b2c1709e2de" name="176100ff-e66c-433a-b422-9b0e39b4006b" type="radio">
+</input><label class="tabbed-label" for="ed37908b-0159-407e-a348-2b2c1709e2de">
 macOS</label><div class="tabbed-content docutils">
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> python_userpath <span class="o">/</span>Users<span class="o">/&lt;</span>user<span class="o">&gt;/</span>mypythoncode
 </pre></div>
 </div>
 </div>
-<input id="05278b9e-2cd9-4b9e-b4e3-455d733acf76" name="d333d0b2-9bf5-41e9-b858-2cf2edaf4dcc" type="radio">
-</input><label class="tabbed-label" for="05278b9e-2cd9-4b9e-b4e3-455d733acf76">
+<input id="edc466c4-d58d-4e9b-8cef-4f203d7fa118" name="176100ff-e66c-433a-b422-9b0e39b4006b" type="radio">
+</input><label class="tabbed-label" for="edc466c4-d58d-4e9b-8cef-4f203d7fa118">
 Windows</label><div class="tabbed-content docutils">
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> python_userpath C:\Users\<span class="o">&lt;</span>users<span class="o">&gt;</span>\mypythoncode
 </pre></div>
@@ -568,18 +568,17 @@ Windows</label><div class="tabbed-content docutils">
 </div>
 <div class="section" id="testing-python">
 <h2>Testing Python<a class="headerlink" href="#testing-python" title="Permalink to this headline">¶</a></h2>
-<p>::{margin}</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
 <div class="admonition-macos-anaconda-issue admonition">
 <p class="admonition-title">macOS + Anaconda Issue</p>
 <p>I ran into <a class="reference external" href="https://www.statalist.org/forums/forum/general-stata-discussion/general/1578573-python-integration-pandas-package-causing-stata-to-close">this issue</a> on my <code class="docutils literal notranslate"><span class="pre">macOS</span></code> installation
 of Stata and found the suggestion solution was required to prevent this behavior</p>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-<span class="n">To</span> <span class="n">check</span> <span class="n">that</span> <span class="n">everything</span> <span class="ow">is</span> <span class="n">setup</span> <span class="ow">and</span> <span class="n">ready</span> <span class="n">to</span> <span class="n">go</span> <span class="n">you</span> <span class="n">can</span> <span class="n">run</span> <span class="n">the</span>
-<span class="p">[</span><span class="n">first</span> <span class="n">python</span> <span class="n">example</span><span class="p">](</span><span class="n">session5</span><span class="o">/</span><span class="n">stata</span><span class="o">-</span><span class="ow">and</span><span class="o">-</span><span class="n">python</span><span class="o">-</span><span class="n">interactive</span><span class="p">)</span> <span class="ow">and</span> <span class="n">verify</span>
-<span class="n">everything</span> <span class="ow">is</span> <span class="n">working</span><span class="o">.</span>
-</pre></div>
 </div>
+<p>To check that everything is setup and ready to go you can run the
+<a class="reference internal" href="stata-and-python-integrated.html#session5-stata-and-python-interactive"><span class="std std-ref">first python example</span></a> and verify
+everything is working.</p>
 </div>
 </div>
 

@@ -137,7 +137,7 @@ Then check the setting has taken effect using `python query`.
 
 ## Testing Python
 
-::{margin}
+:::{margin}
 ```{admonition} macOS + Anaconda Issue
 I ran into [this issue](https://www.statalist.org/forums/forum/general-stata-discussion/general/1578573-python-integration-pandas-package-causing-stata-to-close) on my `macOS` installation
 of Stata and found the suggestion solution was required to prevent this behavior
