@@ -3,20 +3,22 @@
 
 In many cases it can be convenient to keep `stata` and `python`
 workflows largely independent of each other and use files to
-transfer data back and forth:
+transfer data back and forth such as:
 
 1. Dataset Construction (Python)
 2. Statistical Modelling (Stata)
 
+or vice-versa.
+
 ```{note}
-If `data` needs to be computed regularly due to updates. The
-`python script` interface in `stata` is useful here as it can
+If `data` needs to be computed regularly due to updates in source files.
+The `python script` interface in `stata` is useful here as it can
 be used to update `data` using a `python script` before running
 any `regressions`.
 ```
 
 Support for using a file based workflow is provided by `pandas`
-as it has an interface for reading and writing dta files.
+as it has an interface for reading and writing `dta` files.
 
 ## Pandas: Reading `dta` files
 
@@ -88,6 +90,12 @@ auto = pd.read_stata("auto.dta")
 auto
 ```
 
+:::{margin}
+```{note}
+As you can see from the `rep78` variable, missing values are also handled in the transfer and represented by `np.nan`
+```
+:::
+
 ```{figure} img/python-pandas-read-auto.png
 ```
 
@@ -99,6 +107,12 @@ auto.dtypes
 ```
 
 produces the following list:
+
+:::{margin}
+```{note}
+Labelled Data in `stata` such as `foreign` is converted into `pd.Categoricals`
+```
+:::
 
 ```
 make              object
@@ -121,7 +135,7 @@ dtype: object
 ```{note}
 You can also write other `data` file formats if you have trouble
 with the `dta` writer, such as `csv`, `xlsx`. However you often loose
-information and you need to think about `dtypes` during this
+information in this process and you may need to think about `dtypes` during this
 translation process between formats.
 ```
 
@@ -132,18 +146,6 @@ import yfinance as yf
 dowjones = yf.Ticker("^DJI")
 data = dowjones.history(start="2010-01-01", end="2020-12-31")[['Close', 'Volume']]
 data.to_stata("yfinance-dji.dta")
-```
-
-This will generate a `dta` file that can be opened with `stata` such as the following
-in the `data editor`
-
-```{figure} img/python-pandas-yfinance-data-tostata-dataeditor1.png
-```
-
-You can then format these dates in stata using
-
-```stata
-format %tcCCYY-NN-DD Date
 ```
 
 :::{note}
@@ -161,6 +163,19 @@ use yfinance-dji.dta, clear
 ```
 :::
 
+This will generate a `dta` file that can be opened with `stata` such as the following
+in the `data editor`
+
+```{figure} img/python-pandas-yfinance-data-tostata-dataeditor1.png
+```
+
+These `pd.datetime` objects have been transferred for you into `stata` date variables
+so they can be formatted using
+
+```stata
+format %tcCCYY-NN-DD Date
+```
+
 You may notice the default `datetime` object has been translated nicely but `pandas`
 has used stata `tc` format (by default) as [per the documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_stata.html).
 We can specify `td` dates using the `convert_dates=` keyword argument and specifying the `column`
@@ -176,7 +191,7 @@ end
 ### Errors writing `dta` files
 
 The `pandas` object is more general than the stata `dta` format so there are cases where
-the data can't be written to `dta`.
+the data can't be written to `dta` format.
 
 In this case you will get a:
 

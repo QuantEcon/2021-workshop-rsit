@@ -2,8 +2,9 @@
 # Session 5 (Python and Stata)
 
 ```{admonition} Aims & Outcomes:
+1. Accelerating `python` when needed.
 1. Understand `python` and `stata` integration (`stata16`)
-2. Discuss Workflows
+2. Highlight `gotchas` in the interface
 ```
 
 **Week 2, Session 5 (Monday 29th March)**
