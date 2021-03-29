@@ -43,10 +43,6 @@
       - file: week2/session5/stata-and-python-setup
       - file: week2/session5/stata-and-python-integrated
       - file: week2/session5/stata-and-python-files
-    - file: week2/session7/schedule
-      sections:
-      - file: week2/session7/stata-and-jupyter
-      - file: week2/session7/python-and-julia
 
 - part: Resources
   numbered: false

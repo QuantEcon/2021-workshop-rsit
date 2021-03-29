@@ -18,8 +18,7 @@ There are `two` main ways we can use `python` effectively with `stata`:
 
 ```{seealso}
 We will also look at alternative ways to use `stata` and `python` in the
-[next session](session7/stata-and-jupyter) through `jupyter` using `stata`
-kernels.
+next session through `jupyter` using `stata` kernels.
 ```
 
 ## Resources

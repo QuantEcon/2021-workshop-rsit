@@ -137,7 +137,13 @@ data.to_stata("yfinance-dji.dta")
 This will generate a `dta` file that can be opened with `stata` such as the following
 in the `data editor`
 
-```{figure} img/
+```{figure} img/python-pandas-yfinance-data-tostata-dataeditor1.png
+```
+
+You can then format these dates in stata using
+
+```stata
+format %tcCCYY-NN-DD Date
 ```
 
 :::{note}
@@ -157,8 +163,7 @@ use yfinance-dji.dta, clear
 
 You may notice the default `datetime` object has been translated nicely but `pandas`
 has used stata `tc` format (by default) as [per the documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_stata.html).
-We can specify
-td dates using the `convert_dates=` keyword argument and specifying the `column`
+We can specify `td` dates using the `convert_dates=` keyword argument and specifying the `column`
 and which `datetime` conversion to use such as:
 
 ```stata
