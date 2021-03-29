@@ -550,6 +550,13 @@ the stata context.
 ```{figure} img/stata-sysuse-auto-3vars-range-dataframe2.png
 ```
 
+You can compare with stata using in the `command window`
+
+```stata
+list foreign mpg rep78 in 46/56
+```
+
+
 ```{exercise}
 How can you explain the value for the variable `rep78` for observation `51`?
 ```
