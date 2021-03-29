@@ -145,5 +145,5 @@ of Stata and found the suggestion solution was required to prevent this behavior
 :::
 
 To check that everything is setup and ready to go you can run the
-[first python example](session5/stata-and-python-firstexample) and verify
+[first python example](session5/stata-and-python-interactive) and verify
 everything is working.

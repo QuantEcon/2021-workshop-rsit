@@ -9,10 +9,17 @@ This [blog post](https://blog.stata.com/2020/08/25/stata-python-integration-part
 does a really good job of explaining the different methods for using `python` in `stata`.
 :::
 
+There are `three` primary interfaces to running `python` within `stata`:
+
+1. [](session5/stata-and-python-interactive)
+2. [](session5/stata-and-python-do)
+3. [](stata-and-python-scripts)
+
+We will then look at how to transfer data between `python` and `stata`
+in both directions through the `stata function interface`.
+
 (session5/stata-and-python-interactive)=
 ## Running `python` Interactively with a First Example
-
-(session5/stata-and-python-firstexample)=
 
 You can run `python` interactively within `stata` in a manner that is the
 equivalent of running the `python` REPL program through a terminal.
@@ -35,7 +42,7 @@ print("Hello World!")
 ```
 
 once you hit enter `stata` sends the code snippet to the python interpreter
-for processing
+for processing and shows the result
 
 ```{figure} img/stata-python-hello-world-result.png
 ```
@@ -61,8 +68,10 @@ If you have a one line `python` command you can use
 ```stata
 python: print("Hello World!")
 ```
-which will pass the code to `python` and display the results
-directly below in the `Results` window
+which will pass the code to `python`, display the results
+directly below in the `Results` window, and return you to
+the `stata` command environment.
+
 ```{figure} img/stata-python-hello-world-oneline.png
 ```
 :::
@@ -86,31 +95,46 @@ python: print("Python Here")
 ```{figure} img/stata-example1-do.png
 ```
 
-and when you click on `Do` button you get the result:
+and when you click on the `Do` button you get the result:
 
 ```{figure} img/stata-example1-do-run.png
 ```
 
 where the results from `python` are displayed similarly to `stata` output.
 
-However, you often want to add in a **block of code** such as:
+However, most of the time you will want to add in a **block of code** such as:
 
 ```python
 for i in range(0,2):
     print("Python Here")
 ```
 
-This can be done by delimiting the `python code` within the `do` file using:
+This can be done by delimiting the `python code` within the `do` file using either
 
-1. `python` and `end`, or
-2. `python:` and `end`
+```stata
+python
+<python code>
+end
+```
+
+or
+
+```stata
+python:
+<python code>
+end
+```
 
 The difference between these two `delimiters` is in how `stata` handles any
-errors in `python`. The `python` environment will continue to execute the rest
-of the `python` code if an error is encountered, while `python:` will **immediately**
+errors in `python`.
+
+The `python` delimiter will continue to execute the rest
+of the `python` code if an error is encountered, while the `python:` delimiter will **immediately**
 return control to `stata` once the error is encountered.
 
 :::{margin}
+We have made an error by incorrectly spelling the `range` function.
+
 This can be {download}`downloaded from here as a do file <do/example2a.do>`
 :::
 
@@ -128,7 +152,7 @@ di "Back in Stata Land!"
 ```
 
 As you can see `stata` has continued to execute code past the point at which there is
-an error. 
+an error.
 
 However if you use `python:` the execution will halt at the point of the `error`.
 
@@ -258,14 +282,14 @@ with the output:
 ```
 
 ```{tip}
-This is a very useful way to run `python` code as it leaves you
+This can be a very useful way to run `python` code as it leaves you
 to write `python` code in any text editor you like such as
 [vscode](https://code.visualstudio.com).
 ```
 
 ## Interacting between `Stata` and `Python`
 
-```{note}
+```{tip}
 In many cases it can be simpler to keep `python` and `stata`
 workflows independent of each other and use `files` to transfer
 data between them.
@@ -275,25 +299,22 @@ This is covered in [](session5/stata-and-python-files)
 
 So far the `python` and `stata` runtime environments have been
 independent of each other to learn about how to run `python` code
-within `stata`.
+within `stata` (i.e. they haven't shared any data)
 
-However for most applications we want some level of `interaction` between `stata`
+For many applications we want some level of `interaction` between `stata`
 and `python` by copying back and forth objects between the different runtime
 environments.
 
-`Stata` makes various components of `stata` available to `python` via
+`Stata` makes various components of its internals available to `python` via
 the [stata function interface (sfi)](session5/stata-and-python-sfi)
-to enable such interaction, such as:
+to enable such interaction with:
 
-1. [Current Stata Dataset](https://www.stata.com/python/api16/Data.html)
-2. [Stata Frames](https://www.stata.com/python/api16/Frame.html)
-   ```{note}
-   [frames](https://www.stata.com/new-in-stata/multiple-datasets-in-memory/) have been introduced 
-   to load more than one dataset
-   ```
-3. [Stata Macros](https://www.stata.com/python/api16/Macro.html)
+1. [Dataset](https://www.stata.com/python/api16/Data.html) which connects `python` with the current
+   in memory `stata` dataset
+2. [Macros](https://www.stata.com/python/api16/Macro.html) which connects `python` with `stata`
+   macros
 
-In addition to access to [many other components](session5/stata-and-python-sfi).
+In addition it also provides access to [many other `stata` components](session5/stata-and-python-sfi).
 
 ### Copying Data from Stata to Python
 
@@ -306,12 +327,12 @@ sysuse auto
 list foreign
 ```
 
-listing the `foreign` data in `stata` shows:
+Listing the `foreign` data in `stata` shows
 
 ```{figure} img/stata-sysuse-auto-list-foreign.png
 ```
 
-then use `python` to look at the `raw` data using the `.get` method
+We can then use `sfi.Data` to transfer the `raw` data to `python` using the `.get` method
 of the `Data` object from the `stata function interface` package.
 
 ```stata
@@ -339,7 +360,7 @@ If you use the `data explorer` you will see that the `foreign` variable consists
 ```{figure} img/stata-sysuse-auto-dataviewier-foreign.png
 ```
 
-You may want to get more information about the `get` method so the best place
+We may want to get more information about the `get` method so the best place
 to look is the [documentation on sfi.Data](https://www.stata.com/python/api16/Data.html).
 Then you can click on the [get method](https://www.stata.com/python/api16/Data.html#sfi.Data.get)
 
@@ -364,18 +385,34 @@ dataraw
 end
 ```
 
-and the `rawdata` is now returned as strings taking the value of the `labels` that
+and the `raw data` is now returned as strings taking the value of the `labels` that
 have been applied to the data
 
 ```{figure} img/stata-sysuse-auto-foreign-valuelabels.png
 ```
 
-**Obtaining more variables at once:**
+#### Obtaining more variables at once
 
 You can obtain more variables using the `get` method. Based on the documentation you can use
-the following methods to specify what variables to fetch `var (int, str, or list-like, optional)`.
+the following methods to specify what variables to fetch:
 
-In addition you can also specify which `obs` you would like `obs (int or list-like, optional)`.
+```
+var (int, str, or list-like, optional) – Variables to access.
+It can be specified as a single variable index or name, or an
+iterable of variable indices or names. If var is not specified,
+all the variables are specified.
+```
+
+In addition you can also specify which observations (`obs`) you would like:
+
+```
+obs (int or list-like, optional) – Observations to access.
+It can be specified as a single observation index or an iterable
+of observation indices. If obs is not specified, all the
+observations are specified.
+```
+
+So let's use this information and run
 
 ```stata
 python
@@ -390,8 +427,8 @@ this code saves a `list of list` type object into the `python` object `dataraw`
 ```{figure} img/stata-sysuse-auto-3vars-range.png
 ```
 
-The data is written as a list of `rows` in the order of the variables requested, which
-in this case is: `foreign mpg rep78` such as the first element:
+The data is written as a list of `rows`/`obs` in the order that the variables are requested,
+which in this case is: `foreign mpg rep78` such as the first element:
 
 ```python
 [[0, 18, 2], ...
@@ -399,7 +436,7 @@ in this case is: `foreign mpg rep78` such as the first element:
 
 :::{margin}
 ```{note}
-`range` is a `python` object that behaves like a list when constructing `ranges`
+`range` is a `python` object that behaves like a list when constructing `ranges`.
 ```
 :::
 
@@ -425,7 +462,7 @@ dataraw
 end
 ```
 
-will return the same data
+which will return the same data
 
 ```{figure} img/stata-sysuse-auto-3vars-range-list.png
 ```
@@ -438,15 +475,18 @@ code?
 :::{margin}
 Current `Stata` support is for moving `raw data` to the python context. It is left
 to the user to push that raw data into some other object such as `pd.DataFrame`
-or `pd.Series`. I hope support for `pd.DataFrame` will be coming in a future release.
+or `pd.Series`.
+
+I hope support for `pd.DataFrame` will be coming in a future release.
 :::
 
-**pd.DataFrame and pd.Series:**
+#### pd.DataFrame and pd.Series:
 
 The discussion so far has focused on fetching `raw data` out of `stata` and copying
-it to the `python` environment. But in many applications we are unlikely to want to
-use the raw data directly and you will want to be comfortable with setting up
-pandas `DataFrame` and `Series` objects such as:
+it to the `python` environment. But in many applications we are likely to want higher
+productivity objects such as pandas `DataFrame` and `Series`.
+
+Let's try
 
 ```stata
 python
@@ -465,8 +505,8 @@ but `columns` and `index` variables haven't come across:
 ```
 
 You may want to parameterize your requests so you can use them in both
-the `sfi.Data.get` method in addition to a `pd.DataFrame` method when converting
-the `raw data` into a `pd.DataFrame`
+the `sfi.Data.get` method in addition to a `pd.DataFrame` method when
+converting the `raw data` into a `pd.DataFrame`
 
 You can save the variable selection as a python variable:
 
@@ -482,9 +522,9 @@ I have used:
 1. `range(45,56)` for `stata`, and
 2. `range(46,57)` for `pandas`
 
-to harmonise given data ind `stata data viewer` is indexed by `1`.
+to harmonise given data in `stata data editor` is indexed by `1`.
 
-I hope `stata` provide `sfi.Data.dataframe` that can help manage these
+It would be nice if `stata` provides `sfi.Data.dataframe` that can help manage these
 indexing issues.
 
 ```{note}
@@ -530,10 +570,12 @@ end
 ```
 :::
 
-**Missing Values:**
+#### Missing Values:
 
 Missing values in `stata` are internally represented by the `largest` value for
-each type. Within `stata` you typically work with missing values using `.`  such as:
+each type. 
+
+Within `stata` you typically work with missing values using `.`  such as:
 
 ```stata
 list rep78 if rep78 != .
@@ -541,7 +583,7 @@ list rep78 if rep78 != .
 
 and much of this detail is taken care of for you.
 
-So missing values are represented by the `maximum value`:
+AS missing values are represented by the `maximum value`:
 
 :::{margin}
 This table is from the [stata manual](https://www.stata.com/manuals/u12.pdf#u12.2.2Numericstoragetypes)
@@ -555,7 +597,9 @@ I am **not** sure why `python` receives the missing value for a `double` numeric
 `rep78` is coded as an `int` in `stata`. I will need to ask `statacorp`.
 :::
 
-However if using the raw data in `python` you will want to specify `missingval=np.nan`
+`python` will interpret this data as an actual value.
+
+You will want to specify `missingval=np.nan`
 
 ```stata
 python
@@ -569,7 +613,7 @@ df
 end
 ```
 
-which returns the following:
+which returns the following
 
 ```{figure} img/stata-sysuse-auto-3vars-range-dataframe3.png
 ```
@@ -584,7 +628,7 @@ It is often the case you will want to do some data work in `python` and have a n
 transfer it to `stata` to do some statistical anaylsis.
 
 The `sfi.Data` interface also contains methods for saving data from `python` into
-the `stata` default `dataframe` or a `frame`.
+the default `stata dataframe` (or a `frame` which is new in `Stata16`)
 
 Let us fetch some data from Yahoo Finance using the `yfinance` package in `python`
 
@@ -612,19 +656,20 @@ Data.setObsTotal(len(data))
 end
 ```
 
-the `stata` data editor now contains space for `len(data)` observations
+the `stata` data editor now contains space for `len(data)` observations to
+be transferred.
 
 ```{figure} img/stata-dataeditor-sfi-setObsTotal.png
 ```
 
 You can then setup `3` variables in stata to save `date`, `close`,
-and `volume` information.
+and `volume` information across.
 
 ```stata
 python:
-Data.addVarStr("date", 10)
-Data.addVarDouble("close")
-Data.addVarInt("volume")
+Data.addVarStr("date", 10)  # Str10
+Data.addVarDouble("close")  # Double
+Data.addVarInt("volume")    # Int
 end
 ```
 
@@ -656,11 +701,17 @@ clear
 ```
 :::
 
-You might try saving the `data` from the `pandas` dataframe into the `stata` dataset using the
+The next step is to migrate the actual data.
+
+You might try saving the `data` directly from the `pandas` dataframe into the `stata` dataset using the
 [sfi.Data.store()](https://www.stata.com/python/api16/Data.html#sfi.Data.store) method.
 
-```{warning}
-This method is expecting: `store(var, obs, val, selectvar=None)`
+:::{Note}
+This method interface is expecting
+
+```
+static store(var, obs, val, selectvar=None)
+```
 
 where,
 1. `var`, `obs`, and `val` are `python arguments`, and
@@ -669,7 +720,7 @@ where,
 This means that `var`, `obs`, and `val` are **required inputs**
 
 This deviates from [sfi.Data.get()](https://www.stata.com/python/api16/Data.html#sfi.Data.get)
-```
+:::
 
 ```stata
 python
@@ -683,8 +734,11 @@ however you will run into trouble with the following error:
 ```
 
 `Stata` is similar to `numpy` in that it is very specific about how it saves `data` in memory in
-accordance with specified `types`. We tried to send through a list of `datetime` objects from
-`pandas` and `stata` doesn't know how to represent this data in the `stata dataset`.
+accordance with specified `types`.
+
+In the code above we tried to send through a list of `datetime` objects from
+`pandas` and the `stata function interface` doesn't know how to represent
+this data in the `stata dataset`.
 
 ```stata
 python
@@ -698,10 +752,10 @@ As you can see the index from the pandas dataframe `data` consists of `Timestamp
 ```{figure} img/stata-yfinance-data-index-dateobjects.png
 ```
 
-Some translation is required in this case to convert `dates` into a `format` that `stata`
-can copy into its dataset and then convert to `stata date` data.
+Therefore some translation is required in this case to convert `dates` into a `format` that `stata`
+can copy into its dataset and then use `stata` tools to convert to `stata` dates.
 
-We know `stata` has a `date` function:
+We know `stata` has a `date` function that we can use:
 
 :::{margin}
 ```{warning}
@@ -724,8 +778,10 @@ list
 ```{figure} img/stata-working-with-date.png
 ```
 
-So we can look to convert the `pandas.Timestamp` objects to be represented as simpler strings
-that contain the information needed for `stata` to convert to `dates`
+So now we can look to convert the `pandas.Timestamp` objects to be represented as simpler `string`
+based data that contain the information needed for `stata` to convert those `dates`.
+
+Pandas has a useful method `.astype()` for useful data conversions.
 
 ```stata
 python
@@ -754,7 +810,7 @@ over to `stata`:
 ```{figure} img/stata-dataeditor-sfi-store1.png
 ```
 
-Let's bring in the numerical data
+Let's bring in the numerical data, which is a much simpler process
 
 ```
 python
@@ -768,9 +824,10 @@ We now have the data we need in the `stata` dataset as seen in the `data editor`
 ```{figure} img/stata-dataeditor-sfi-store2.png
 ```
 
-and can swtich back to `stata` to run an `analysis` or construct a `plot`
+Now that the data is copied across we can switch back to `stata` to run
+any `analysis` or construct a `plot`
 
-We will first want to convert those dates in `stata`
+We will first want to convert those dates in `stata` as a post transfer step
 
 ```stata
 gen sdate = date(date, "YMD")
@@ -820,7 +877,7 @@ which produces the following `matplotlib` figure:
 ### Persistence between `python` code-blocks in `stata`
 
 Once the `python` interpreter is initialised it is used throughout the `stata`
-session. 
+session.
 
 This means that once variables are created in `python` they will be
 available in future `python` code-blocks.
