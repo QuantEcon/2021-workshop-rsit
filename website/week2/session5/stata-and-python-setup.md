@@ -4,16 +4,11 @@
 :::{margin}
 Stata16 [has been updated for use on Apple Silicon based Macs](https://blog.stata.com/2020/11/10/stata-for-mac-with-apple-silicon/) but older versions will run through translation instead of
 native support.
-
-```{admonition} macOS + Anaconda Issue
-I ran into [this issue](https://www.statalist.org/forums/forum/general-stata-discussion/general/1578573-python-integration-pandas-package-causing-stata-to-close) on my `macOS` installation
-of Stata and found the suggestion solution was required to prevent this behavior
-```
 :::
 
 ```{admonition} Assumptions
-This session presumes you have already installed `Stata16+` on your computer and you are already
-familiar with using `stata`
+This session presumes you have already installed `Stata16` on your computer and you are already
+proficient with using `stata`
 ```
 
 ```{warning}
@@ -25,10 +20,10 @@ these problems and we can look at trying to find a solution.
 Integration between computer software is always a tricky problem to solve and typically requires
 some investment in setting up the integrations properly.
 
-We will focus on setting up `python` in `stata` and getting access to your configuration.
+In this session we will focus on setting up `python` in `stata` and getting access to your configuration.
 
-Having good knowledge of how your system is configured helps greatly in reducing bugs and issues related
-to software problems.
+Having good knowledge of how your system is configured can great assist in reducing bugs and issues related
+to software problems and environments.
 
 :::{margin}
 This workflow has been put together on `macOS`. The `stata` application is pretty consistent
@@ -42,7 +37,7 @@ Open up the `Stata` application on your computer
 
 ## Checking your Configuration
 
-To check your configuration you can type:
+To check your configuration you can type
 
 ```stata
 python query
@@ -70,9 +65,11 @@ are linked together.
   - this provides additional information about the `python` version and software used.
 ```
 
+You can also see that `python` hasn't been initialised as we haven't used it in this session.
+
 ## Searching for Python on your System
 
-Stata can search your system for any `python` installations and list them by typing:
+Stata can search your system for any `python` installations and list them by typing
 
 ```stata
 python search
@@ -113,8 +110,14 @@ set python_exec C:\Users\<users>\anaconda3\python.exe
 ```
 :::
 
-This can be used together with `python search` to know which path to provide and then
-the setting can be checked using `python query`.
+:::{warning}
+If you have already started a python session in `stata` you will need to quit stata
+and reopen it before using `set python_exec`
+:::
+
+This can be used together with `python search` to know which path to provide.
+
+You can then check the setting has taken effect using `python query`.
 
 ## Updating your `sys.path` in `python`
 
@@ -135,10 +138,17 @@ set python_userpath C:\Users\<users>\mypythoncode
 ```
 :::
 
-Then check the setting using `python query`.
+Then check the setting has taken effect using `python query`.
 
 ## Testing Python
 
+:::{margin}
+```{admonition} macOS + Anaconda Issue
+I ran into [this issue](https://www.statalist.org/forums/forum/general-stata-discussion/general/1578573-python-integration-pandas-package-causing-stata-to-close) on my `macOS` installation
+of Stata and found the suggestion solution was required to prevent this behavior
+```
+:::
+
 To check that everything is setup and ready to go you can run the
-[first python example](session5/stata-and-python-firstexample) and verify
+[first python example](session5/stata-and-python-interactive) and verify
 everything is working.

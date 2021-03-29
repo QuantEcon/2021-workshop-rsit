@@ -2,8 +2,9 @@
 # Session 5 (Python and Stata)
 
 ```{admonition} Aims & Outcomes:
-1. Understand `python` and `stata` integration (`stata16`)
-2. Discuss Workflows
+1. Accelerating `python` when needed with `numba`
+2. Understand `python` and `stata` integration (`stata16`)
+3. Highlight any `gotchas` in the interface
 ```
 
 **Week 2, Session 5 (Monday 29th March)**
@@ -23,5 +24,5 @@
 * - 10:30am - 11:00am
   - Q&A / Break
 * - 11:00am - 12:30pm
-  - [Using Python in Stata](session5/stata-and-python-integrated)
+  - [Using Python in Stata](session5/stata-and-python-integrated), [Using Python and Stata (via Files)](session5/stata-and-python-files)
 ```
