@@ -13,7 +13,7 @@ There are `three` primary interfaces to running `python` within `stata`:
 
 1. [](session5/stata-and-python-interactive)
 2. [](session5/stata-and-python-do)
-3. [](stata-and-python-scripts)
+3. [](session5/stata-and-python-scripts)
 
 We will then look at how to transfer data between `python` and `stata`
 in both directions through the `stata function interface`.
