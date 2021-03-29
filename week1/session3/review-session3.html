@@ -460,7 +460,7 @@ from the tutorial.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">pd.concat</span></code> (works to append <code class="docutils literal notranslate"><span class="pre">rows</span></code> by default)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">pd.join</span></code> (works to append <code class="docutils literal notranslate"><span class="pre">columns</span></code> by default)</p></li>
 </ol>
-<p>but they can be used on differenct <code class="docutils literal notranslate"><span class="pre">axis</span></code> by specifing <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> etc.</p>
+<p>but they can be used on different <code class="docutils literal notranslate"><span class="pre">axis</span></code> by specifying <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> etc.</p>
 <p>so we could have used</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">usa</span><span class="p">,</span> <span class="n">others</span><span class="p">])</span>
 </pre></div>
@@ -469,7 +469,7 @@ from the tutorial.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">usa</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">others</span><span class="o">.</span><span class="n">T</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>or by alterning the <code class="docutils literal notranslate"><span class="pre">axis</span></code></p>
+<p>or by changin the <code class="docutils literal notranslate"><span class="pre">axis</span></code></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">usa</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">others</span><span class="o">.</span><span class="n">T</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>

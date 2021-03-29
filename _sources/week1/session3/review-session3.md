@@ -46,7 +46,7 @@ We had a discussion focused around combining dataframes and had a look at:
 1. `pd.concat` (works to append `rows` by default)
 2. `pd.join` (works to append `columns` by default)
 
-but they can be used on differenct `axis` by specifing `axis=1` etc.
+but they can be used on different `axis` by specifying `axis=1` etc.
 
 so we could have used
 
@@ -60,7 +60,7 @@ or with the usa.T, others.T data which is a format more convenient for `plotting
 pd.join([usa.T, others.T])
 ```
 
-or by alterning the `axis`
+or by changin the `axis`
 
 ```python
 pd.concat([usa.T, others.T], axis=1)
