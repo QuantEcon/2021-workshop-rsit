@@ -12,4 +12,6 @@ dependencies:
   - numba
   - bokeh
   - statsmodels
+  - linearmodels
+  - yfinance
 
