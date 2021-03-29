@@ -777,6 +777,11 @@ gen sdate = date(date, "YMD")
 format %tdCCYY-NN-DD sdate
 ```
 
+and we can check the conversion in the stata `data editor`
+
+```{figure} img/stata-dataeditor-sfi-store3.png
+```
+
 and then we can construct the `plot` as demonstrated in the [original blog post](https://blog.stata.com/2020/11/19/stata-python-integration-part-9-using-the-stata-function-interface-to-copy-data-from-python-to-stata/)
 
 ```stata
