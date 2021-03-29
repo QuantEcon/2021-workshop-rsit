@@ -47,6 +47,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -270,7 +272,7 @@
   <ul class="current collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="stata-and-python.html">
-     Intro
+     Stata and Python
     </a>
    </li>
    <li class="toctree-l2">
@@ -431,20 +433,21 @@
 <span id="session5-stata-and-python-files"></span><h1>File based Workflows<a class="headerlink" href="#file-based-workflows" title="Permalink to this headline">¶</a></h1>
 <p>In many cases it can be convenient to keep <code class="docutils literal notranslate"><span class="pre">stata</span></code> and <code class="docutils literal notranslate"><span class="pre">python</span></code>
 workflows largely independent of each other and use files to
-transfer data back and forth:</p>
+transfer data back and forth such as:</p>
 <ol class="simple">
 <li><p>Dataset Construction (Python)</p></li>
 <li><p>Statistical Modelling (Stata)</p></li>
 </ol>
+<p>or vice-versa.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If <code class="docutils literal notranslate"><span class="pre">data</span></code> needs to be computed regularly due to updates. The
-<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">script</span></code> interface in <code class="docutils literal notranslate"><span class="pre">stata</span></code> is useful here as it can
+<p>If <code class="docutils literal notranslate"><span class="pre">data</span></code> needs to be computed regularly due to updates in source files.
+The <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">script</span></code> interface in <code class="docutils literal notranslate"><span class="pre">stata</span></code> is useful here as it can
 be used to update <code class="docutils literal notranslate"><span class="pre">data</span></code> using a <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">script</span></code> before running
 any <code class="docutils literal notranslate"><span class="pre">regressions</span></code>.</p>
 </div>
 <p>Support for using a file based workflow is provided by <code class="docutils literal notranslate"><span class="pre">pandas</span></code>
-as it has an interface for reading and writing dta files.</p>
+as it has an interface for reading and writing <code class="docutils literal notranslate"><span class="pre">dta</span></code> files.</p>
 <div class="section" id="pandas-reading-dta-files">
 <h2>Pandas: Reading <code class="docutils literal notranslate"><span class="pre">dta</span></code> files<a class="headerlink" href="#pandas-reading-dta-files" title="Permalink to this headline">¶</a></h2>
 <p>Let’s fetch the <code class="docutils literal notranslate"><span class="pre">auto</span></code> dataset provided by <code class="docutils literal notranslate"><span class="pre">stata</span></code> and save it as
@@ -527,6 +530,13 @@ a <code class="docutils literal notranslate"><span class="pre">dta</span></code>
 <span class="n">auto</span>
 </pre></div>
 </div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As you can see from the <code class="docutils literal notranslate"><span class="pre">rep78</span></code> variable, missing values are also handled in the transfer and represented by <code class="docutils literal notranslate"><span class="pre">np.nan</span></code></p>
+</div>
+</div>
 <div class="figure align-default">
 <img alt="../../_images/python-pandas-read-auto.png" src="../../_images/python-pandas-read-auto.png" />
 </div>
@@ -536,6 +546,13 @@ the data faithfully from the <code class="docutils literal notranslate"><span cl
 </pre></div>
 </div>
 <p>produces the following list:</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Labelled Data in <code class="docutils literal notranslate"><span class="pre">stata</span></code> such as <code class="docutils literal notranslate"><span class="pre">foreign</span></code> is converted into <code class="docutils literal notranslate"><span class="pre">pd.Categoricals</span></code></p>
+</div>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span>              <span class="nb">object</span>
 <span class="n">price</span>              <span class="n">int16</span>
 <span class="n">mpg</span>                <span class="n">int16</span>
@@ -558,7 +575,7 @@ the data faithfully from the <code class="docutils literal notranslate"><span cl
 <p class="admonition-title">Note</p>
 <p>You can also write other <code class="docutils literal notranslate"><span class="pre">data</span></code> file formats if you have trouble
 with the <code class="docutils literal notranslate"><span class="pre">dta</span></code> writer, such as <code class="docutils literal notranslate"><span class="pre">csv</span></code>, <code class="docutils literal notranslate"><span class="pre">xlsx</span></code>. However you often loose
-information and you need to think about <code class="docutils literal notranslate"><span class="pre">dtypes</span></code> during this
+information in this process and you may need to think about <code class="docutils literal notranslate"><span class="pre">dtypes</span></code> during this
 translation process between formats.</p>
 </div>
 <p>You can write to <code class="docutils literal notranslate"><span class="pre">dta</span></code> file format using <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_stata.html">pd.DataFrame.to_stata()</a> method associated with <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code>.</p>
@@ -566,15 +583,6 @@ translation process between formats.</p>
 <span class="n">dowjones</span> <span class="o">=</span> <span class="n">yf</span><span class="o">.</span><span class="n">Ticker</span><span class="p">(</span><span class="s2">&quot;^DJI&quot;</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">dowjones</span><span class="o">.</span><span class="n">history</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s2">&quot;2010-01-01&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;2020-12-31&quot;</span><span class="p">)[[</span><span class="s1">&#39;Close&#39;</span><span class="p">,</span> <span class="s1">&#39;Volume&#39;</span><span class="p">]]</span>
 <span class="n">data</span><span class="o">.</span><span class="n">to_stata</span><span class="p">(</span><span class="s2">&quot;yfinance-dji.dta&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>This will generate a <code class="docutils literal notranslate"><span class="pre">dta</span></code> file that can be opened with <code class="docutils literal notranslate"><span class="pre">stata</span></code> such as the following
-in the <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">editor</span></code></p>
-<div class="figure align-default">
-<img alt="../../_images/python-pandas-yfinance-data-tostata-dataeditor1.png" src="../../_images/python-pandas-yfinance-data-tostata-dataeditor1.png" />
-</div>
-<p>You can then format these dates in stata using</p>
-<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">format</span> <span class="nx">%tcCCYY-NN-DD</span> Date
 </pre></div>
 </div>
 <div class="admonition note">
@@ -591,6 +599,16 @@ data<span class="m">.</span>to_stata(<span class="s">&quot;yfinance-dji.dta&quot
 </pre></div>
 </div>
 </div>
+<p>This will generate a <code class="docutils literal notranslate"><span class="pre">dta</span></code> file that can be opened with <code class="docutils literal notranslate"><span class="pre">stata</span></code> such as the following
+in the <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">editor</span></code></p>
+<div class="figure align-default">
+<img alt="../../_images/python-pandas-yfinance-data-tostata-dataeditor1.png" src="../../_images/python-pandas-yfinance-data-tostata-dataeditor1.png" />
+</div>
+<p>These <code class="docutils literal notranslate"><span class="pre">pd.datetime</span></code> objects have been transferred for you into <code class="docutils literal notranslate"><span class="pre">stata</span></code> date variables
+so they can be formatted using</p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">format</span> <span class="nx">%tcCCYY-NN-DD</span> Date
+</pre></div>
+</div>
 <p>You may notice the default <code class="docutils literal notranslate"><span class="pre">datetime</span></code> object has been translated nicely but <code class="docutils literal notranslate"><span class="pre">pandas</span></code>
 has used stata <code class="docutils literal notranslate"><span class="pre">tc</span></code> format (by default) as <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_stata.html">per the documentation</a>.
 We can specify <code class="docutils literal notranslate"><span class="pre">td</span></code> dates using the <code class="docutils literal notranslate"><span class="pre">convert_dates=</span></code> keyword argument and specifying the <code class="docutils literal notranslate"><span class="pre">column</span></code>
@@ -604,7 +622,7 @@ data<span class="m">.</span>to_stata(<span class="s">&quot;yfinance-dji2.dta&quo
 <div class="section" id="errors-writing-dta-files">
 <h3>Errors writing <code class="docutils literal notranslate"><span class="pre">dta</span></code> files<a class="headerlink" href="#errors-writing-dta-files" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> object is more general than the stata <code class="docutils literal notranslate"><span class="pre">dta</span></code> format so there are cases where
-the data can’t be written to <code class="docutils literal notranslate"><span class="pre">dta</span></code>.</p>
+the data can’t be written to <code class="docutils literal notranslate"><span class="pre">dta</span></code> format.</p>
 <p>In this case you will get a:</p>
 <p><code class="docutils literal notranslate"><span class="pre">NotImplementedError</span></code> if the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> datetime objects contain <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">zone</span></code> information,
 or a <code class="docutils literal notranslate"><span class="pre">column</span></code> data type is not able to be represented in the <code class="docutils literal notranslate"><span class="pre">dta</span></code> file format</p>

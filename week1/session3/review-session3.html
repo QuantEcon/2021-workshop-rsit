@@ -47,6 +47,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -270,7 +272,7 @@
   <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="../../week2/session5/stata-and-python.html">
-     Intro
+     Stata and Python
     </a>
    </li>
    <li class="toctree-l2">
@@ -429,22 +431,26 @@
 </pre></div>
 </div>
 <p>There is an excellent discussion of this
-<a class="reference external" href="https://stackoverflow.com/questions/1704823/create-numpy-matrix-filled-with-nans">on stackoverflow</a></p>
-<p>including performance comparisons!</p>
+<a class="reference external" href="https://stackoverflow.com/questions/1704823/create-numpy-matrix-filled-with-nans">on stackoverflow</a> including performance comparisons!</p>
 </div>
 <div class="section" id="q-will-we-cover-more-of-statsmodels">
 <h2>Q: Will we cover more of <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code><a class="headerlink" href="#q-will-we-cover-more-of-statsmodels" title="Permalink to this headline">¶</a></h2>
-<p>Yes, we will do more <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> today.</p>
-<p>There is also a package called <a class="reference external" href="https://bashtage.github.io/linearmodels/">linearmodels</a> that will
-be used.</p>
+<p>Yes, we can do more <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> in <code class="docutils literal notranslate"><span class="pre">Session</span> <span class="pre">7</span></code>.</p>
+<p>There is also a package called <a class="reference external" href="https://bashtage.github.io/linearmodels/">linearmodels</a> that we can take a look at as well that
+includes support for Panels etc.</p>
+<p>Still doing some research around <code class="docutils literal notranslate"><span class="pre">high</span> <span class="pre">dimensional</span> <span class="pre">fixed</span> <span class="pre">effects</span></code>
+models in <code class="docutils literal notranslate"><span class="pre">python</span></code>.</p>
+<p>There is <a class="reference external" href="https://bashtage.github.io/linearmodels/iv/absorbing/linearmodels.iv.absorbing.AbsorbingLS.html#linearmodels.iv.absorbing.AbsorbingLS">linearmodels.iv.absorbing.AbsorbingLS</a> in the <code class="docutils literal notranslate"><span class="pre">IV</span></code> family of models where <span class="math notranslate nohighlight">\(z\)</span> may be high-dimension.</p>
 </div>
 <div class="section" id="q-parsing-data-and-constructing-age-categories">
 <h2>Q: Parsing data and constructing Age Categories<a class="headerlink" href="#q-parsing-data-and-constructing-age-categories" title="Permalink to this headline">¶</a></h2>
 <p>I have put together <a class="reference download internal" download="" href="../../_downloads/37823eceed29ded3854e6b1985330ffb/solution-age-categories.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">a</span> <span class="pre">notebook</span></code></a>
-discussing some possible options in <code class="docutils literal notranslate"><span class="pre">pure</span> <span class="pre">python</span></code> using a dictionary to store the results and a
-comparison with <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
-<p>I have recieved some sample data from a participant so we can use that on <code class="docutils literal notranslate"><span class="pre">Tuesday</span></code>/<code class="docutils literal notranslate"><span class="pre">Thursday</span></code> to review using
-real world data.</p>
+discussing some possible options in <code class="docutils literal notranslate"><span class="pre">pure</span> <span class="pre">python</span></code> using a
+dictionary to store the results and a comparison with <code class="docutils literal notranslate"><span class="pre">pandas</span></code>
+using <code class="docutils literal notranslate"><span class="pre">categoricals</span></code>.</p>
+<p>You can <a class="reference external" href="https://mybinder.org/v2/gh/QuantEcon/2021-workshop-rsit/main?filepath=notebooks%2Fsession5%2Fsolution-age-categories.ipynb">run this notebook here</a></p>
+<p>I have received some sample data from a participant so we can use
+that in this weeks <code class="docutils literal notranslate"><span class="pre">Tutorial</span></code> to review using real world data.</p>
 </div>
 </div>
 

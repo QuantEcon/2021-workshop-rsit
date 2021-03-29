@@ -47,6 +47,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -57,7 +59,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Integrated Workflows" href="stata-and-python-integrated.html" />
-    <link rel="prev" title="Intro" href="stata-and-python.html" />
+    <link rel="prev" title="Stata and Python" href="stata-and-python.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -270,7 +272,7 @@
   <ul class="current collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="stata-and-python.html">
-     Intro
+     Stata and Python
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -434,16 +436,11 @@
 <p class="sidebar-title"></p>
 <p>Stata16 <a class="reference external" href="https://blog.stata.com/2020/11/10/stata-for-mac-with-apple-silicon/">has been updated for use on Apple Silicon based Macs</a> but older versions will run through translation instead of
 native support.</p>
-<div class="admonition-macos-anaconda-issue admonition">
-<p class="admonition-title">macOS + Anaconda Issue</p>
-<p>I ran into <a class="reference external" href="https://www.statalist.org/forums/forum/general-stata-discussion/general/1578573-python-integration-pandas-package-causing-stata-to-close">this issue</a> on my <code class="docutils literal notranslate"><span class="pre">macOS</span></code> installation
-of Stata and found the suggestion solution was required to prevent this behavior</p>
-</div>
 </div>
 <div class="admonition-assumptions admonition">
 <p class="admonition-title">Assumptions</p>
-<p>This session presumes you have already installed <code class="docutils literal notranslate"><span class="pre">Stata16+</span></code> on your computer and you are already
-familiar with using <code class="docutils literal notranslate"><span class="pre">stata</span></code></p>
+<p>This session presumes you have already installed <code class="docutils literal notranslate"><span class="pre">Stata16</span></code> on your computer and you are already
+proficient with using <code class="docutils literal notranslate"><span class="pre">stata</span></code></p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -453,9 +450,9 @@ these problems and we can look at trying to find a solution.</p>
 </div>
 <p>Integration between computer software is always a tricky problem to solve and typically requires
 some investment in setting up the integrations properly.</p>
-<p>We will focus on setting up <code class="docutils literal notranslate"><span class="pre">python</span></code> in <code class="docutils literal notranslate"><span class="pre">stata</span></code> and getting access to your configuration.</p>
-<p>Having good knowledge of how your system is configured helps greatly in reducing bugs and issues related
-to software problems.</p>
+<p>In this session we will focus on setting up <code class="docutils literal notranslate"><span class="pre">python</span></code> in <code class="docutils literal notranslate"><span class="pre">stata</span></code> and getting access to your configuration.</p>
+<p>Having good knowledge of how your system is configured can great assist in reducing bugs and issues related
+to software problems and environments.</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>This workflow has been put together on <code class="docutils literal notranslate"><span class="pre">macOS</span></code>. The <code class="docutils literal notranslate"><span class="pre">stata</span></code> application is pretty consistent
@@ -467,7 +464,7 @@ across platforms such as <code class="docutils literal notranslate"><span class=
 </div>
 <div class="section" id="checking-your-configuration">
 <h2>Checking your Configuration<a class="headerlink" href="#checking-your-configuration" title="Permalink to this headline">¶</a></h2>
-<p>To check your configuration you can type:</p>
+<p>To check your configuration you can type</p>
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span>python<span class="k"> query</span>
 </pre></div>
 </div>
@@ -499,10 +496,11 @@ are linked together.</p>
 </tr>
 </tbody>
 </table>
+<p>You can also see that <code class="docutils literal notranslate"><span class="pre">python</span></code> hasn’t been initialised as we haven’t used it in this session.</p>
 </div>
 <div class="section" id="searching-for-python-on-your-system">
 <h2>Searching for Python on your System<a class="headerlink" href="#searching-for-python-on-your-system" title="Permalink to this headline">¶</a></h2>
-<p>Stata can search your system for any <code class="docutils literal notranslate"><span class="pre">python</span></code> installations and list them by typing:</p>
+<p>Stata can search your system for any <code class="docutils literal notranslate"><span class="pre">python</span></code> installations and list them by typing</p>
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span>python<span class="k"> search</span>
 </pre></div>
 </div>
@@ -527,23 +525,23 @@ are linked together.</p>
 <p>Linking <code class="docutils literal notranslate"><span class="pre">stata</span></code> to a specific <code class="docutils literal notranslate"><span class="pre">python</span></code> installation (such as <code class="docutils literal notranslate"><span class="pre">anaconda</span></code>) can be done
 using the <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">python_exec</span></code> command such as:</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="e3cfe698-7d6b-4e35-adc7-950e1d55c34e" name="956e60d0-5fa1-4099-9eef-f86471addc5c" type="radio">
-</input><label class="tabbed-label" for="e3cfe698-7d6b-4e35-adc7-950e1d55c34e">
+<input checked="checked" id="2e955937-48b4-475f-a0f1-cf0b67b83acc" name="c8ff2cba-c781-4d0c-9472-6e14475730d7" type="radio">
+</input><label class="tabbed-label" for="2e955937-48b4-475f-a0f1-cf0b67b83acc">
 macOS</label><div class="tabbed-content docutils">
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> python_exec <span class="o">/</span>Users<span class="o">/&lt;</span>user<span class="o">&gt;/</span>anaconda3<span class="o">/</span>bin<span class="o">/</span>python
 </pre></div>
 </div>
 </div>
-<input id="83cdd538-11ee-46a7-880a-e7fafa9fc970" name="956e60d0-5fa1-4099-9eef-f86471addc5c" type="radio">
-</input><label class="tabbed-label" for="83cdd538-11ee-46a7-880a-e7fafa9fc970">
+<input id="a1e7b246-5470-419d-a6f4-fa8fe0de7a76" name="c8ff2cba-c781-4d0c-9472-6e14475730d7" type="radio">
+</input><label class="tabbed-label" for="a1e7b246-5470-419d-a6f4-fa8fe0de7a76">
 Windows</label><div class="tabbed-content docutils">
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> python_exec C:\Users\<span class="o">&lt;</span>users<span class="o">&gt;</span>\anaconda3\python<span class="m">.</span>exe
 </pre></div>
 </div>
 </div>
 </div>
-<p>This can be used together with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">search</span></code> to know which path to provide and then
-the setting can be checked using <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">query</span></code>.</p>
+<p>This can be used together with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">search</span></code> to know which path to provide.</p>
+<p>You can then check the setting has taken effect using <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">query</span></code>.</p>
 </div>
 <div class="section" id="updating-your-sys-path-in-python">
 <h2>Updating your <code class="docutils literal notranslate"><span class="pre">sys.path</span></code> in <code class="docutils literal notranslate"><span class="pre">python</span></code><a class="headerlink" href="#updating-your-sys-path-in-python" title="Permalink to this headline">¶</a></h2>
@@ -551,28 +549,37 @@ the setting can be checked using <code class="docutils literal notranslate"><spa
 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">packages</span></code> and other utilities and programs.</p>
 <p>You can add a custom path for the python <code class="docutils literal notranslate"><span class="pre">stata</span></code> environment using <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">python_userpath</span></code></p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="8ef9f260-ca70-43f5-acf9-91b219380b89" name="da4fc040-23ed-40fb-8586-1751790b4801" type="radio">
-</input><label class="tabbed-label" for="8ef9f260-ca70-43f5-acf9-91b219380b89">
+<input checked="checked" id="899ee467-3a9a-4a69-add1-66a2e0d30ae2" name="d333d0b2-9bf5-41e9-b858-2cf2edaf4dcc" type="radio">
+</input><label class="tabbed-label" for="899ee467-3a9a-4a69-add1-66a2e0d30ae2">
 macOS</label><div class="tabbed-content docutils">
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> python_userpath <span class="o">/</span>Users<span class="o">/&lt;</span>user<span class="o">&gt;/</span>mypythoncode
 </pre></div>
 </div>
 </div>
-<input id="f5ae5c8f-ea47-448f-b0fd-c9d3479b992b" name="da4fc040-23ed-40fb-8586-1751790b4801" type="radio">
-</input><label class="tabbed-label" for="f5ae5c8f-ea47-448f-b0fd-c9d3479b992b">
+<input id="05278b9e-2cd9-4b9e-b4e3-455d733acf76" name="d333d0b2-9bf5-41e9-b858-2cf2edaf4dcc" type="radio">
+</input><label class="tabbed-label" for="05278b9e-2cd9-4b9e-b4e3-455d733acf76">
 Windows</label><div class="tabbed-content docutils">
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> python_userpath C:\Users\<span class="o">&lt;</span>users<span class="o">&gt;</span>\mypythoncode
 </pre></div>
 </div>
 </div>
 </div>
-<p>Then check the setting using <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">query</span></code>.</p>
+<p>Then check the setting has taken effect using <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">query</span></code>.</p>
 </div>
 <div class="section" id="testing-python">
 <h2>Testing Python<a class="headerlink" href="#testing-python" title="Permalink to this headline">¶</a></h2>
-<p>To check that everything is setup and ready to go you can run the
-<a class="reference internal" href="stata-and-python-integrated.html#session5-stata-and-python-firstexample"><span class="std std-ref">first python example</span></a> and verify
-everything is working.</p>
+<p>::{margin}</p>
+<div class="admonition-macos-anaconda-issue admonition">
+<p class="admonition-title">macOS + Anaconda Issue</p>
+<p>I ran into <a class="reference external" href="https://www.statalist.org/forums/forum/general-stata-discussion/general/1578573-python-integration-pandas-package-causing-stata-to-close">this issue</a> on my <code class="docutils literal notranslate"><span class="pre">macOS</span></code> installation
+of Stata and found the suggestion solution was required to prevent this behavior</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="n">To</span> <span class="n">check</span> <span class="n">that</span> <span class="n">everything</span> <span class="ow">is</span> <span class="n">setup</span> <span class="ow">and</span> <span class="n">ready</span> <span class="n">to</span> <span class="n">go</span> <span class="n">you</span> <span class="n">can</span> <span class="n">run</span> <span class="n">the</span>
+<span class="p">[</span><span class="n">first</span> <span class="n">python</span> <span class="n">example</span><span class="p">](</span><span class="n">session5</span><span class="o">/</span><span class="n">stata</span><span class="o">-</span><span class="ow">and</span><span class="o">-</span><span class="n">python</span><span class="o">-</span><span class="n">interactive</span><span class="p">)</span> <span class="ow">and</span> <span class="n">verify</span>
+<span class="n">everything</span> <span class="ow">is</span> <span class="n">working</span><span class="o">.</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -601,7 +608,7 @@ everything is working.</p>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="stata-and-python.html" title="previous page">Intro</a>
+    <a class='left-prev' id="prev-link" href="stata-and-python.html" title="previous page">Stata and Python</a>
     <a class='right-next' id="next-link" href="stata-and-python-integrated.html" title="next page">Integrated Workflows</a>
 
         </div>

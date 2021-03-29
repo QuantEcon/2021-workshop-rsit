@@ -47,6 +47,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -270,7 +272,7 @@
   <ul class="current collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="stata-and-python.html">
-     Intro
+     Stata and Python
     </a>
    </li>
    <li class="toctree-l2">
@@ -451,6 +453,23 @@
     <a class="reference internal nav-link" href="#copying-data-from-stata-to-python">
      Copying Data from Stata to Python
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#obtaining-more-variables-at-once">
+       Obtaining more variables at once
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pd-dataframe-and-pd-series">
+       pd.DataFrame and pd.Series:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#missing-values">
+       Missing Values:
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#copying-data-from-python-to-stata">
@@ -506,9 +525,17 @@ on the <code class="docutils literal notranslate"><span class="pre">python</span
 <p>This <a class="reference external" href="https://blog.stata.com/2020/08/25/stata-python-integration-part-2-three-ways-to-use-python-in-stata/">blog post</a>
 does a really good job of explaining the different methods for using <code class="docutils literal notranslate"><span class="pre">python</span></code> in <code class="docutils literal notranslate"><span class="pre">stata</span></code>.</p>
 </div>
+<p>There are <code class="docutils literal notranslate"><span class="pre">three</span></code> primary interfaces to running <code class="docutils literal notranslate"><span class="pre">python</span></code> within <code class="docutils literal notranslate"><span class="pre">stata</span></code>:</p>
+<ol class="simple">
+<li><p><a class="reference internal" href="#session5-stata-and-python-interactive"><span class="std std-ref">Running python Interactively with a First Example</span></a></p></li>
+<li><p><a class="reference internal" href="#session5-stata-and-python-do"><span class="std std-ref">Running python in a do file</span></a></p></li>
+<li><p><span class="xref myst"></span></p></li>
+</ol>
+<p>We will then look at how to transfer data between <code class="docutils literal notranslate"><span class="pre">python</span></code> and <code class="docutils literal notranslate"><span class="pre">stata</span></code>
+in both directions through the <code class="docutils literal notranslate"><span class="pre">stata</span> <span class="pre">function</span> <span class="pre">interface</span></code>.</p>
 <div class="section" id="running-python-interactively-with-a-first-example">
 <span id="session5-stata-and-python-interactive"></span><h2>Running <code class="docutils literal notranslate"><span class="pre">python</span></code> Interactively with a First Example<a class="headerlink" href="#running-python-interactively-with-a-first-example" title="Permalink to this headline">¶</a></h2>
-<p id="session5-stata-and-python-firstexample">You can run <code class="docutils literal notranslate"><span class="pre">python</span></code> interactively within <code class="docutils literal notranslate"><span class="pre">stata</span></code> in a manner that is the
+<p>You can run <code class="docutils literal notranslate"><span class="pre">python</span></code> interactively within <code class="docutils literal notranslate"><span class="pre">stata</span></code> in a manner that is the
 equivalent of running the <code class="docutils literal notranslate"><span class="pre">python</span></code> REPL program through a terminal.</p>
 <p>This is activated by typing <code class="docutils literal notranslate"><span class="pre">python</span></code> in the command window.</p>
 <div class="figure align-default">
@@ -524,7 +551,7 @@ the <code class="docutils literal notranslate"><span class="pre">Result</span></
 <img alt="../../_images/stata-python-hello-world.png" src="../../_images/stata-python-hello-world.png" />
 </div>
 <p>once you hit enter <code class="docutils literal notranslate"><span class="pre">stata</span></code> sends the code snippet to the python interpreter
-for processing</p>
+for processing and shows the result</p>
 <div class="figure align-default">
 <img alt="../../_images/stata-python-hello-world-result.png" src="../../_images/stata-python-hello-world-result.png" />
 </div>
@@ -549,8 +576,9 @@ the command window</p>
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span>python:<span class="k"> print</span>(<span class="s">&quot;Hello World!&quot;</span>)
 </pre></div>
 </div>
-<p>which will pass the code to <code class="docutils literal notranslate"><span class="pre">python</span></code> and display the results
-directly below in the <code class="docutils literal notranslate"><span class="pre">Results</span></code> window</p>
+<p>which will pass the code to <code class="docutils literal notranslate"><span class="pre">python</span></code>, display the results
+directly below in the <code class="docutils literal notranslate"><span class="pre">Results</span></code> window, and return you to
+the <code class="docutils literal notranslate"><span class="pre">stata</span></code> command environment.</p>
 <div class="figure align-default">
 <img alt="../../_images/stata-python-hello-world-oneline.png" src="../../_images/stata-python-hello-world-oneline.png" />
 </div>
@@ -571,27 +599,36 @@ python:<span class="k"> print</span>(<span class="s">&quot;Python Here&quot;</sp
 <div class="figure align-default">
 <img alt="../../_images/stata-example1-do.png" src="../../_images/stata-example1-do.png" />
 </div>
-<p>and when you click on <code class="docutils literal notranslate"><span class="pre">Do</span></code> button you get the result:</p>
+<p>and when you click on the <code class="docutils literal notranslate"><span class="pre">Do</span></code> button you get the result:</p>
 <div class="figure align-default">
 <img alt="../../_images/stata-example1-do-run.png" src="../../_images/stata-example1-do-run.png" />
 </div>
 <p>where the results from <code class="docutils literal notranslate"><span class="pre">python</span></code> are displayed similarly to <code class="docutils literal notranslate"><span class="pre">stata</span></code> output.</p>
-<p>However, you often want to add in a <strong>block of code</strong> such as:</p>
+<p>However, most of the time you will want to add in a <strong>block of code</strong> such as:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Python Here&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This can be done by delimiting the <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">code</span></code> within the <code class="docutils literal notranslate"><span class="pre">do</span></code> file using:</p>
-<ol class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">python</span></code> and <code class="docutils literal notranslate"><span class="pre">end</span></code>, or</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">python:</span></code> and <code class="docutils literal notranslate"><span class="pre">end</span></code></p></li>
-</ol>
+<p>This can be done by delimiting the <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">code</span></code> within the <code class="docutils literal notranslate"><span class="pre">do</span></code> file using either</p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span>python
+<span class="o">&lt;</span>python code<span class="o">&gt;</span><span class="k"></span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span>python:
+<span class="o">&lt;</span>python code<span class="o">&gt;</span><span class="k"></span>
+<span class="k">end</span>
+</pre></div>
+</div>
 <p>The difference between these two <code class="docutils literal notranslate"><span class="pre">delimiters</span></code> is in how <code class="docutils literal notranslate"><span class="pre">stata</span></code> handles any
-errors in <code class="docutils literal notranslate"><span class="pre">python</span></code>. The <code class="docutils literal notranslate"><span class="pre">python</span></code> environment will continue to execute the rest
-of the <code class="docutils literal notranslate"><span class="pre">python</span></code> code if an error is encountered, while <code class="docutils literal notranslate"><span class="pre">python:</span></code> will <strong>immediately</strong>
+errors in <code class="docutils literal notranslate"><span class="pre">python</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">python</span></code> delimiter will continue to execute the rest
+of the <code class="docutils literal notranslate"><span class="pre">python</span></code> code if an error is encountered, while the <code class="docutils literal notranslate"><span class="pre">python:</span></code> delimiter will <strong>immediately</strong>
 return control to <code class="docutils literal notranslate"><span class="pre">stata</span></code> once the error is encountered.</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
+<p>We have made an error by incorrectly spelling the <code class="docutils literal notranslate"><span class="pre">range</span></code> function.</p>
 <p>This can be <a class="reference download internal" download="" href="../../_downloads/2ef6efee475324b7186a0da135dd264b/example2a.do"><code class="xref download docutils literal notranslate"><span class="pre">downloaded</span> <span class="pre">from</span> <span class="pre">here</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">do</span> <span class="pre">file</span></code></a></p>
 </div>
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">di</span> <span class="s">&quot;Stata Here&quot;</span>
@@ -719,15 +756,15 @@ python script</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>This is a very useful way to run <code class="docutils literal notranslate"><span class="pre">python</span></code> code as it leaves you
+<p>This can be a very useful way to run <code class="docutils literal notranslate"><span class="pre">python</span></code> code as it leaves you
 to write <code class="docutils literal notranslate"><span class="pre">python</span></code> code in any text editor you like such as
 <a class="reference external" href="https://code.visualstudio.com">vscode</a>.</p>
 </div>
 </div>
 <div class="section" id="interacting-between-stata-and-python">
 <h2>Interacting between <code class="docutils literal notranslate"><span class="pre">Stata</span></code> and <code class="docutils literal notranslate"><span class="pre">Python</span></code><a class="headerlink" href="#interacting-between-stata-and-python" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <p>In many cases it can be simpler to keep <code class="docutils literal notranslate"><span class="pre">python</span></code> and <code class="docutils literal notranslate"><span class="pre">stata</span></code>
 workflows independent of each other and use <code class="docutils literal notranslate"><span class="pre">files</span></code> to transfer
 data between them.</p>
@@ -735,25 +772,20 @@ data between them.</p>
 </div>
 <p>So far the <code class="docutils literal notranslate"><span class="pre">python</span></code> and <code class="docutils literal notranslate"><span class="pre">stata</span></code> runtime environments have been
 independent of each other to learn about how to run <code class="docutils literal notranslate"><span class="pre">python</span></code> code
-within <code class="docutils literal notranslate"><span class="pre">stata</span></code>.</p>
-<p>However for most applications we want some level of <code class="docutils literal notranslate"><span class="pre">interaction</span></code> between <code class="docutils literal notranslate"><span class="pre">stata</span></code>
+within <code class="docutils literal notranslate"><span class="pre">stata</span></code> (i.e. they haven’t shared any data)</p>
+<p>For many applications we want some level of <code class="docutils literal notranslate"><span class="pre">interaction</span></code> between <code class="docutils literal notranslate"><span class="pre">stata</span></code>
 and <code class="docutils literal notranslate"><span class="pre">python</span></code> by copying back and forth objects between the different runtime
 environments.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Stata</span></code> makes various components of <code class="docutils literal notranslate"><span class="pre">stata</span></code> available to <code class="docutils literal notranslate"><span class="pre">python</span></code> via
+<p><code class="docutils literal notranslate"><span class="pre">Stata</span></code> makes various components of its internals available to <code class="docutils literal notranslate"><span class="pre">python</span></code> via
 the <a class="reference internal" href="#session5-stata-and-python-sfi"><span class="std std-ref">stata function interface (sfi)</span></a>
-to enable such interaction, such as:</p>
-<ol>
-<li><p><a class="reference external" href="https://www.stata.com/python/api16/Data.html">Current Stata Dataset</a></p></li>
-<li><p><a class="reference external" href="https://www.stata.com/python/api16/Frame.html">Stata Frames</a></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><a class="reference external" href="https://www.stata.com/new-in-stata/multiple-datasets-in-memory/">frames</a> have been introduced
-to load more than one dataset</p>
-</div>
-</li>
-<li><p><a class="reference external" href="https://www.stata.com/python/api16/Macro.html">Stata Macros</a></p></li>
+to enable such interaction with:</p>
+<ol class="simple">
+<li><p><a class="reference external" href="https://www.stata.com/python/api16/Data.html">Dataset</a> which connects <code class="docutils literal notranslate"><span class="pre">python</span></code> with the current
+in memory <code class="docutils literal notranslate"><span class="pre">stata</span></code> dataset</p></li>
+<li><p><a class="reference external" href="https://www.stata.com/python/api16/Macro.html">Macros</a> which connects <code class="docutils literal notranslate"><span class="pre">python</span></code> with <code class="docutils literal notranslate"><span class="pre">stata</span></code>
+macros</p></li>
 </ol>
-<p>In addition to access to <a class="reference internal" href="#session5-stata-and-python-sfi"><span class="std std-ref">many other components</span></a>.</p>
+<p>In addition it also provides access to <a class="reference internal" href="#session5-stata-and-python-sfi"><span class="std std-ref">many other <code class="docutils literal notranslate"><span class="pre">stata</span></code> components</span></a>.</p>
 <div class="section" id="copying-data-from-stata-to-python">
 <h3>Copying Data from Stata to Python<a class="headerlink" href="#copying-data-from-stata-to-python" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-stata-blog-post admonition">
@@ -764,11 +796,11 @@ to load more than one dataset</p>
 <span class="k">list</span> foreign
 </pre></div>
 </div>
-<p>listing the <code class="docutils literal notranslate"><span class="pre">foreign</span></code> data in <code class="docutils literal notranslate"><span class="pre">stata</span></code> shows:</p>
+<p>Listing the <code class="docutils literal notranslate"><span class="pre">foreign</span></code> data in <code class="docutils literal notranslate"><span class="pre">stata</span></code> shows</p>
 <div class="figure align-default">
 <img alt="../../_images/stata-sysuse-auto-list-foreign.png" src="../../_images/stata-sysuse-auto-list-foreign.png" />
 </div>
-<p>then use <code class="docutils literal notranslate"><span class="pre">python</span></code> to look at the <code class="docutils literal notranslate"><span class="pre">raw</span></code> data using the <code class="docutils literal notranslate"><span class="pre">.get</span></code> method
+<p>We can then use <code class="docutils literal notranslate"><span class="pre">sfi.Data</span></code> to transfer the <code class="docutils literal notranslate"><span class="pre">raw</span></code> data to <code class="docutils literal notranslate"><span class="pre">python</span></code> using the <code class="docutils literal notranslate"><span class="pre">.get</span></code> method
 of the <code class="docutils literal notranslate"><span class="pre">Data</span></code> object from the <code class="docutils literal notranslate"><span class="pre">stata</span> <span class="pre">function</span> <span class="pre">interface</span></code> package.</p>
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span>python
 from sfi import Data
@@ -791,7 +823,7 @@ dataraw<span class="k"></span>
 <div class="figure align-default">
 <img alt="../../_images/stata-sysuse-auto-dataviewier-foreign.png" src="../../_images/stata-sysuse-auto-dataviewier-foreign.png" />
 </div>
-<p>You may want to get more information about the <code class="docutils literal notranslate"><span class="pre">get</span></code> method so the best place
+<p>We may want to get more information about the <code class="docutils literal notranslate"><span class="pre">get</span></code> method so the best place
 to look is the <a class="reference external" href="https://www.stata.com/python/api16/Data.html">documentation on sfi.Data</a>.
 Then you can click on the <a class="reference external" href="https://www.stata.com/python/api16/Data.html#sfi.Data.get">get method</a></p>
 <div class="admonition tip">
@@ -812,15 +844,29 @@ dataraw<span class="k"></span>
 <span class="k">end</span>
 </pre></div>
 </div>
-<p>and the <code class="docutils literal notranslate"><span class="pre">rawdata</span></code> is now returned as strings taking the value of the <code class="docutils literal notranslate"><span class="pre">labels</span></code> that
+<p>and the <code class="docutils literal notranslate"><span class="pre">raw</span> <span class="pre">data</span></code> is now returned as strings taking the value of the <code class="docutils literal notranslate"><span class="pre">labels</span></code> that
 have been applied to the data</p>
 <div class="figure align-default">
 <img alt="../../_images/stata-sysuse-auto-foreign-valuelabels.png" src="../../_images/stata-sysuse-auto-foreign-valuelabels.png" />
 </div>
-<p><strong>Obtaining more variables at once:</strong></p>
+<div class="section" id="obtaining-more-variables-at-once">
+<h4>Obtaining more variables at once<a class="headerlink" href="#obtaining-more-variables-at-once" title="Permalink to this headline">¶</a></h4>
 <p>You can obtain more variables using the <code class="docutils literal notranslate"><span class="pre">get</span></code> method. Based on the documentation you can use
-the following methods to specify what variables to fetch <code class="docutils literal notranslate"><span class="pre">var</span> <span class="pre">(int,</span> <span class="pre">str,</span> <span class="pre">or</span> <span class="pre">list-like,</span> <span class="pre">optional)</span></code>.</p>
-<p>In addition you can also specify which <code class="docutils literal notranslate"><span class="pre">obs</span></code> you would like <code class="docutils literal notranslate"><span class="pre">obs</span> <span class="pre">(int</span> <span class="pre">or</span> <span class="pre">list-like,</span> <span class="pre">optional)</span></code>.</p>
+the following methods to specify what variables to fetch:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>var (int, str, or list-like, optional) – Variables to access.
+It can be specified as a single variable index or name, or an
+iterable of variable indices or names. If var is not specified,
+all the variables are specified.
+</pre></div>
+</div>
+<p>In addition you can also specify which observations (<code class="docutils literal notranslate"><span class="pre">obs</span></code>) you would like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>obs (int or list-like, optional) – Observations to access.
+It can be specified as a single observation index or an iterable
+of observation indices. If obs is not specified, all the
+observations are specified.
+</pre></div>
+</div>
+<p>So let’s use this information and run</p>
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span>python
 from sfi import Data
 dataraw = Data<span class="m">.</span><span class="nf">get</span>(&#39;foreign mpg rep78&#39;,<span class="k"> range</span>(<span class="m">45</span>,<span class="m">56</span>))
@@ -832,8 +878,8 @@ dataraw<span class="k"></span>
 <div class="figure align-default">
 <img alt="../../_images/stata-sysuse-auto-3vars-range.png" src="../../_images/stata-sysuse-auto-3vars-range.png" />
 </div>
-<p>The data is written as a list of <code class="docutils literal notranslate"><span class="pre">rows</span></code> in the order of the variables requested, which
-in this case is: <code class="docutils literal notranslate"><span class="pre">foreign</span> <span class="pre">mpg</span> <span class="pre">rep78</span></code> such as the first element:</p>
+<p>The data is written as a list of <code class="docutils literal notranslate"><span class="pre">rows</span></code>/<code class="docutils literal notranslate"><span class="pre">obs</span></code> in the order that the variables are requested,
+which in this case is: <code class="docutils literal notranslate"><span class="pre">foreign</span> <span class="pre">mpg</span> <span class="pre">rep78</span></code> such as the first element:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="o">...</span>
 </pre></div>
 </div>
@@ -841,7 +887,7 @@ in this case is: <code class="docutils literal notranslate"><span class="pre">fo
 <p class="sidebar-title"></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><code class="docutils literal notranslate"><span class="pre">range</span></code> is a <code class="docutils literal notranslate"><span class="pre">python</span></code> object that behaves like a list when constructing <code class="docutils literal notranslate"><span class="pre">ranges</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">range</span></code> is a <code class="docutils literal notranslate"><span class="pre">python</span></code> object that behaves like a list when constructing <code class="docutils literal notranslate"><span class="pre">ranges</span></code>.</p>
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">range(45,56)</span></code> request will fetch observations <code class="docutils literal notranslate"><span class="pre">46</span></code> to <code class="docutils literal notranslate"><span class="pre">56</span></code> as shown in the <code class="docutils literal notranslate"><span class="pre">data</span></code> browser</p>
@@ -864,7 +910,7 @@ dataraw<span class="k"></span>
 <span class="k">end</span>
 </pre></div>
 </div>
-<p>will return the same data</p>
+<p>which will return the same data</p>
 <div class="figure align-default">
 <img alt="../../_images/stata-sysuse-auto-3vars-range-list.png" src="../../_images/stata-sysuse-auto-3vars-range-list.png" />
 </div>
@@ -879,13 +925,16 @@ code?</p>
 <p class="sidebar-title"></p>
 <p>Current <code class="docutils literal notranslate"><span class="pre">Stata</span></code> support is for moving <code class="docutils literal notranslate"><span class="pre">raw</span> <span class="pre">data</span></code> to the python context. It is left
 to the user to push that raw data into some other object such as <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code>
-or <code class="docutils literal notranslate"><span class="pre">pd.Series</span></code>. I hope support for <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code> will be coming in a future release.</p>
+or <code class="docutils literal notranslate"><span class="pre">pd.Series</span></code>.</p>
+<p>I hope support for <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code> will be coming in a future release.</p>
 </div>
-<p><strong>pd.DataFrame and pd.Series:</strong></p>
+</div>
+<div class="section" id="pd-dataframe-and-pd-series">
+<h4>pd.DataFrame and pd.Series:<a class="headerlink" href="#pd-dataframe-and-pd-series" title="Permalink to this headline">¶</a></h4>
 <p>The discussion so far has focused on fetching <code class="docutils literal notranslate"><span class="pre">raw</span> <span class="pre">data</span></code> out of <code class="docutils literal notranslate"><span class="pre">stata</span></code> and copying
-it to the <code class="docutils literal notranslate"><span class="pre">python</span></code> environment. But in many applications we are unlikely to want to
-use the raw data directly and you will want to be comfortable with setting up
-pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> and <code class="docutils literal notranslate"><span class="pre">Series</span></code> objects such as:</p>
+it to the <code class="docutils literal notranslate"><span class="pre">python</span></code> environment. But in many applications we are likely to want higher
+productivity objects such as pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> and <code class="docutils literal notranslate"><span class="pre">Series</span></code>.</p>
+<p>Let’s try</p>
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span>python
 from sfi import Data
 import pandas<span class="k"> as</span> pd
@@ -901,8 +950,8 @@ but <code class="docutils literal notranslate"><span class="pre">columns</span><
 <img alt="../../_images/stata-sysuse-auto-3vars-range-dataframe.png" src="../../_images/stata-sysuse-auto-3vars-range-dataframe.png" />
 </div>
 <p>You may want to parameterize your requests so you can use them in both
-the <code class="docutils literal notranslate"><span class="pre">sfi.Data.get</span></code> method in addition to a <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code> method when converting
-the <code class="docutils literal notranslate"><span class="pre">raw</span> <span class="pre">data</span></code> into a <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code></p>
+the <code class="docutils literal notranslate"><span class="pre">sfi.Data.get</span></code> method in addition to a <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code> method when
+converting the <code class="docutils literal notranslate"><span class="pre">raw</span> <span class="pre">data</span></code> into a <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code></p>
 <p>You can save the variable selection as a python variable:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;foreign&#39;</span><span class="p">,</span> <span class="s1">&#39;mpg&#39;</span><span class="p">,</span> <span class="s1">&#39;rep78&#39;</span><span class="p">]</span>
 </pre></div>
@@ -915,8 +964,8 @@ the <code class="docutils literal notranslate"><span class="pre">raw</span> <spa
 <li><p><code class="docutils literal notranslate"><span class="pre">range(45,56)</span></code> for <code class="docutils literal notranslate"><span class="pre">stata</span></code>, and</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">range(46,57)</span></code> for <code class="docutils literal notranslate"><span class="pre">pandas</span></code></p></li>
 </ol>
-<p>to harmonise given data ind <code class="docutils literal notranslate"><span class="pre">stata</span> <span class="pre">data</span> <span class="pre">viewer</span></code> is indexed by <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
-<p>I hope <code class="docutils literal notranslate"><span class="pre">stata</span></code> provide <code class="docutils literal notranslate"><span class="pre">sfi.Data.dataframe</span></code> that can help manage these
+<p>to harmonise given data in <code class="docutils literal notranslate"><span class="pre">stata</span> <span class="pre">data</span> <span class="pre">editor</span></code> is indexed by <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<p>It would be nice if <code class="docutils literal notranslate"><span class="pre">stata</span></code> provides <code class="docutils literal notranslate"><span class="pre">sfi.Data.dataframe</span></code> that can help manage these
 indexing issues.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -960,14 +1009,17 @@ df<span class="k"></span>
 </pre></div>
 </div>
 </div>
-<p><strong>Missing Values:</strong></p>
+</div>
+<div class="section" id="missing-values">
+<h4>Missing Values:<a class="headerlink" href="#missing-values" title="Permalink to this headline">¶</a></h4>
 <p>Missing values in <code class="docutils literal notranslate"><span class="pre">stata</span></code> are internally represented by the <code class="docutils literal notranslate"><span class="pre">largest</span></code> value for
-each type. Within <code class="docutils literal notranslate"><span class="pre">stata</span></code> you typically work with missing values using <code class="docutils literal notranslate"><span class="pre">.</span></code>  such as:</p>
+each type.</p>
+<p>Within <code class="docutils literal notranslate"><span class="pre">stata</span></code> you typically work with missing values using <code class="docutils literal notranslate"><span class="pre">.</span></code>  such as:</p>
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">list</span> rep78<span class="k"> if</span> rep78 <span class="o">!=</span> .
 </pre></div>
 </div>
 <p>and much of this detail is taken care of for you.</p>
-<p>So missing values are represented by the <code class="docutils literal notranslate"><span class="pre">maximum</span> <span class="pre">value</span></code>:</p>
+<p>AS missing values are represented by the <code class="docutils literal notranslate"><span class="pre">maximum</span> <span class="pre">value</span></code>:</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>This table is from the <a class="reference external" href="https://www.stata.com/manuals/u12.pdf#u12.2.2Numericstoragetypes">stata manual</a></p>
@@ -980,7 +1032,8 @@ each type. Within <code class="docutils literal notranslate"><span class="pre">s
 <p>I am <strong>not</strong> sure why <code class="docutils literal notranslate"><span class="pre">python</span></code> receives the missing value for a <code class="docutils literal notranslate"><span class="pre">double</span></code> numeric type when
 <code class="docutils literal notranslate"><span class="pre">rep78</span></code> is coded as an <code class="docutils literal notranslate"><span class="pre">int</span></code> in <code class="docutils literal notranslate"><span class="pre">stata</span></code>. I will need to ask <code class="docutils literal notranslate"><span class="pre">statacorp</span></code>.</p>
 </div>
-<p>However if using the raw data in <code class="docutils literal notranslate"><span class="pre">python</span></code> you will want to specify <code class="docutils literal notranslate"><span class="pre">missingval=np.nan</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span></code> will interpret this data as an actual value.</p>
+<p>You will want to specify <code class="docutils literal notranslate"><span class="pre">missingval=np.nan</span></code></p>
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span>python
 from sfi import Data
 import numpy<span class="k"> as</span> np
@@ -992,9 +1045,10 @@ df<span class="k"></span>
 <span class="k">end</span>
 </pre></div>
 </div>
-<p>which returns the following:</p>
+<p>which returns the following</p>
 <div class="figure align-default">
 <img alt="../../_images/stata-sysuse-auto-3vars-range-dataframe3.png" src="../../_images/stata-sysuse-auto-3vars-range-dataframe3.png" />
+</div>
 </div>
 </div>
 <div class="section" id="copying-data-from-python-to-stata">
@@ -1006,7 +1060,7 @@ df<span class="k"></span>
 <p>It is often the case you will want to do some data work in <code class="docutils literal notranslate"><span class="pre">python</span></code> and have a need to
 transfer it to <code class="docutils literal notranslate"><span class="pre">stata</span></code> to do some statistical anaylsis.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">sfi.Data</span></code> interface also contains methods for saving data from <code class="docutils literal notranslate"><span class="pre">python</span></code> into
-the <code class="docutils literal notranslate"><span class="pre">stata</span></code> default <code class="docutils literal notranslate"><span class="pre">dataframe</span></code> or a <code class="docutils literal notranslate"><span class="pre">frame</span></code>.</p>
+the default <code class="docutils literal notranslate"><span class="pre">stata</span> <span class="pre">dataframe</span></code> (or a <code class="docutils literal notranslate"><span class="pre">frame</span></code> which is new in <code class="docutils literal notranslate"><span class="pre">Stata16</span></code>)</p>
 <p>Let us fetch some data from Yahoo Finance using the <code class="docutils literal notranslate"><span class="pre">yfinance</span></code> package in <code class="docutils literal notranslate"><span class="pre">python</span></code></p>
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span>python:
 import yfinance<span class="k"> as</span> yf
@@ -1028,16 +1082,17 @@ Data<span class="m">.</span>setObsTotal(len(data))<span class="k"></span>
 <span class="k">end</span>
 </pre></div>
 </div>
-<p>the <code class="docutils literal notranslate"><span class="pre">stata</span></code> data editor now contains space for <code class="docutils literal notranslate"><span class="pre">len(data)</span></code> observations</p>
+<p>the <code class="docutils literal notranslate"><span class="pre">stata</span></code> data editor now contains space for <code class="docutils literal notranslate"><span class="pre">len(data)</span></code> observations to
+be transferred.</p>
 <div class="figure align-default">
 <img alt="../../_images/stata-dataeditor-sfi-setObsTotal.png" src="../../_images/stata-dataeditor-sfi-setObsTotal.png" />
 </div>
 <p>You can then setup <code class="docutils literal notranslate"><span class="pre">3</span></code> variables in stata to save <code class="docutils literal notranslate"><span class="pre">date</span></code>, <code class="docutils literal notranslate"><span class="pre">close</span></code>,
-and <code class="docutils literal notranslate"><span class="pre">volume</span></code> information.</p>
+and <code class="docutils literal notranslate"><span class="pre">volume</span></code> information across.</p>
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span>python:
-Data<span class="m">.</span>addVarStr(<span class="s">&quot;date&quot;</span>, <span class="m">10</span>)
-Data<span class="m">.</span>addVarDouble(<span class="s">&quot;close&quot;</span>)
-Data<span class="m">.</span>addVarInt(<span class="s">&quot;volume&quot;</span>)<span class="k"></span>
+Data<span class="m">.</span>addVarStr(<span class="s">&quot;date&quot;</span>, <span class="m">10</span>)  # Str10
+Data<span class="m">.</span>addVarDouble(<span class="s">&quot;close&quot;</span>)  # Double
+Data<span class="m">.</span>addVarInt(<span class="s">&quot;volume&quot;</span>)    # Int<span class="k"></span>
 <span class="k">end</span>
 </pre></div>
 </div>
@@ -1065,11 +1120,15 @@ variable already exists in the dataset.</p>
 </pre></div>
 </div>
 </div>
-<p>You might try saving the <code class="docutils literal notranslate"><span class="pre">data</span></code> from the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> dataframe into the <code class="docutils literal notranslate"><span class="pre">stata</span></code> dataset using the
+<p>The next step is to migrate the actual data.</p>
+<p>You might try saving the <code class="docutils literal notranslate"><span class="pre">data</span></code> directly from the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> dataframe into the <code class="docutils literal notranslate"><span class="pre">stata</span></code> dataset using the
 <a class="reference external" href="https://www.stata.com/python/api16/Data.html#sfi.Data.store">sfi.Data.store()</a> method.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This method is expecting: <code class="docutils literal notranslate"><span class="pre">store(var,</span> <span class="pre">obs,</span> <span class="pre">val,</span> <span class="pre">selectvar=None)</span></code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method interface is expecting</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">static</span> <span class="n">store</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">selectvar</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>where,</p>
 <ol class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">var</span></code>, <code class="docutils literal notranslate"><span class="pre">obs</span></code>, and <code class="docutils literal notranslate"><span class="pre">val</span></code> are <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">arguments</span></code>, and</p></li>
@@ -1088,8 +1147,10 @@ Data<span class="m">.</span>store(<span class="s">&quot;date&quot;</span>, None,
 <img alt="../../_images/stata-yfinance-data-save-data.png" src="../../_images/stata-yfinance-data-save-data.png" />
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">Stata</span></code> is similar to <code class="docutils literal notranslate"><span class="pre">numpy</span></code> in that it is very specific about how it saves <code class="docutils literal notranslate"><span class="pre">data</span></code> in memory in
-accordance with specified <code class="docutils literal notranslate"><span class="pre">types</span></code>. We tried to send through a list of <code class="docutils literal notranslate"><span class="pre">datetime</span></code> objects from
-<code class="docutils literal notranslate"><span class="pre">pandas</span></code> and <code class="docutils literal notranslate"><span class="pre">stata</span></code> doesn’t know how to represent this data in the <code class="docutils literal notranslate"><span class="pre">stata</span> <span class="pre">dataset</span></code>.</p>
+accordance with specified <code class="docutils literal notranslate"><span class="pre">types</span></code>.</p>
+<p>In the code above we tried to send through a list of <code class="docutils literal notranslate"><span class="pre">datetime</span></code> objects from
+<code class="docutils literal notranslate"><span class="pre">pandas</span></code> and the <code class="docutils literal notranslate"><span class="pre">stata</span> <span class="pre">function</span> <span class="pre">interface</span></code> doesn’t know how to represent
+this data in the <code class="docutils literal notranslate"><span class="pre">stata</span> <span class="pre">dataset</span></code>.</p>
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span>python
 data<span class="m">.</span>index
 data<span class="m">.</span>index[<span class="m">0</span>]<span class="k"></span>
@@ -1100,9 +1161,9 @@ data<span class="m">.</span>index[<span class="m">0</span>]<span class="k"></spa
 <div class="figure align-default">
 <img alt="../../_images/stata-yfinance-data-index-dateobjects.png" src="../../_images/stata-yfinance-data-index-dateobjects.png" />
 </div>
-<p>Some translation is required in this case to convert <code class="docutils literal notranslate"><span class="pre">dates</span></code> into a <code class="docutils literal notranslate"><span class="pre">format</span></code> that <code class="docutils literal notranslate"><span class="pre">stata</span></code>
-can copy into its dataset and then convert to <code class="docutils literal notranslate"><span class="pre">stata</span> <span class="pre">date</span></code> data.</p>
-<p>We know <code class="docutils literal notranslate"><span class="pre">stata</span></code> has a <code class="docutils literal notranslate"><span class="pre">date</span></code> function:</p>
+<p>Therefore some translation is required in this case to convert <code class="docutils literal notranslate"><span class="pre">dates</span></code> into a <code class="docutils literal notranslate"><span class="pre">format</span></code> that <code class="docutils literal notranslate"><span class="pre">stata</span></code>
+can copy into its dataset and then use <code class="docutils literal notranslate"><span class="pre">stata</span></code> tools to convert to <code class="docutils literal notranslate"><span class="pre">stata</span></code> dates.</p>
+<p>We know <code class="docutils literal notranslate"><span class="pre">stata</span></code> has a <code class="docutils literal notranslate"><span class="pre">date</span></code> function that we can use:</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition warning">
@@ -1124,8 +1185,9 @@ need to start from the begining to bring back in the <code class="docutils liter
 <div class="figure align-default">
 <img alt="../../_images/stata-working-with-date.png" src="../../_images/stata-working-with-date.png" />
 </div>
-<p>So we can look to convert the <code class="docutils literal notranslate"><span class="pre">pandas.Timestamp</span></code> objects to be represented as simpler strings
-that contain the information needed for <code class="docutils literal notranslate"><span class="pre">stata</span></code> to convert to <code class="docutils literal notranslate"><span class="pre">dates</span></code></p>
+<p>So now we can look to convert the <code class="docutils literal notranslate"><span class="pre">pandas.Timestamp</span></code> objects to be represented as simpler <code class="docutils literal notranslate"><span class="pre">string</span></code>
+based data that contain the information needed for <code class="docutils literal notranslate"><span class="pre">stata</span></code> to convert those <code class="docutils literal notranslate"><span class="pre">dates</span></code>.</p>
+<p>Pandas has a useful method <code class="docutils literal notranslate"><span class="pre">.astype()</span></code> for useful data conversions.</p>
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span>python
 data<span class="m">.</span>index = data<span class="m">.</span>index<span class="m">.</span>astype(str)
 data<span class="m">.</span>index[<span class="m">0</span>]<span class="k"></span>
@@ -1148,7 +1210,7 @@ over to <code class="docutils literal notranslate"><span class="pre">stata</span
 <div class="figure align-default">
 <img alt="../../_images/stata-dataeditor-sfi-store1.png" src="../../_images/stata-dataeditor-sfi-store1.png" />
 </div>
-<p>Let’s bring in the numerical data</p>
+<p>Let’s bring in the numerical data, which is a much simpler process</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span>
 <span class="n">Data</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="s2">&quot;close&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">Close</span><span class="p">)</span>
 <span class="n">Data</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="s2">&quot;volume&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">Volume</span><span class="p">)</span>
@@ -1159,8 +1221,9 @@ over to <code class="docutils literal notranslate"><span class="pre">stata</span
 <div class="figure align-default">
 <img alt="../../_images/stata-dataeditor-sfi-store2.png" src="../../_images/stata-dataeditor-sfi-store2.png" />
 </div>
-<p>and can swtich back to <code class="docutils literal notranslate"><span class="pre">stata</span></code> to run an <code class="docutils literal notranslate"><span class="pre">analysis</span></code> or construct a <code class="docutils literal notranslate"><span class="pre">plot</span></code></p>
-<p>We will first want to convert those dates in <code class="docutils literal notranslate"><span class="pre">stata</span></code></p>
+<p>Now that the data is copied across we can switch back to <code class="docutils literal notranslate"><span class="pre">stata</span></code> to run
+any <code class="docutils literal notranslate"><span class="pre">analysis</span></code> or construct a <code class="docutils literal notranslate"><span class="pre">plot</span></code></p>
+<p>We will first want to convert those dates in <code class="docutils literal notranslate"><span class="pre">stata</span></code> as a post transfer step</p>
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">gen</span> sdate = <span class="nf">date</span>(date, <span class="s">&quot;YMD&quot;</span>)<span class="k"></span>
 <span class="k">format</span> <span class="nx">%tdCCYY-NN-DD</span> sdate
 </pre></div>
