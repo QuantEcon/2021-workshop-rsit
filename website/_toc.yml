@@ -43,6 +43,14 @@
       - file: week2/session5/stata-and-python-setup
       - file: week2/session5/stata-and-python-integrated
       - file: week2/session5/stata-and-python-files
+    - file: week2/session6/schedule
+      sections:
+      - file: week2/session6/pandas-reshape
+      - file: week2/session6/pandas-merge
+      - file: week2/session6/pandas-groupby
+      - file: week2/session6/pandas-timeseries
+      - file: week2/session6/exercises
+
 
 - part: Resources
   numbered: false
