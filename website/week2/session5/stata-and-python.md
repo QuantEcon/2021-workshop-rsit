@@ -1,5 +1,5 @@
 (session5/stata-and-python)=
-# Intro
+# Stata and Python
 
 :::{admonition} Resource Development
 I am interested in turning these workshop materials into a resource on using
@@ -14,11 +14,12 @@ is [python integration](https://www.stata.com/new-in-stata/python-integration/).
 There are `two` main ways we can use `python` effectively with `stata`:
 
 1. [Using **python** in **stata** (through integrated workflows)](session5/stata-and-python-integrated)
-2. [Using **stata** with **python** (via file based workflows)](session5/stata-and-python-files)]
+2. [Using **stata** with **python** (via file based workflows)](session5/stata-and-python-files)
 
 ```{seealso}
-We will also look at alternative ways to use `stata` and `python` in the
-next session through `jupyter` using `stata` kernels.
+We will also look at alternative ways to use `stata` and `python` in `session 7`
+through `jupyter` using `stata` kernels. This is useful if you like the `jupyter`
+interface and environment.
 ```
 
 ## Resources
