@@ -388,6 +388,16 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#q-how-do-you-combine-pd-dataframe">
+   Q: How do you combine
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pd.DataFrame
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#q-will-we-cover-more-of-statsmodels">
    Q: Will we cover more of
    <code class="docutils literal notranslate">
@@ -416,6 +426,9 @@
                 
   <div class="section" id="questions-answers">
 <span id="session3-review-session3"></span><h1>Questions &amp; Answers<a class="headerlink" href="#questions-answers" title="Permalink to this headline">¶</a></h1>
+<p>I have updated the <a class="reference download internal" download="" href="../../_downloads/7e830aba3e32400f2b1bc8620511cd8a/exercises.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">exercise</span> <span class="pre">notebook</span> <span class="pre">with</span> <span class="pre">solutions</span></code></a>
+from the tutorial.</p>
+<p>You can <a class="reference external" href="https://mybinder.org/v2/gh/QuantEcon/2021-workshop-rsit/main?filepath=notebooks%2Fsession3%2Fexercises.ipynb">launch the notebook</a></p>
 <div class="section" id="q-how-to-create-a-numpy-array-with-np-nan">
 <h2>Q: How to create a numpy array with np.nan<a class="headerlink" href="#q-how-to-create-a-numpy-array-with-np-nan" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -432,6 +445,34 @@
 </div>
 <p>There is an excellent discussion of this
 <a class="reference external" href="https://stackoverflow.com/questions/1704823/create-numpy-matrix-filled-with-nans">on stackoverflow</a> including performance comparisons!</p>
+</div>
+<div class="section" id="q-how-do-you-combine-pd-dataframe">
+<h2>Q: How do you combine <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code><a class="headerlink" href="#q-how-do-you-combine-pd-dataframe" title="Permalink to this headline">¶</a></h2>
+<p>There are a number of ways of doing this. After brushing up on <code class="docutils literal notranslate"><span class="pre">pandas</span></code> docs here are some methods that will be useful.</p>
+<p>In the exercise notebook we saved data for <code class="docutils literal notranslate"><span class="pre">usa</span></code> and <code class="docutils literal notranslate"><span class="pre">others</span></code> which can be combined:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">combined</span> <span class="o">=</span> <span class="n">usa</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">others</span><span class="p">)</span>
+<span class="n">combined</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This <code class="docutils literal notranslate"><span class="pre">appends</span></code> additional rows. Given the columns are the same in each dataframe this a simple option.</p>
+<p>We had a discussion focused around combining dataframes and had a look at:</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pd.concat</span></code> (works to append <code class="docutils literal notranslate"><span class="pre">rows</span></code> by default)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pd.join</span></code> (works to append <code class="docutils literal notranslate"><span class="pre">columns</span></code> by default)</p></li>
+</ol>
+<p>but they can be used on differenct <code class="docutils literal notranslate"><span class="pre">axis</span></code> by specifing <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> etc.</p>
+<p>so we could have used</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">usa</span><span class="p">,</span> <span class="n">others</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>or with the usa.T, others.T data which is a format more convenient for <code class="docutils literal notranslate"><span class="pre">plotting</span></code> with <code class="docutils literal notranslate"><span class="pre">countries</span></code> as columns.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">usa</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">others</span><span class="o">.</span><span class="n">T</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>or by alterning the <code class="docutils literal notranslate"><span class="pre">axis</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">usa</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">others</span><span class="o">.</span><span class="n">T</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="q-will-we-cover-more-of-statsmodels">
 <h2>Q: Will we cover more of <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code><a class="headerlink" href="#q-will-we-cover-more-of-statsmodels" title="Permalink to this headline">¶</a></h2>
