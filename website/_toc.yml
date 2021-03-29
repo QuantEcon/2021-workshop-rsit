@@ -25,6 +25,7 @@
       - file: week1/session3/numba
       - file: week1/session3/others
       - file: week1/session3/exercises
+      - file: week1/session3/review-session3
     - file: week1/session4/schedule
       sections:
       - file: week1/session4/pandas-introduction
@@ -33,6 +34,15 @@
       - file: week1/session4/pandas-cleaning
       - file: week1/session4/pandas-reshape
       - file: week1/session4/exercises
+
+- part: Week 2
+  chapters:
+    - file: week2/session5/schedule
+      sections:
+      - file: week2/session5/stata-and-python
+      - file: week2/session5/stata-and-python-setup
+      - file: week2/session5/stata-and-python-integrated
+      - file: week2/session5/stata-and-python-files
 
 - part: Resources
   numbered: false
