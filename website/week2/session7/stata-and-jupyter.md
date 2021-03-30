@@ -106,9 +106,7 @@ jupyter notebook stata-jupyter-kernel.ipynb
 There is no `cloud` based option available as it is difficult to load `stata` onto `cloud` server
 instances (i.e. can't be done for free).
 
-https://nbviewer.jupyter.org/github/QuantEcon/2021-workshop-rsit/blob/main/notebooks/session3/intro-to-numba.ipynb
-
-You can [view the notebook here](https://nbviewer.jupyter.org/github/QuantEcon/2021-workshop-rsit/blob/main/notebooks/session7/stata-jupyter-kernel.ipynb)
+You can [view the notebook here](https://github.com/QuantEcon/2021-workshop-rsit/blob/main/notebooks/session7/stata-jupyter-kernel.ipynb)
 
 
 ## IPyStata
@@ -191,4 +189,4 @@ jupyter notebook jupyter-ipystata.ipynb
 There is no `cloud` based option available as it is difficult to load `stata` onto `cloud` server
 instances (i.e. can't be done for free).
 
-You can [view the notebook here](https://nbviewer.jupyter.org/github/QuantEcon/2021-workshop-rsit/blob/main/notebooks/session7/jupyter-ipystata.ipynb)
+You can [view the notebook here](https://github.com/QuantEcon/2021-workshop-rsit/blob/main/notebooks/session7/jupyter-ipystata.ipynb)
