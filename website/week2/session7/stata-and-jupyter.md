@@ -83,6 +83,13 @@ instead of `console` as per
 However this does enable the use of `browse`
 :::
 
+If you start `jupyter notebook` you should now see a `stata` kernel option. If selected a `jupyter`
+notebook will open with a connection to `stata`. You can verify this on the top-right of the 
+notebook
+
+```{figure} img/jupyter-stata-kernel.png
+```
+
 ### Local Notebook Option
 
 You can download the {download}`notebook from here <../../../notebooks/session7/stata-jupyter-kernel.ipynb>`
