@@ -2,8 +2,9 @@
 # Session 7 (Python and Stata)
 
 ```{admonition} Aims & Outcomes:
-1. Using `stata` with `jupyter`
-``` 
+1. Using `python` with `stata` using files
+2. Using `stata` with `jupyter`
+```
 
 **Week 2, Session 7 (Tuesday 30th March)**
 
