@@ -55,6 +55,7 @@
       - file: week2/session7/stata-and-python-example
       - file: week2/session7/stata-and-jupyter
       - file: week2/session7/python-and-julia
+      - file: week2/session7/exercises
 
 
 - part: Resources

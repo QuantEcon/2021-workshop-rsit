@@ -18,7 +18,7 @@
 * - 9:45am - 10:30am
   - [Stata and Jupyter](session7/stata-and-jupyter)
 * - 10:30 - 11:00am
-  - Break / Q&A / Exercises
+  - Break / Q&A / [Exercises](session7/exercises)
 * - 11:00am - 12:00pm
   - Other Integrations (R, Julia)
 * - 12:00pm - 12:30pm

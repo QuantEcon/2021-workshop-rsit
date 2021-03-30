@@ -1,0 +1,65 @@
+
+  ___  ____  ____  ____  ____ (R)
+ /__    /   ____/   /   ____/
+___/   /   /___/   /   /___/   16.1   Copyright 1985-2019 StataCorp LLC
+  Statistics/Data analysis            StataCorp
+                                      4905 Lakeway Drive
+                                      College Station, Texas 77845 USA
+                                      800-STATA-PC        https://www.stata.com
+                                      979-696-4600        stata@stata.com
+                                      979-696-4601 (fax)
+
+Stata license: Single-user , expiring 31 Mar 2022
+Serial number: 301609639785
+  Licensed to: Matthew McKay
+               Australian National University
+
+Notes:
+      1. Stata is running in batch mode.
+      2. Unicode is supported; see help unicode_advice.
+
+. do /Users/matthewmckay/.ipython/stata/code.do 
+
+. clear
+
+. set more off
+
+. set linesize 200
+
+. use "/Users/matthewmckay/.ipython/stata/data_input.dta", clear 
+
+. log using "/Users/matthewmckay/.ipython/stata/log_output.log", text replace
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/matthewmckay/.ipython/stata/log_output.log
+  log type:  text
+ opened on:  30 Mar 2021, 12:00:52
+
+. reg aapl msft
+
+      Source |       SS           df       MS      Number of obs   =        21
+-------------+----------------------------------   F(1, 19)        =     11.55
+       Model |  46.9120593         1  46.9120593   Prob > F        =    0.0030
+    Residual |  77.1751304        19  4.06184897   R-squared       =    0.3781
+-------------+----------------------------------   Adj R-squared   =    0.3453
+       Total |   124.08719        20  6.20435949   Root MSE        =    2.0154
+
+------------------------------------------------------------------------------
+        aapl |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        msft |   .4398038   .1294132     3.40   0.003     .1689388    .7106688
+       _cons |   19.18672   30.24207     0.63   0.533    -44.11067    82.48411
+------------------------------------------------------------------------------
+
+. 
+. log close
+      name:  <unnamed>
+       log:  /Users/matthewmckay/.ipython/stata/log_output.log
+  log type:  text
+ closed on:  30 Mar 2021, 12:00:52
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+. 
+. // End of line deletion prevention
+. 
+end of do-file

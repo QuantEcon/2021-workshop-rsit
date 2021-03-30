@@ -5,16 +5,28 @@
 
 There are two primary approaches to using `stata` with `jupyter`:
 
+1. [Stata Jupyter Kernel](https://github.com/kylebarron/stata_kernel)
+2. [IPyStata](https://github.com/TiesdeKok/ipystata)
+
+and they have different configurations catering to different workflows.
+
 ## Stata Jupyter Kernel
 
-The [Stata Jupyter Kernel](https://github.com/kylebarron/stata_kernel)
-enables using stata directly in `jupyter` notebooks. 
-
-It is effectively an alternative interface to use stata if you like
-`jupyter` as an interface. 
-
-There is [excellent documentation](https://kylebarron.dev/stata_kernel/)
+:::{margin}
+There is also [excellent documentation](https://kylebarron.dev/stata_kernel/)
 available.
+:::
+
+The [Stata Jupyter Kernel](https://github.com/kylebarron/stata_kernel)
+enables using `stata` directly in `jupyter` notebooks.
+
+It is effectively an alternative interface to use `stata` if you like
+`jupyter` as an interface.
+
+This can be useful if you want to write notebooks that are `integrated`
+with `stata` code.
+
+It supports a [wide range of interaction with `stata`](https://kylebarron.dev/stata_kernel/#stata_kernel-features)
 
 To install using `anaconda` tools you can use the following commands
 in a `jupyter notebook`:
@@ -22,15 +34,17 @@ in a `jupyter notebook`:
 :::{margin}
 ```{tip}
 It is important to specify `-y` when issuing install requests via
-jupyter as there is no way to accept the user requested `y` input
-to proceed with install.
+`conda` as there is no way to accept the user requested `y` input
+to proceed with install. `pip` doesn't have this issue as it doesn't
+request user input.
 :::
 
 ```bash
 !conda install -y -c conda-forge stata_kernel
 ```
 
-once the software is installed you need to install the `kernel`:
+once the software is installed you need to install the `jupyter kernel`
+on your computer
 
 ```bash
 !python -m stata_kernel.install
@@ -63,26 +77,44 @@ stata_path = /Applications/Stata/StataIC.app/Contents/MacOS/StataIC
 execution_mode = automation
 ```
 
-Unfortunately `StataIC` is limited on `mac os` so had to use `automation`
+Unfortunately `StataIC` is limited on `mac os` so I had to use `automation`
 instead of `console` as per
 [this issue in the docs](https://kylebarron.dev/stata_kernel/using_stata_kernel/configuration/)
+However this does enable the use of `browse`
 :::
+
+### Local Notebook Option
+
+You can download the {download}`notebook from here <../../../notebooks/session7/stata-jupyter-kernel.ipynb>`
+
+Then browse to your download location and load the notebook with **jupyter**:
+
+```bash
+cd ~/Downloads
+jupyter notebook stata-jupyter-kernel.ipynb
+```
+
+### Cloud Based Notebook Option
+
+There is no `cloud` based option available as it is difficult to load `stata` onto `cloud` server
+instances (i.e. can't be done for free).
+
+https://nbviewer.jupyter.org/github/QuantEcon/2021-workshop-rsit/blob/main/notebooks/session3/intro-to-numba.ipynb
+
+You can [view the notebook here](https://nbviewer.jupyter.org/github/QuantEcon/2021-workshop-rsit/blob/main/notebooks/session7/stata-jupyter-kernel.ipynb)
+
 
 ## IPyStata
 
-```{warning}
-For `macOS` it appears that `stataIC` does not come with the console tools
-needed to make this work. This requires `stataSE` and above
-```
+[IPyStata](https://github.com/TiesdeKok/ipystata) provides an alternative
+approach which provides support for running `stata` commands using `ipython magics`.
 
-This package provides an alternative approach which provides support
-for running `stata` commands using `ipython magics`. So you remain in a
-`python` powered notebook and interface with stata when needed.
+So you remain in a `python` notebook and interface with stata when needed.
 
-[IPyStata](https://github.com/TiesdeKok/ipystata)
-
+:::{margin}
 There is a [nice presentation](http://fmwww.bc.edu/repec/chic2016/chicago16_dekok.pdf)
-that runs through this integration. 
+that runs through this integration.
+:::
 
 To install you can use `pip`:
 
@@ -91,6 +123,8 @@ pip install ipystata
 ```
 
 :::{margin}
+The `PyPI` release is from [17th March 2017](https://pypi.org/project/ipystata/#history)
+
 This is a bit of a red flag in my view as releases are best distributed via PyPI.
 However for tired open-source contributors this can be one short-cut taken to reduce workload.
 :::
@@ -103,13 +137,51 @@ pip install git+https://github.com/TiesdeKok/ipystata
 ```
 
 The [documentation](https://nbviewer.jupyter.org/github/TiesdeKok/ipystata/blob/master/ipystata/Example.ipynb)
-largely consists of a demo notebook.
+largely consists of a demo notebook and the [README](https://github.com/TiesdeKok/ipystata/blob/master/README.md).
 
-To setup the package you then need to configure the package to know where `Stata` is on your computer.
+### Setup
+
+To setup the package you then need to configure it to know where `stata` is on your computer.
+
+Open a `Jupyter` notebook that is attached to the `python` kernel.
 
 ```python
 import ipystata
 from ipystata.config import config_stata
-config_stata("<path>")
+config_stata("<path-to-stata>")
 ```
-as documented [here](https://github.com/TiesdeKok/ipystata#set-installation-directory-for-stata)
+
+This will look something like:
+
+:::{tabbed} macOS
+```python
+config_stata("/Applications/Stata/StataSE.app/Contents/MacOS/stataSE")
+```
+:::
+
+:::{tabbed} Windows
+```python
+config_stata("C:\Program Files (x86)\Stata14\StataSE-64.exe")
+```
+
+:::
+
+This is documented [here](https://github.com/TiesdeKok/ipystata#set-installation-directory-for-stata)
+
+### Local Notebook Option
+
+You can download the {download}`notebook from here <../../../notebooks/session7/jupyter-ipystata.ipynb>`
+
+Then browse to your download location and load the notebook with **jupyter**:
+
+```bash
+cd ~/Downloads
+jupyter notebook jupyter-ipystata.ipynb
+```
+
+### Cloud Based Notebook Option
+
+There is no `cloud` based option available as it is difficult to load `stata` onto `cloud` server
+instances (i.e. can't be done for free).
+
+You can [view the notebook here](https://nbviewer.jupyter.org/github/QuantEcon/2021-workshop-rsit/blob/main/notebooks/session7/jupyter-ipystata.ipynb)
