@@ -1,6 +1,8 @@
 (session8/web-scraping)=
 # Web Scraping
 
+You can download the {download}`notebook from here <../../../notebooks/session8/scraping_examples.ipynb>`
+
 Data is everywhere around us and is constantly being collected, redistributed, and visualized. Luckily, if the data is on the internet in a place that we can see it, we can typically retrieve it.
 
 We will discuss a few ways that we can retrieve data:
@@ -69,7 +71,7 @@ Components of this section were originally written by one of our collaborators, 
 - value: `class` is one property, syntax is `property\=value`
 - text: the actual text contained in the element
 
-Figure originally from Practical Web Design by Philippe Hong 
+Figure originally from Practical Web Design by Philippe Hong
 
 
 #### Structure of Webpage
