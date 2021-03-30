@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Common Workflow &#8212; RSIT Workshop (Uni Tübingen) 2021</title>
+    <title>Workflow Tools &#8212; RSIT Workshop (Uni Tübingen) 2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -58,8 +58,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Integrations with Other Languages" href="python-integrations.html" />
-    <link rel="prev" title="Stata and Jupyter" href="stata-and-jupyter.html" />
+    <link rel="next" title="Getting Setup for the Workshop" href="../../resources/python-setup.html" />
+    <link rel="prev" title="Web Scraping" href="web-scraping.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -328,28 +328,28 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 current active collapsible-parent">
-  <a class="reference internal" href="schedule.html">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../session7/schedule.html">
    Session 7 (Python and Stata)
   </a>
-  <ul class="current collapse-ul">
+  <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="stata-and-jupyter.html">
+    <a class="reference internal" href="../session7/stata-and-jupyter.html">
      Stata and Jupyter
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session7/stata-and-python-example.html">
      A Common Workflow
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="python-integrations.html">
+    <a class="reference internal" href="../session7/python-integrations.html">
      Integrations with Other Languages
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="exercises.html">
+    <a class="reference internal" href="../session7/exercises.html">
      Exercises
     </a>
    </li>
@@ -357,33 +357,33 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../session8/schedule.html">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="schedule.html">
    Session 8 (SQL, Scraping, and Workflow)
   </a>
-  <ul class="collapse-ul">
+  <ul class="current collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../session8/sql.html">
+    <a class="reference internal" href="sql.html">
      SQL
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../session8/text-editors.html">
+    <a class="reference internal" href="text-editors.html">
      Text Editors
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../session8/python-files.html">
+    <a class="reference internal" href="python-files.html">
      Python Files
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../session8/web-scraping.html">
+    <a class="reference internal" href="web-scraping.html">
      Web Scraping
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../session8/workflow-tools.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Workflow Tools
     </a>
    </li>
@@ -448,7 +448,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/week2/session7/stata-and-python-example.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/week2/session8/workflow-tools.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -480,30 +480,31 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exploring-data-in-jupyter">
-   Exploring Data in Jupyter
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#local-notebook-option">
-     Local Notebook Option
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cloud-based-option">
-     Cloud Based Option
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#optional-saving-the-exploration-as-a-script">
-   (Optional) Saving the Exploration as a Script
+  <a class="reference internal nav-link" href="#kedro">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     kedro
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-the-dataset-in-stata">
-   Using the Dataset in Stata
+  <a class="reference internal nav-link" href="#prefect">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     prefect
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#things-should-run-on-the-cloud">
+   Things should run on the cloud
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-workflow">
+   Example workflow
   </a>
  </li>
 </ul>
@@ -518,57 +519,36 @@
         
               <div>
                 
-  <div class="section" id="a-common-workflow">
-<span id="session7-stata-and-python-example"></span><h1>A Common Workflow<a class="headerlink" href="#a-common-workflow" title="Permalink to this headline">¶</a></h1>
-<p>In this session we take a look at a typical <code class="docutils literal notranslate"><span class="pre">workflow</span></code> that I find
-to be a pretty common.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This example could be done pretty easily all within <code class="docutils literal notranslate"><span class="pre">stata</span></code> but this
-workflow pattern is pretty common when starting to use <code class="docutils literal notranslate"><span class="pre">python</span></code> to build your
-datasets.</p>
-<p>However if you have built up resources in <code class="docutils literal notranslate"><span class="pre">stata</span></code> you may be more interested in using
-data that you have already compiled in <code class="docutils literal notranslate"><span class="pre">stata</span></code> and you want to explore some <code class="docutils literal notranslate"><span class="pre">machine</span> <span class="pre">learning</span></code>
-in <code class="docutils literal notranslate"><span class="pre">python</span></code>.</p>
+  <div class="section" id="workflow-tools">
+<span id="session8-workflow-tools"></span><h1>Workflow Tools<a class="headerlink" href="#workflow-tools" title="Permalink to this headline">¶</a></h1>
+<p>Two great tools that I use in my own workflows are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">kedro</span></code>: <a class="reference external" href="https://github.com/quantumblacklabs/kedro">https://github.com/quantumblacklabs/kedro</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">prefect</span></code>: <a class="reference external" href="https://github.com/PrefectHQ/prefect">https://github.com/PrefectHQ/prefect</a></p></li>
+</ul>
+<div class="section" id="kedro">
+<h2><code class="docutils literal notranslate"><span class="pre">kedro</span></code><a class="headerlink" href="#kedro" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">kedro</span></code> is a package that helps manage data pipelines from transforming data from raw data to clean data and to analysis.</p>
+<p>It helps ensure that the steps used to arrive at an analysis are replicable and provides some convenience funtions that allow us to access and update the data easily</p>
 </div>
-<div class="section" id="exploring-data-in-jupyter">
-<h2>Exploring Data in Jupyter<a class="headerlink" href="#exploring-data-in-jupyter" title="Permalink to this headline">¶</a></h2>
-<p>The work often starts by finding and exploring data in <code class="docutils literal notranslate"><span class="pre">jupyter</span></code> notebooks as in the below
-demonstration notebook.</p>
-<div class="section" id="local-notebook-option">
-<h3>Local Notebook Option<a class="headerlink" href="#local-notebook-option" title="Permalink to this headline">¶</a></h3>
-<p>You can download the <a class="reference download internal" download="" href="../../_downloads/2325ef6695aa934ee2b1486fa5380072/gravity-model-example.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">notebook</span> <span class="pre">from</span> <span class="pre">here</span></code></a></p>
-<p>You can get the <a class="reference download internal" download="" href="../../_downloads/75bf7a7f7cbeabefabbf520674206502/data.zip"><code class="xref download docutils literal notranslate"><span class="pre">data</span> <span class="pre">files</span> <span class="pre">here</span></code></a></p>
-<p>Then browse to your download location and load <strong>jupyter</strong>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter notebook gravity-model-example.ipynb
-</pre></div>
+<div class="section" id="prefect">
+<h2><code class="docutils literal notranslate"><span class="pre">prefect</span></code><a class="headerlink" href="#prefect" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">prefect</span></code> is a DAG management tool. It allows you to define particular operations and specify a schedule on which you’d like those operations executed.</p>
+<p>There are other tools that do this, <code class="docutils literal notranslate"><span class="pre">cron</span></code> for example… So why <code class="docutils literal notranslate"><span class="pre">prefect</span></code>? <code class="docutils literal notranslate"><span class="pre">prefect</span></code> is built on the idea of “negative engineering” – <code class="docutils literal notranslate"><span class="pre">cron</span></code> is a perfectly acceptable solution to schedule tasks when everything works, but what happens when things break? <code class="docutils literal notranslate"><span class="pre">prefect</span></code> is built on the premise that your pipeline is likely to break for any variety of reasons - It keeps detailed logs of what broke when and presents a relatively clean GUI interface for task management.</p>
 </div>
-<p>the data files need to be located in a <code class="docutils literal notranslate"><span class="pre">data</span></code> folder in the same directory as the notebook</p>
+<div class="section" id="things-should-run-on-the-cloud">
+<h2>Things should run on the cloud<a class="headerlink" href="#things-should-run-on-the-cloud" title="Permalink to this headline">¶</a></h2>
+<p>It might seem convenient to run tasks or host a postgres server locally, but it’s not a particularly good idea to do that… It requires that you have someone competent enough not to accidentally expose security risks (which I wouldn’t trust myself not to do…) and maintain your computer/network. The cloud is “someone else’s” problem – If the network goes down (which, at the level of maturity we’ve reached in the cloud tooling, is a rare event for cloud based services), then you complain about it and someone else fixes it.</p>
+<p>All of the cloud providers deliver similar quality services… I personally like Google Cloud, but, if it saved money, then I would gladly switch to an alternative.</p>
 </div>
-<div class="section" id="cloud-based-option">
-<h3>Cloud Based Option<a class="headerlink" href="#cloud-based-option" title="Permalink to this headline">¶</a></h3>
-<p>You can <a class="reference external" href="https://mybinder.org/v2/gh/QuantEcon/2021-workshop-rsit/main?filepath=notebooks%2Fsession7%2Fgravity-model-example.ipynb">launch the notebook</a></p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Most of this notebook will work except the <code class="docutils literal notranslate"><span class="pre">stata</span></code> calls via <code class="docutils literal notranslate"><span class="pre">ipystata</span></code></p>
-</div>
-</div>
-</div>
-<div class="section" id="optional-saving-the-exploration-as-a-script">
-<h2>(Optional) Saving the Exploration as a Script<a class="headerlink" href="#optional-saving-the-exploration-as-a-script" title="Permalink to this headline">¶</a></h2>
-<p>You can then distill the needed steps to build a <code class="docutils literal notranslate"><span class="pre">dataset</span></code> formula as a script</p>
-<p>You can download a <a class="reference download internal" download="" href="../../_downloads/76e0d97d1e010ea987f5399f33833b70/gravity-model-example.py"><code class="xref download docutils literal notranslate"><span class="pre">example</span> <span class="pre">python</span> <span class="pre">script</span></code></a></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This is a particularly useful step if your data needs to be updated in the future</p>
-</div>
-</div>
-<div class="section" id="using-the-dataset-in-stata">
-<h2>Using the Dataset in Stata<a class="headerlink" href="#using-the-dataset-in-stata" title="Permalink to this headline">¶</a></h2>
-<p>You can then open <code class="docutils literal notranslate"><span class="pre">stata</span></code> and continue on with your <code class="docutils literal notranslate"><span class="pre">statistical</span> <span class="pre">analysis</span></code></p>
-<div class="figure align-default">
-<img alt="../../_images/stata-import-and-regress.png" src="../../_images/stata-import-and-regress.png" />
-</div>
+<div class="section" id="example-workflow">
+<h2>Example workflow<a class="headerlink" href="#example-workflow" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Github repository that contains scrapers and code.</p></li>
+<li><p>DAGs uploaded to a cloud instance running <code class="docutils literal notranslate"><span class="pre">prefect</span></code>.</p></li>
+<li><p>As DAGs run, ensure that data is saved at every step! This is important because if anything ever broke on the database side, we would be able to reconstruct the data at any snapshot in time.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">kedro</span></code> and other tools to interface with the storage bucket or postgrest database and help manage analysis steps</p></li>
+</ol>
 </div>
 </div>
 
@@ -585,7 +565,7 @@ demonstration notebook.</p>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./week2/session7"
+            path: "./week2/session8"
         },
         predefinedOutput: true
     }
@@ -597,8 +577,8 @@ demonstration notebook.</p>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="stata-and-jupyter.html" title="previous page">Stata and Jupyter</a>
-    <a class='right-next' id="next-link" href="python-integrations.html" title="next page">Integrations with Other Languages</a>
+    <a class='left-prev' id="prev-link" href="web-scraping.html" title="previous page">Web Scraping</a>
+    <a class='right-next' id="next-link" href="../../resources/python-setup.html" title="next page">Getting Setup for the Workshop</a>
 
         </div>
         
