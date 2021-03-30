@@ -1,0 +1,572 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercises &#8212; RSIT Workshop (Uni Tübingen) 2021</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Getting Setup for the Workshop" href="../../resources/python-setup.html" />
+    <link rel="prev" title="Integrations with Other Languages" href="python-integrations.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/qe-logo-large.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">RSIT Workshop (Uni Tübingen) 2021</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   RSIT Workshop (Uni Tübingen) 2021
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../week1/session1/schedule.html">
+   Session 1 (Intro Python)
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../week1/session1/python-for-economics.html">
+     Introduction to Python for Economics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../week1/session1/jupyter-intro.html">
+     Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../week1/session1/demo-science-2007.html">
+     (Demo) Replicating the ProductSpace
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../week1/session1/github-intro.html">
+     GitHub
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../week1/session2/schedule.html">
+   Session 2 (Python Fundamentals)
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../week1/session2/python-basics.html">
+     Python Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../week1/session2/python-collections.html">
+     Python Collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../week1/session2/python-control-flow.html">
+     Python Control Flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../week1/session2/exercises.html">
+     Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../week1/session2/python-functions.html">
+     Python Functions
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../week1/session3/schedule.html">
+   Session 3 (Python Ecosystem)
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../week1/session3/overview.html">
+     Overview of Python Ecoysystem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../week1/session3/numpy.html">
+     NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../week1/session3/pandas.html">
+     Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../week1/session3/matplotlib.html">
+     Matplotlib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../week1/session3/statsmodels.html">
+     statsmodels
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../week1/session3/numba.html">
+     Numba
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../week1/session3/others.html">
+     Other Packages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../week1/session3/exercises.html">
+     Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../week1/session3/review-session3.html">
+     Questions &amp; Answers
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../week1/session4/schedule.html">
+   Session 4 (Pandas)
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../week1/session4/pandas-introduction.html">
+     Pandas Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../week1/session4/pandas-basics.html">
+     Pandas Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../week1/session4/pandas-index.html">
+     Pandas Index
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../week1/session4/pandas-cleaning.html">
+     Pandas Cleaning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../week1/session4/pandas-reshape.html">
+     Pandas Reshaping
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../week1/session4/exercises.html">
+     Exercises
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Week 2
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../session5/schedule.html">
+   Session 5 (Python and Stata)
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session5/stata-and-python.html">
+     Stata and Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session5/stata-and-python-setup.html">
+     Setup Python in Stata
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session5/stata-and-python-integrated.html">
+     Integrated Workflows
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session5/stata-and-python-files.html">
+     File based Workflows
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../session6/schedule.html">
+   Session 6 (Pandas)
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session6/pandas-reshape.html">
+     Pandas Reshaping
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session6/pandas-merge.html">
+     Pandas Merge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session6/pandas-groupby.html">
+     Pandas Groupby
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session6/pandas-timeseries.html">
+     Pandas Index
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session6/exercises.html">
+     Exercises
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="schedule.html">
+   Session 7 (Python and Stata)
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="stata-and-jupyter.html">
+     Stata and Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="stata-and-python-example.html">
+     A Common Workflow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-integrations.html">
+     Integrations with Other Languages
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Exercises
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../resources/python-setup.html">
+   Getting Setup for the Workshop
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../workshop.html">
+   How will the Workshop work?
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/week2/session7/exercises.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="exercises">
+<span id="session7-exercises"></span><h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<p>Here are some exercises to work through in your own time.</p>
+<div class="exercise admonition" id="week2/session7/exercises-exercise-0">
+<p class="admonition-title"><span class="caption-number">Exercise 4 </span></p>
+<div class="section" id="exercise-content">
+<p>Using <code class="docutils literal notranslate"><span class="pre">stata</span></code> fetch the <code class="docutils literal notranslate"><span class="pre">sysauto</span></code> dataset using</p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">sysuse</span> auto
+</pre></div>
+</div>
+<p><strong>Part 1:</strong></p>
+<p>Use the <a class="reference internal" href="../session5/stata-and-python-integrated.html#session5-stata-and-python-integrated"><span class="std std-ref">integrated workflows</span></a>
+to transfer the <code class="docutils literal notranslate"><span class="pre">weight</span></code> and <code class="docutils literal notranslate"><span class="pre">price</span></code> variables to <code class="docutils literal notranslate"><span class="pre">python</span></code> and save the
+results in a <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code> called <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span>
+<span class="go">    weight  price</span>
+<span class="go">0     2930   4099</span>
+<span class="go">1     3350   4749</span>
+<span class="go">2     2640   3799</span>
+<span class="go">3     3250   4816</span>
+<span class="go">4     4080   7827</span>
+<span class="go">..     ...    ...</span>
+<span class="go">69    2160   7140</span>
+<span class="go">70    2040   5397</span>
+<span class="go">71    1930   4697</span>
+<span class="go">72    1990   6850</span>
+<span class="go">73    3170  11995</span>
+
+<span class="go">[74 rows x 2 columns]</span>
+</pre></div>
+</div>
+<p><strong>Part 2:</strong></p>
+<p>Use <a class="reference internal" href="../../week1/session3/statsmodels.html#session3-statsmodels"><span class="std std-ref">statsmodels</span></a> to run a simple <code class="docutils literal notranslate"><span class="pre">OLS</span></code> regression of <code class="docutils literal notranslate"><span class="pre">weight</span> <span class="pre">~</span> <span class="pre">price</span></code>
+and then run this regression in <code class="docutils literal notranslate"><span class="pre">stata</span></code>.</p>
+</div>
+</div>
+<div class="exercise admonition" id="week2/session7/exercises-exercise-1">
+<p class="admonition-title"><span class="caption-number">Exercise 5 </span></p>
+<div class="section" id="exercise-content">
+<p>Use the <code class="docutils literal notranslate"><span class="pre">yfinance</span></code> package in <code class="docutils literal notranslate"><span class="pre">python</span></code> to fetch the last <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">months</span></code> of <code class="docutils literal notranslate"><span class="pre">Close</span></code>
+prince data for:</p>
+<ol class="simple">
+<li><p>Amazon (AMZN)</p></li>
+<li><p>Microsoft (MSFT)</p></li>
+<li><p>Game Stop (GME)</p></li>
+</ol>
+<p>and construct a dataframe.</p>
+<p><strong>Part 1:</strong></p>
+<p>Choose to use either the <a class="reference internal" href="../session5/stata-and-python-integrated.html#session5-stata-and-python-integrated"><span class="std std-ref">integrated workflows</span></a>
+or <a class="reference internal" href="../session5/stata-and-python-files.html#session5-stata-and-python-files"><span class="std std-ref">file based workflow</span></a> to transfer the
+stock price data to <code class="docutils literal notranslate"><span class="pre">stata</span></code></p>
+<p>Run a simple <code class="docutils literal notranslate"><span class="pre">ols</span></code> regression:</p>
+<ol class="simple">
+<li><p>comparing <code class="docutils literal notranslate"><span class="pre">AMZN</span></code> and <code class="docutils literal notranslate"><span class="pre">MSFT</span></code> stock price histories</p></li>
+<li><p>comparing <code class="docutils literal notranslate"><span class="pre">AMZN</span></code> and <code class="docutils literal notranslate"><span class="pre">GME</span></code> stock price histories</p></li>
+</ol>
+<p><strong>Part 2:</strong></p>
+<p>Choose either <code class="docutils literal notranslate"><span class="pre">stata</span></code> or <code class="docutils literal notranslate"><span class="pre">python</span></code> to normalize each stock price history by
+dividing the column by the first price of each stock.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">dataframe</span></code> should look like</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/python-yfinance-stock-price-normalised.png"><img alt="../../_images/python-yfinance-stock-price-normalised.png" src="../../_images/python-yfinance-stock-price-normalised.png" style="width: 340.0px; height: 500.0px;" /></a>
+</div>
+<p>and make a <code class="docutils literal notranslate"><span class="pre">plot</span></code> comparing the three time series.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./week2/session7"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="python-integrations.html" title="previous page">Integrations with Other Languages</a>
+    <a class='right-next' id="next-link" href="../../resources/python-setup.html" title="next page">Getting Setup for the Workshop</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Matthew McKay & Chase Coleman<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

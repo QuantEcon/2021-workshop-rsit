@@ -328,6 +328,35 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../session7/schedule.html">
+   Session 7 (Python and Stata)
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session7/stata-and-jupyter.html">
+     Stata and Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session7/stata-and-python-example.html">
+     A Common Workflow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session7/python-integrations.html">
+     Integrations with Other Languages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session7/exercises.html">
+     Exercises
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -559,15 +588,15 @@ are linked together.</p>
 <p>Linking <code class="docutils literal notranslate"><span class="pre">stata</span></code> to a specific <code class="docutils literal notranslate"><span class="pre">python</span></code> installation (such as <code class="docutils literal notranslate"><span class="pre">anaconda</span></code>) can be done
 using the <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">python_exec</span></code> command such as:</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="5035c8f5-6607-446b-8700-2aa418d002c8" name="689a2688-daa7-42d5-85ad-f0687b960994" type="radio">
-</input><label class="tabbed-label" for="5035c8f5-6607-446b-8700-2aa418d002c8">
+<input checked="checked" id="3216e3bf-0d73-4888-bf9f-2e79f0c64c30" name="b87531b6-4e83-459d-88f5-f3a11f4d487d" type="radio">
+</input><label class="tabbed-label" for="3216e3bf-0d73-4888-bf9f-2e79f0c64c30">
 macOS</label><div class="tabbed-content docutils">
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> python_exec <span class="o">/</span>Users<span class="o">/&lt;</span>user<span class="o">&gt;/</span>anaconda3<span class="o">/</span>bin<span class="o">/</span>python
 </pre></div>
 </div>
 </div>
-<input id="e29b45ab-ceef-4466-9583-4828d8c5c536" name="689a2688-daa7-42d5-85ad-f0687b960994" type="radio">
-</input><label class="tabbed-label" for="e29b45ab-ceef-4466-9583-4828d8c5c536">
+<input id="7035722f-24c5-457e-8391-ede146c8dce7" name="b87531b6-4e83-459d-88f5-f3a11f4d487d" type="radio">
+</input><label class="tabbed-label" for="7035722f-24c5-457e-8391-ede146c8dce7">
 Windows</label><div class="tabbed-content docutils">
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> python_exec C:\Users\<span class="o">&lt;</span>users<span class="o">&gt;</span>\anaconda3\python<span class="m">.</span>exe
 </pre></div>
@@ -588,15 +617,15 @@ and reopen it before using <code class="docutils literal notranslate"><span clas
 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">packages</span></code> and other utilities and programs.</p>
 <p>You can add a custom path for the python <code class="docutils literal notranslate"><span class="pre">stata</span></code> environment using <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">python_userpath</span></code></p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="16871351-2346-4d3c-9880-cc0adb07535b" name="6415c930-01a0-453d-a5d9-2fbcda5614eb" type="radio">
-</input><label class="tabbed-label" for="16871351-2346-4d3c-9880-cc0adb07535b">
+<input checked="checked" id="dc3588c7-2e5f-44b4-a57e-7c8454619bb5" name="b925c3ad-01f9-4dd3-8a63-293d2f94db6c" type="radio">
+</input><label class="tabbed-label" for="dc3588c7-2e5f-44b4-a57e-7c8454619bb5">
 macOS</label><div class="tabbed-content docutils">
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> python_userpath <span class="o">/</span>Users<span class="o">/&lt;</span>user<span class="o">&gt;/</span>mypythoncode
 </pre></div>
 </div>
 </div>
-<input id="3f4eae96-b878-460e-8f29-762cd9a89901" name="6415c930-01a0-453d-a5d9-2fbcda5614eb" type="radio">
-</input><label class="tabbed-label" for="3f4eae96-b878-460e-8f29-762cd9a89901">
+<input id="24c35185-5f3f-484a-95fc-fe5dde42e060" name="b925c3ad-01f9-4dd3-8a63-293d2f94db6c" type="radio">
+</input><label class="tabbed-label" for="24c35185-5f3f-484a-95fc-fe5dde42e060">
 Windows</label><div class="tabbed-content docutils">
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> python_userpath C:\Users\<span class="o">&lt;</span>users<span class="o">&gt;</span>\mypythoncode
 </pre></div>
