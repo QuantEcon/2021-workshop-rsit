@@ -1,5 +1,5 @@
 (session6/pandas-timeseries)=
-# Pandas Index
+# Pandas Time-Series
 
 This notebook introduces the concept of an index
 
