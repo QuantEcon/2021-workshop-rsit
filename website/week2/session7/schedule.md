@@ -20,7 +20,7 @@
 * - 10:30 - 11:00am
   - Break / Q&A / [Exercises](session7/exercises)
 * - 11:00am - 12:00pm
-  - Other Integrations (R, Julia)
+  - [Workflow Example](session7/stata-and-python-example)
 * - 12:00pm - 12:30pm
-  - Wrap Up
+  - [Python Integrations](session7/python-integrations) & Wrap Up
 ```

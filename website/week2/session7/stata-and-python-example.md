@@ -1,62 +1,62 @@
-(session5/stata-and-python-example)=
-# Example: Product Level Gravity Model (International Trade)
+(session7/stata-and-python-example)=
+# A Common Workflow
 
-```{warning} In Work
-This Session is in Work
-```
-
-For this demo you will need to fetch the data from [The Atlas of Complexity](https://atlas.cid.harvard.edu/data-downloads)
-data downloads page. This will redirect you to the Harvard Dataverse Page from where you can download the
-file `country_partner_sitcproduct4digit_year_2013.tab` (284Mb)
+In this session we take a look at a typical `workflow` that I find
+to be a pretty common.
 
 ```{note}
-You can also fetch a `dta` of this file if working with stata
+This example could be done pretty easily all within `stata` but this
+workflow pattern is pretty common when starting to use `python` to build your
+datasets.
+
+However if you have built up resources in `stata` you may be more interested in using
+data that you have already compiled in `stata` and you want to explore some `machine learning`
+in `python`.
 ```
 
-These days it is convenient to get access to datasets that are already well prepared. Just a few years ago
-we had to spend a long time combining data from lots of sources to construct an equivalent dataset. This
-dataset already includes `ISO3C` codes for example for easier representation of country codes. Let's take a
-look at the data:
+## Exploring Data in Jupyter
 
-Let's use `python` to combine this dataset and then we will run regressions in `stata`
+The work often starts by finding and exploring data in `jupyter` notebooks as in the below
+demonstration notebook.
 
-```python
-import pandas as pd
-data = pd.read_table("country_partner_sitcproduct4digit_year_2013.tab", nrows=10)
+### Local Notebook Option
+
+You can download the {download}`notebook from here <../../../notebooks/session7/gravity-model-example.ipynb>`
+
+You can get the {download}`data files here <../../../notebooks/session7/data/data.zip>`
+
+Then browse to your download location and load **jupyter**:
+
+```bash
+jupyter notebook gravity-model-example.ipynb
 ```
 
-```{tip}
-When working with larger datasets it is very useful to use the `nrows=` argument to get a preview
-of what is in the file.
+the data files need to be located in a `data` folder in the same directory as the notebook
 
-Specifying `nrows=10` means you only import the first 10 rows of `data` contained in the file.
+### Cloud Based Option
+
+You can [launch the notebook](https://mybinder.org/v2/gh/QuantEcon/2021-workshop-rsit/main?filepath=notebooks%2Fsession7%2Fgravity-model-example.ipynb)
+
+```{warning}
+Most of this notebook will work except the `stata` calls via `ipystata`
 ```
 
-You can see the dataframe contains:
+## (Optional) Saving the Exploration as a Script
 
-```{figure} img/python-pandas-atlas2013-datapreview.png
+You can then distill the needed steps to build a `dataset` formula as a script
+
+You can download a {download}`example python script <../../../notebooks/session7/gravity-model-example.py>`
+
+```{note}
+This is a particularly useful step if your data needs to be updated in the future
 ```
 
-This allows you to specify which columns you really need to import from the file
+## Using the Dataset in Stata
 
-```python
-columns = [ 'year','location_code', 'partner_code', 'sitc_product_code', 'export_value']
-data = pd.read_table("country_partner_sitcproduct4digit_year_2013.tab",
-                     usecols=columns)
+You can then open `stata` and continue on with your `statistical analysis`
+
+```{figure} img/stata-import-and-regress.png
 ```
-
-now we have a subset of the data that we are interested in and loaded into a `pd.DataFrame`
-
-```{figure} img/python-pandas-atlas2013-datapreview2.png
-```
-
-We will also need to get `distance` and `gdp` information to add to our dataset. For this we
-will use [CEPII](http://www.cepii.fr/cepii/en/bdd_modele/bdd.asp) and `World Bank Data`
-
-You will need to download:
-
-1. [Gravity Dataset](http://www.cepii.fr/cepii/en/bdd_modele/presentation.asp?id=8)
-
 
 
 
