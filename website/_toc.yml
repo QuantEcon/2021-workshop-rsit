@@ -56,7 +56,13 @@
       - file: week2/session7/stata-and-python-example
       - file: week2/session7/python-integrations
       - file: week2/session7/exercises
-
+    - file: week2/session8/schedule
+      sections:
+      - file: week2/session8/sql
+      - file: week2/session8/text-editors
+      - file: week2/session8/python-files
+      - file: week2/session8/web-scraping
+      - file: week2/session8/workflow-tools
 
 - part: Resources
   numbered: false
