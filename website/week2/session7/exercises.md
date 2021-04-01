@@ -55,7 +55,7 @@ and construct a dataframe.
 
 Choose to use either the [integrated workflows](session5/stata-and-python-integrated)
 or [file based workflow](session5/stata-and-python-files) to transfer the
-stock price data to `stata`
+last three months of stock price data ("closing price") to `stata`
 
 Run a simple `ols` regression:
 
