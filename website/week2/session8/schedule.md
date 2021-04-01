@@ -31,3 +31,9 @@
 * - 16:45 - 17:00
   - [Workflow tools](session8/workflow-tools)
 ```
+
+We also worked through some notebooks on Tuesday and Thursday that are linked below:
+
+
+* {download}`Thursday examples <../../../notebooks/session8/webscraping_examples_from_thursday.ipynb>`
+* {download}`Web scraping <../../../notebooks/session8/scraping_examples.ipynb>`
